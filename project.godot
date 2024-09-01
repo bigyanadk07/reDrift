@@ -11,7 +11,12 @@ config_version=5
 [application]
 
 config/name="reDrift"
+run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+
+[display]
+
+window/stretch/scale=2.0
 
 [importer_defaults]
 
@@ -34,3 +39,7 @@ texture={
 "roughness/mode": 0,
 "roughness/src_normal": ""
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
