@@ -54,6 +54,7 @@ func deal_with_damage():
 			can_take_damage = false
 			print("Slime health =" , health)
 			if health <=0:
+				$AnimatedSprite2D.play("death")
 				self.queue_free()
 		
 

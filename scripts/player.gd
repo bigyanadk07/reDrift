@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 200
+const speed = 100
 
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
