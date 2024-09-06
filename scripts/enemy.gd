@@ -47,7 +47,7 @@ func _on_enemy_hitbox_body_exited(body):
 			player_inattack_zone = false
 
 func deal_with_damage():
-	if player_inattack_zone and Global.player_current_attack == true:
+	if player_inattack_zone and global.player_current_attack == true:
 		if can_take_damage == true:
 			health = health - 20
 			$take_damage_cooldown.start()
