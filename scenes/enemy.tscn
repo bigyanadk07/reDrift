@@ -1,6 +1,6 @@
-[gd_scene load_steps=62 format=3 uid="uid://dls7064xsrcy8"]
+[gd_scene load_steps=63 format=3 uid="uid://dls7064xsrcy8"]
 
-[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_480qr"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_480qr"]
 [ext_resource type="Texture2D" uid="uid://b2bi5m0iw4cr0" path="res://characters/slime.png" id="1_f2mff"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6ggh"]
@@ -454,13 +454,14 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_hcscx"]
 radius = 57.0088
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_sljo7"]
+
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_480qr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m24dv")
-animation = &"idle_side"
-frame_progress = 0.646124
+animation = &"move_side"
 offset = Vector2(0, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -475,5 +476,17 @@ collision_mask = 2
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_hcscx")
 
+[node name="Enemy_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_hitbox"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_sljo7")
+
+[node name="take_damage_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="Enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]

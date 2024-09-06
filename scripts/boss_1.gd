@@ -10,7 +10,7 @@ func _ready():
 func _physics_process(delta):
 	if player_chase: 
 		position += (player.position - position)/speed
-		$AnimatedSprite2D.play("move ")
+		$AnimatedSprite2D.play("walk")
 		
 
 
