@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://doa66tqeirssk"]
+[gd_scene load_steps=18 format=3 uid="uid://doa66tqeirssk"]
 
 [ext_resource type="PackedScene" uid="uid://d0bwc852pp1x6" path="res://scenes/player.tscn" id="1_2fpox"]
 [ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/enemy.tscn" id="1_k1vi2"]
 [ext_resource type="Texture2D" uid="uid://b131pn02eup4f" path="res://tilesets/plains.png" id="1_trh2y"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_uyln8"]
 [ext_resource type="Texture2D" uid="uid://bljf3i633tmq7" path="res://tilesets/grass.png" id="2_yks4r"]
 [ext_resource type="Texture2D" uid="uid://dhb1bdx25tknl" path="res://objects/objects.png" id="3_vrdol"]
 [ext_resource type="Texture2D" uid="uid://ctfhhr1mi85xx" path="res://tilesets/Assets_source.png" id="4_7q82x"]
 [ext_resource type="Texture2D" uid="uid://2nqjb3svll22" path="res://tilesets/OverworldTYpe/TX Tileset Grass.png" id="5_4gglj"]
 [ext_resource type="Texture2D" uid="uid://rxxp4q6s5nqn" path="res://tilesets/OverworldTYpe/TX Props.png" id="6_upege"]
+[ext_resource type="PackedScene" uid="uid://buo6ubi7u13qt" path="res://scenes/pause_menu.tscn" id="10_6y27x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0glm"]
 texture = ExtResource("1_trh2y")
@@ -2243,6 +2245,7 @@ sources/7 = SubResource("TileSetAtlasSource_qno4c")
 [node name="world" type="Node2D"]
 z_as_relative = false
 y_sort_enabled = true
+script = ExtResource("1_uyln8")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -2265,3 +2268,11 @@ position = Vector2(26, 66)
 
 [node name="enemy" parent="." instance=ExtResource("1_k1vi2")]
 position = Vector2(189, 122)
+
+[node name="Pause Menu" parent="." instance=ExtResource("10_6y27x")]
+visible = false
+z_index = 5
+offset_left = 201.0
+offset_top = 128.0
+offset_right = 201.0
+offset_bottom = 128.0
