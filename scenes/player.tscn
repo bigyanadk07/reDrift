@@ -433,14 +433,13 @@ y_sort_enabled = true
 position = Vector2(-1, -2)
 scale = Vector2(1.04167, 1.21875)
 sprite_frames = SubResource("SpriteFrames_xqcke")
-animation = &"death"
-frame_progress = 0.289074
+animation = &"back_walk"
 offset = Vector2(0, -15)
 
 [node name="Player_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_hitbox"]
-position = Vector2(1, -8)
+position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_wpvir")
 
 [node name="attack_cooldown" type="Timer" parent="."]
@@ -461,7 +460,20 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.501961, 0, 1)
+offset_left = -8.0
+offset_top = -28.0
+offset_right = 162.0
+offset_bottom = -1.0
+scale = Vector2(0.1, 0.1)
+show_percentage = false
+
+[node name="regen_timer" type="Timer" parent="."]
+wait_time = 4.0
+
 [connection signal="body_entered" from="Player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="Player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
+[connection signal="timeout" from="regen_timer" to="." method="_on_regen_timer_timeout"]

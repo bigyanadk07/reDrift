@@ -456,7 +456,7 @@ radius = 57.0088
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sljo7"]
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="Slime" type="CharacterBody2D"]
 script = ExtResource("1_480qr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -486,9 +486,21 @@ shape = SubResource("CircleShape2D_sljo7")
 [node name="take_damage_cooldown" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0.537255, 0.0235294, 0.12549, 1)
+offset_left = -9.0
+offset_top = -17.0
+offset_right = 181.0
+offset_bottom = 10.0
+scale = Vector2(0.1, 0.1)
+show_percentage = false
+
+[node name="regen_timer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="Enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
+[connection signal="timeout" from="regen_timer" to="." method="_on_regen_t_imer_timeout"]

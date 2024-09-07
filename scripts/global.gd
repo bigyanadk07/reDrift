@@ -12,7 +12,7 @@ var player_start_posx = 0
 var player_start_posy = 0
 
 
-func finish_changescene():
+func finish_changescenes():
 	if transition_scene == true:
 		transition_scene = false
 		if current_scene == "world":

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4kediim8sfcn"]
+
+[ext_resource type="Script" path="res://scripts/Howto.gd" id="1_w3yhc"]
+
+[node name="How To" type="Node2D"]
+script = ExtResource("1_w3yhc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8539, 16.2417)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2

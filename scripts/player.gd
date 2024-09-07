@@ -13,8 +13,10 @@ var current_dir = "none"
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
+	$regen_timer.start()
 
 func _physics_process(delta):
+	update_health()
 	player_movement(delta)
 	enemy_attack()
 	attack()
@@ -140,3 +142,17 @@ func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	global.player_current_attack = false
 	attack_ip = false
+
+
+func update_health():
+	var healthbar = $HealthBar
+	healthbar.value = health
+	if health >= 100:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true
+
+func _on_regen_timer_timeout():
+	if health < 100 and health > 0:
+		health = health + 5
+		

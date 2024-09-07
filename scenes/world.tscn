@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://doa66tqeirssk"]
 
 [ext_resource type="PackedScene" uid="uid://d0bwc852pp1x6" path="res://scenes/player.tscn" id="1_2fpox"]
-[ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/enemy.tscn" id="1_k1vi2"]
+[ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/slime.tscn" id="1_k1vi2"]
 [ext_resource type="Texture2D" uid="uid://b131pn02eup4f" path="res://tilesets/plains.png" id="1_trh2y"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_uyln8"]
 [ext_resource type="Texture2D" uid="uid://bljf3i633tmq7" path="res://tilesets/grass.png" id="2_yks4r"]
@@ -2271,6 +2271,15 @@ position = Vector2(26, 66)
 
 [node name="enemy" parent="." instance=ExtResource("1_k1vi2")]
 position = Vector2(189, 122)
+
+[node name="enemy2" parent="." instance=ExtResource("1_k1vi2")]
+position = Vector2(496, 143)
+
+[node name="enemy3" parent="." instance=ExtResource("1_k1vi2")]
+position = Vector2(60, 229)
+
+[node name="enemy4" parent="." instance=ExtResource("1_k1vi2")]
+position = Vector2(256, 274)
 
 [node name="Pause Menu" parent="." instance=ExtResource("10_6y27x")]
 visible = false

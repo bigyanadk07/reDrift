@@ -8,6 +8,7 @@ func _ready():
 	pass 
 
 func _process(delta):
+	change_scene()
 	if Input.is_action_just_pressed("Resume"):
 		pauseMenu()
 	
