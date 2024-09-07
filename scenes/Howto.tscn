@@ -1,17 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4kediim8sfcn"]
+[gd_scene load_steps=4 format=3 uid="uid://c4kediim8sfcn"]
 
 [ext_resource type="Script" path="res://scripts/Howto.gd" id="1_w3yhc"]
+[ext_resource type="Texture2D" uid="uid://cvok83qw7s2q0" path="res://objects/keys.png" id="2_28cjs"]
+[ext_resource type="Texture2D" uid="uid://dmsohnllsdmxd" path="res://objects/left-click.png" id="3_tf7ul"]
 
 [node name="How To" type="Node2D"]
 script = ExtResource("1_w3yhc")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(28.8539, 16.2417)
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 651.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="HowtoTitle" type="TextEdit" parent="Panel"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -205.0
+offset_right = 214.0
+offset_bottom = -526.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/background_color = Color(1, 1, 1, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "How to Play"
+editable = false
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="MovementKeys" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 339.0
+offset_right = 375.0
+offset_bottom = 454.0
+scale = Vector2(2, 2)
+text = "
+W - Player Move Up
+A - Player Move Left
+S - Player Move Down
+D - Player Move Right"
+fit_content = true
+tab_size = 7
+
+[node name="ActionButton" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 387.0
+offset_right = 862.0
+offset_bottom = 415.0
+scale = Vector2(2, 2)
+text = "MouseLeftClick - Attack"
+fit_content = true
+tab_size = 7
+
+[node name="MovementTitle" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 312.0
+offset_right = 317.0
+offset_bottom = 340.0
+scale = Vector2(3, 3)
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/shadow_outline_size = 7
+theme_override_constants/line_separation = 5
+theme_override_constants/table_h_separation = 5
+theme_override_constants/outline_size = 3
+theme_override_constants/text_highlight_h_padding = 7
+theme_override_constants/text_highlight_v_padding = 8
+text = "Movement"
+fit_content = true
+tab_size = 7
+
+[node name="ActionTItle" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 310.0
+offset_right = 855.0
+offset_bottom = 338.0
+scale = Vector2(3, 3)
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/shadow_outline_size = 7
+theme_override_constants/line_separation = 5
+theme_override_constants/table_h_separation = 5
+theme_override_constants/outline_size = 3
+theme_override_constants/text_highlight_h_padding = 7
+theme_override_constants/text_highlight_v_padding = 8
+bbcode_enabled = true
+text = "Action"
+fit_content = true
+tab_size = 7
+
+[node name="Back" type="Button" parent="Panel"]
+offset_left = 574.0
+offset_top = 580.0
+offset_right = 619.0
+offset_bottom = 611.0
+text = "Back"
+
+[node name="Keys" type="Sprite2D" parent="Panel"]
+position = Vector2(361, 251)
+scale = Vector2(0.328788, 0.291005)
+texture = ExtResource("2_28cjs")
+
+[node name="Mouseleft" type="Sprite2D" parent="Panel"]
+position = Vector2(833, 256)
+scale = Vector2(0.151367, 0.158203)
+texture = ExtResource("3_tf7ul")
+
+[connection signal="pressed" from="Panel/Back" to="." method="_on_back_pressed"]
