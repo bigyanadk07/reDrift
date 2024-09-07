@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ctfhhr1mi85xx" path="res://tilesets/Assets_source.png" id="4_7q82x"]
 [ext_resource type="Texture2D" uid="uid://2nqjb3svll22" path="res://tilesets/OverworldTYpe/TX Tileset Grass.png" id="5_4gglj"]
 [ext_resource type="Texture2D" uid="uid://rxxp4q6s5nqn" path="res://tilesets/OverworldTYpe/TX Props.png" id="6_upege"]
-[ext_resource type="PackedScene" uid="uid://buo6ubi7u13qt" path="res://scenes/pause_menu.tscn" id="10_6y27x"]
+[ext_resource type="PackedScene" uid="uid://buo6ubi7u13qt" path="res://dump/pause_menu.tscn" id="10_6y27x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0glm"]
 texture = ExtResource("1_trh2y")

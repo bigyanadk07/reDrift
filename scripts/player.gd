@@ -154,5 +154,5 @@ func update_health():
 
 func _on_regen_timer_timeout():
 	if health < 100 and health > 0:
-		health = health + 5
+		health = health + 20
 		

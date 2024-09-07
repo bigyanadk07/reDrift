@@ -401,7 +401,7 @@ script = ExtResource("1_45u4s")
 position = Vector2(4, 5)
 scale = Vector2(0.454712, 0.467041)
 sprite_frames = SubResource("SpriteFrames_it2lk")
-animation = &"death"
+animation = &"walk"
 offset = Vector2(-5, -60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

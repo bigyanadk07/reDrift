@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4kediim8sfcn"]
+[gd_scene load_steps=6 format=3 uid="uid://c4kediim8sfcn"]
 
 [ext_resource type="Script" path="res://scripts/Howto.gd" id="1_w3yhc"]
-[ext_resource type="Texture2D" uid="uid://cvok83qw7s2q0" path="res://objects/keys.png" id="2_28cjs"]
+[ext_resource type="Texture2D" uid="uid://dw4ax0wmxvri5" path="res://objects/game.png" id="2_m43ed"]
+[ext_resource type="Texture2D" uid="uid://c0tut5wxxhrtj" path="res://objects/light.png" id="3_pusob"]
+[ext_resource type="Texture2D" uid="uid://cethjk44cbr8e" path="res://objects/joy.png" id="3_s83n8"]
 [ext_resource type="Texture2D" uid="uid://dmsohnllsdmxd" path="res://objects/left-click.png" id="3_tf7ul"]
 
 [node name="How To" type="Node2D"]
@@ -11,31 +13,12 @@ script = ExtResource("1_w3yhc")
 offset_right = 1152.0
 offset_bottom = 651.0
 
-[node name="HowtoTitle" type="TextEdit" parent="Panel"]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -205.0
-offset_right = 214.0
-offset_bottom = -526.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/background_color = Color(1, 1, 1, 0)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 70
-text = "How to Play"
-editable = false
-
 [node name="MovementKeys" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 339.0
-offset_right = 375.0
-offset_bottom = 454.0
-scale = Vector2(2, 2)
+offset_left = 106.0
+offset_top = 345.0
+offset_right = 276.0
+offset_bottom = 460.0
 text = "
 W - Player Move Up
 A - Player Move Left
@@ -44,24 +27,70 @@ D - Player Move Right"
 fit_content = true
 tab_size = 7
 
+[node name="MovementKeys2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 30.0
+offset_right = 621.0
+offset_bottom = 86.0
+scale = Vector2(2, 2)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_separation = 1
+theme_override_constants/table_h_separation = 5
+theme_override_constants/table_v_separation = 7
+theme_override_constants/outline_size = 7
+theme_override_constants/text_highlight_h_padding = 7
+theme_override_constants/text_highlight_v_padding = 1
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 2
+theme_override_font_sizes/italics_font_size = 2
+theme_override_font_sizes/bold_italics_font_size = 2
+theme_override_font_sizes/mono_font_size = 2
+text = "How to Play?"
+fit_content = true
+tab_size = 7
+
 [node name="ActionButton" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
-offset_left = 680.0
-offset_top = 387.0
-offset_right = 862.0
-offset_bottom = 415.0
-scale = Vector2(2, 2)
+offset_left = 462.0
+offset_top = 322.0
+offset_right = 644.0
+offset_bottom = 350.0
 text = "MouseLeftClick - Attack"
+fit_content = true
+tab_size = 7
+
+[node name="ActionButton2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 308.0
+offset_right = 1082.0
+offset_bottom = 378.0
+theme_override_font_sizes/normal_font_size = 0
+text = "- Player auto regens after a period of time
+- Enemy auto regens after a period of time"
+fit_content = true
+tab_size = 7
+
+[node name="JoyText" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 451.0
+offset_right = 635.0
+offset_bottom = 477.0
+text = "No Joystick Support"
 fit_content = true
 tab_size = 7
 
 [node name="MovementTitle" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
-offset_left = 230.0
-offset_top = 312.0
-offset_right = 317.0
-offset_bottom = 340.0
-scale = Vector2(3, 3)
+offset_left = 108.0
+offset_top = 289.0
+offset_right = 195.0
+offset_bottom = 317.0
+scale = Vector2(2, 2)
 theme_override_constants/shadow_offset_x = 9
 theme_override_constants/shadow_offset_y = 12
 theme_override_constants/shadow_outline_size = 7
@@ -76,11 +105,11 @@ tab_size = 7
 
 [node name="ActionTItle" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
-offset_left = 768.0
-offset_top = 310.0
-offset_right = 855.0
-offset_bottom = 338.0
-scale = Vector2(3, 3)
+offset_left = 500.0
+offset_top = 269.0
+offset_right = 587.0
+offset_bottom = 297.0
+scale = Vector2(2, 2)
 theme_override_constants/shadow_offset_x = 9
 theme_override_constants/shadow_offset_y = 12
 theme_override_constants/shadow_outline_size = 7
@@ -94,20 +123,51 @@ text = "Action"
 fit_content = true
 tab_size = 7
 
+[node name="ActionTItle2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 245.0
+offset_right = 966.0
+offset_bottom = 273.0
+scale = Vector2(2, 2)
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/shadow_outline_size = 7
+theme_override_constants/line_separation = 5
+theme_override_constants/table_h_separation = 5
+theme_override_constants/outline_size = 3
+theme_override_constants/text_highlight_h_padding = 7
+theme_override_constants/text_highlight_v_padding = 8
+bbcode_enabled = true
+text = "Info"
+fit_content = true
+tab_size = 7
+
 [node name="Back" type="Button" parent="Panel"]
-offset_left = 574.0
-offset_top = 580.0
-offset_right = 619.0
-offset_bottom = 611.0
+layout_mode = 0
+offset_left = 526.0
+offset_top = 525.0
+offset_right = 571.0
+offset_bottom = 556.0
 text = "Back"
 
 [node name="Keys" type="Sprite2D" parent="Panel"]
-position = Vector2(361, 251)
-scale = Vector2(0.328788, 0.291005)
-texture = ExtResource("2_28cjs")
+position = Vector2(195, 235)
+scale = Vector2(0.264003, 0.213862)
+texture = ExtResource("2_m43ed")
+
+[node name="Info" type="Sprite2D" parent="Panel"]
+position = Vector2(914, 222)
+scale = Vector2(1.26392, 1.11597)
+texture = ExtResource("3_pusob")
+
+[node name="Joystick" type="Sprite2D" parent="Panel"]
+position = Vector2(551, 393)
+scale = Vector2(0.183925, 0.172846)
+texture = ExtResource("3_s83n8")
 
 [node name="Mouseleft" type="Sprite2D" parent="Panel"]
-position = Vector2(833, 256)
+position = Vector2(547, 223)
 scale = Vector2(0.151367, 0.158203)
 texture = ExtResource("3_tf7ul")
 
