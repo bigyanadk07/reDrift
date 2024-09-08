@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://doyp3ym75cw8s"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_ol174"]
+[ext_resource type="Shader" path="res://shader/pause_menu.gdshader" id="2_v2v3u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ga20b"]
+shader = ExtResource("2_v2v3u")
+shader_parameter/amount = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bg3lh"]
+shader = ExtResource("2_v2v3u")
+shader_parameter/amount = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_truqb"]
+font_size = 32
+
+[node name="Pause Menu" type="Control"]
+z_index = 3
+material = SubResource("ShaderMaterial_ga20b")
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.000391315
+scale = Vector2(0.605827, 0.667443)
+script = ExtResource("1_ol174")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_bg3lh")
+layout_mode = 0
+offset_left = -1512.14
+offset_top = -878.369
+offset_right = -1472.14
+offset_bottom = -838.369
+scale = Vector2(95.2215, 74.7709)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.998062, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Paused
+"
+label_settings = SubResource("LabelSettings_truqb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="resume" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "Resume"
+
+[node name="restart" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "Restart"
+
+[node name="Exit" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "Exit to menu"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

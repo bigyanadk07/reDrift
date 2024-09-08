@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d23jo0gn33mrq"]
+[gd_scene load_steps=7 format=3 uid="uid://7wyyin16npko"]
 
 [ext_resource type="PackedScene" uid="uid://d0bwc852pp1x6" path="res://scenes/player.tscn" id="1_h0dfw"]
 [ext_resource type="Texture2D" uid="uid://cf1suaf84airf" path="res://tilesets/gentle forest v03.png" id="10_v638u"]

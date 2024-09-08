@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyiocthi2otge"]
+
+[ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="1_dke2u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
+radius = 2.99871
+height = 12.0
+
+[sub_resource type="Animation" id="Animation_es6oo"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_vpskd"]
+resource_name = "Walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s7d0e"]
+_data = {
+"RESET": SubResource("Animation_es6oo"),
+"Walk": SubResource("Animation_vpskd")
+}
+
+[node name="enemy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(1, 1.02163)
+texture = ExtResource("1_dke2u")
+hframes = 6
+vframes = 13
+frame = 3
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+rotation = 1.57105
+shape = SubResource("CapsuleShape2D_yr5ho")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s7d0e")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="AttackComponent" type="Node2D" parent="."]
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+
+[node name="HealthComponent" type="Node2D" parent="."]
