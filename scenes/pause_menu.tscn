@@ -82,7 +82,7 @@ text = "Resume"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 24
-text = "Restart"
+text = "reDrift"
 
 [node name="Exit" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(5, 5)
