@@ -4,6 +4,7 @@ extends Node2D
 var paused = false
 
 func _process(delta):
+	change_scene()
 	if Input.is_action_just_pressed('Resume'):
 		pauseMenu()
 
