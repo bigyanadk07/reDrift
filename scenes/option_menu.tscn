@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwusu0xcbao2n"]
+[gd_scene load_steps=9 format=3 uid="uid://cwusu0xcbao2n"]
 
 [ext_resource type="Script" path="res://scripts/option_menu.gd" id="1_6qvu1"]
 
@@ -15,72 +15,77 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xs61s"]
-bg_color = Color(0.707967, 0.707967, 0.707966, 1)
-border_width_left = 1
-border_width_top = 2
-border_width_right = 1
-border_width_bottom = 3
-border_color = Color(0.796243, 0.796243, 0.796243, 1)
-border_blend = true
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_size = 2
-shadow_offset = Vector2(0, 1)
-anti_aliasing_size = 0.01
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mtuk"]
+bg_color = Color(0, 0.505882, 0.890196, 0.847059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tsm3q"]
+bg_color = Color(0, 0, 0, 0.270588)
 
 [sub_resource type="Theme" id="Theme_um8j2"]
 Button/styles/hover = SubResource("StyleBoxFlat_pwulb")
 Button/styles/normal = SubResource("StyleBoxFlat_bq6ga")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_5gpkq")
-HSlider/styles/slider = SubResource("StyleBoxFlat_xs61s")
+Label/font_sizes/font_size = 24
+Label/styles/normal = SubResource("StyleBoxFlat_4mtuk")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_tsm3q")
+
+[sub_resource type="Theme" id="Theme_l5qtm"]
 
 [node name="Option Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -41.0
-offset_top = -68.0
-offset_right = 15.0
-offset_bottom = 7.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_um8j2")
 script = ExtResource("1_6qvu1")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
 layout_mode = 2
 
-[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_l5qtm")
+
+[node name="Volume" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
 text = "Volume"
+horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="HSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.85
 
-[node name="Difficulty" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Difficulty" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Difficulty"
 
-[node name="Keybinds" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Keybinds" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Keybinds"
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Back" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Difficulty" to="." method="_on_difficulty_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Keybinds" to="." method="_on_keybinds_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Difficulty" to="." method="_on_difficulty_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Keybinds" to="." method="_on_keybinds_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
