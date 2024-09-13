@@ -2269,9 +2269,6 @@ layer_2/z_index = 2
 layer_2/navigation_enabled = false
 layer_2/tile_data = PackedInt32Array(458757, 655362, 7, 655367, 393218, 7, 655370, 393218, 7, 786426, 393218, 7, 131084, 2, 5, 1048588, 524290, 6, -131069, 524290, 6, 917499, 655362, 7, 65542, 655362, 7, 262139, 2, 5, 983040, 2, 5, 524288, 2, 5, -65508, 2, 5, 589854, 2, 5, 393232, 655362, 7, 917525, 655362, 7, 851988, 524290, 6, 524305, 524290, 6, 458773, 393218, 7, 655381, 393218, 7, 851996, 393218, 7, 65559, 393218, 7, -65539, 393218, 7, 1048599, 393218, 7, -65517, 2, 0, 393244, 2, 0, 1114141, 2, 0, 262141, 2, 0, 65545, 2, 0, 917519, 2, 1, 655380, 2, 1, 655369, 2, 1, 983042, 2, 1, 327708, 2, 1, -262144, 2, 1, 1048595, 2, 1, 917520, 327682, 0, -196590, 327682, 0, 65543, 327682, 0, 720926, 327682, 0, 655354, 327682, 0, 786446, 655362, 0, 786447, 720898, 0, -262134, 655362, 0, -262133, 720898, 0, 983045, 655362, 0, 983046, 720898, 0, 786429, 1572867, 8, 851965, 1572867, 9, 786430, 1638403, 8, 851966, 1638403, 9, 524332, 1441799, 17, 786476, 1441799, 21, 65574, 1441799, 21, 65578, 1703943, 21, 65579, 1769479, 21)
 
-[node name="player" parent="." instance=ExtResource("1_2fpox")]
-position = Vector2(26, 66)
-
 [node name="enemy" parent="." instance=ExtResource("1_k1vi2")]
 position = Vector2(189, 122)
 
@@ -2308,6 +2305,9 @@ offset_left = -64.0
 offset_top = -32.0
 offset_right = 64.0
 offset_bottom = 32.0
+
+[node name="player" parent="." instance=ExtResource("1_2fpox")]
+position = Vector2(39, 52)
 
 [connection signal="body_entered" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_entered"]
 [connection signal="body_exited" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_exited"]

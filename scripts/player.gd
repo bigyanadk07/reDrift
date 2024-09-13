@@ -7,7 +7,7 @@ var enemy_attack_cooldown = true
 var health = 100
 var player_alive = true
 var attack_ip = false
-
+@onready var anim_tree = get_node("AnimationTree")
 
 var current_dir = "none"
 
@@ -15,11 +15,13 @@ func _ready():
 	$AnimatedSprite2D.play("front_idle")
 	$regen_timer.start()
 
+
+
 func _physics_process(delta):
 	update_health()
 	player_movement(delta)
 	enemy_attack()
-	attack()
+	#attack()
 	
 	if health <= 0:
 		player_alive = false
@@ -29,32 +31,27 @@ func _physics_process(delta):
 
 
 func player_movement(delta):
-	if Input.is_action_pressed("move_right"):
-		play_anim(1)
-		current_dir = "right"
-		velocity.x = speed
-		velocity.y = 0
-	elif Input.is_action_pressed("move_left"):
-		play_anim(1)
-		current_dir = "left"
-		velocity.x = -speed
-		velocity.y = 0
-	elif Input.is_action_pressed("move_down"):
-		play_anim(1)
-		current_dir = "down"
-		velocity.x = 0
-		velocity.y = speed
-	elif Input.is_action_pressed("move_up"):
-		play_anim(1)
-		current_dir = "up"
-		velocity.x = 0
-		velocity.y = -speed
-	else: 
-		play_anim(0)
-		velocity.x = 0
-		velocity.y = 0
+	if Input.is_action_just_pressed("attack"):
+		anim_tree.get("parameters/playback").travel("attack")
+		global.player_current_attack = true
+		attack_ip = true
+		$deal_attack_timer.start()
+		
 	
-	move_and_slide()
+	if attack_ip == false:
+		var input_vector = Vector2(
+			Input.get_action_raw_strength("move_right")-Input.get_action_raw_strength("move_left"),
+			Input.get_action_raw_strength("move_down")-Input.get_action_raw_strength("move_up"))
+		self.velocity= input_vector*speed
+		if input_vector==Vector2.ZERO:
+			anim_tree.get("parameters/playback").travel("idle")
+		else:
+			anim_tree.get("parameters/playback").travel("walk")
+			anim_tree.set("parameters/idle/blend_position",input_vector)
+			anim_tree.set("parameters/walk/blend_position",input_vector)
+			anim_tree.set("parameters/attack/blend_position",input_vector)
+			
+		move_and_slide()
 		
 func play_anim(movement):
 	var dir = current_dir

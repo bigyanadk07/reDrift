@@ -1,8 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://cyiocthi2otge"]
+[gd_scene load_steps=57 format=3 uid="uid://cxbsi15l23riy"]
 
-[ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="1_dke2u"]
-[ext_resource type="Script" path="res://scripts/player/weapon.gd" id="1_nch8i"]
-[ext_resource type="Script" path="res://scripts/skele/HealthComponent.gd" id="3_2xp8w"]
+[ext_resource type="Script" path="res://scripts/skele/Skeleme.gd" id="1_r3vus"]
+[ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="2_hm4qp"]
+[ext_resource type="Script" path="res://scripts/skele/HealthComponent.gd" id="3_txkpk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
 radius = 4.00025
@@ -10,8 +10,9 @@ height = 12.0
 
 [sub_resource type="Animation" id="Animation_0sr31"]
 resource_name = "Attack"
-length = 0.7
+length = 1.2
 loop_mode = 1
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,7 +20,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [78, 79, 80, 81, 82, 83]
@@ -27,8 +28,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_tr17k"]
 resource_name = "Attack_left"
-length = 0.6
+length = 1.2
 loop_mode = 1
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,7 +38,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [89, 88, 87, 86, 85, 84]
@@ -44,8 +46,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_f6haa"]
 resource_name = "Attack_right"
-length = 0.6
+length = 1.2
 loop_mode = 1
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -53,7 +56,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [90, 91, 92, 93, 94, 95]
@@ -61,8 +64,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ooytc"]
 resource_name = "Attack_up"
-length = 0.6
+length = 1.2
 loop_mode = 1
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -70,7 +74,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [102, 103, 104, 105, 106, 107]
@@ -509,14 +513,14 @@ radius = 17.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7bfg"]
 radius = 43.0
 
-[node name="Skele" type="CharacterBody2D"]
+[node name="Skeleme" type="CharacterBody2D"]
 z_index = 2
-script = ExtResource("1_nch8i")
+script = ExtResource("1_r3vus")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -10)
 scale = Vector2(1, 1.02163)
-texture = ExtResource("1_dke2u")
+texture = ExtResource("2_hm4qp")
 hframes = 12
 vframes = 14
 frame = 18
@@ -548,7 +552,7 @@ parameters/walk/blend_position = Vector2(-0.000876427, -0.00484574)
 [node name="HitboxComponent" type="Area2D" parent="."]
 
 [node name="HealthComponent" type="Node2D" parent="."]
-script = ExtResource("3_2xp8w")
+script = ExtResource("3_txkpk")
 
 [node name="Area2D" type="Area2D" parent="."]
 
