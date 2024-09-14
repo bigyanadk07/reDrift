@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4kediim8sfcn"]
 
 [ext_resource type="Script" path="res://scripts/Howto.gd" id="1_w3yhc"]
-[ext_resource type="Texture2D" uid="uid://dw4ax0wmxvri5" path="res://objects/game.png" id="2_m43ed"]
-[ext_resource type="Texture2D" uid="uid://c0tut5wxxhrtj" path="res://objects/light.png" id="3_pusob"]
-[ext_resource type="Texture2D" uid="uid://cethjk44cbr8e" path="res://objects/joy.png" id="3_s83n8"]
-[ext_resource type="Texture2D" uid="uid://dmsohnllsdmxd" path="res://objects/left-click.png" id="3_tf7ul"]
+[ext_resource type="Texture2D" uid="uid://dw4ax0wmxvri5" path="res://tilesets/objects/game.png" id="2_m43ed"]
+[ext_resource type="Texture2D" uid="uid://c0tut5wxxhrtj" path="res://tilesets/objects/light.png" id="3_pusob"]
+[ext_resource type="Texture2D" uid="uid://cethjk44cbr8e" path="res://tilesets/objects/joy.png" id="3_s83n8"]
+[ext_resource type="Texture2D" uid="uid://dmsohnllsdmxd" path="res://tilesets/objects/left-click.png" id="3_tf7ul"]
 
 [node name="How To" type="Node2D"]
 script = ExtResource("1_w3yhc")

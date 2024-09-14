@@ -1122,6 +1122,7 @@ position = Vector2(-1, -2)
 scale = Vector2(1.04167, 1.21875)
 sprite_frames = SubResource("SpriteFrames_xqcke")
 animation = &"front_idle"
+frame = 3
 offset = Vector2(0, -15)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

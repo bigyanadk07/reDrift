@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch4xyg1kntaj"]
+
+[ext_resource type="Texture2D" uid="uid://dsqjkl71y8kbk" path="res://tilesets/Mystic Land/Serene_Village_32x32.png" id="1_qh74c"]
+
+[node name="Tree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qh74c")
+region_enabled = true
+region_rect = Rect2(287.491, 400.593, 63.0889, 79.7274)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, 17, 23, 17, 11, 20, 11, 27, 16, 31, 14, 34, 9, 36, 1, 35, -5, 35, -13, 35, -13, 31, -9, 28, -8, 23, -8, 19, -15, 20)

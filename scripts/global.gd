@@ -16,6 +16,14 @@ func finish_changescenes():
 	if transition_scene == true:
 		transition_scene = false
 		if current_scene == "world":
-			current_scene = "mini_dungeon"
+			current_scene = "mystic_land"
 		else: 
 			current_scene = "world"
+
+func finish_changescenes1():
+	if transition_scene == true:
+		transition_scene = false
+		if current_scene == "mystic_land":
+			current_scene = "mystic_land2"
+		else: 
+			current_scene = "mystic_land"

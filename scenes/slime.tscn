@@ -457,7 +457,8 @@ radius = 57.0088
 [sub_resource type="CircleShape2D" id="CircleShape2D_sljo7"]
 
 [node name="Slime" type="CharacterBody2D"]
-z_index = 2
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_480qr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
