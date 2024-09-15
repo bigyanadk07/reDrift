@@ -557,6 +557,7 @@ script = ExtResource("3_txkpk")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+y_sort_enabled = true
 shape = SubResource("CircleShape2D_h5yte")
 
 [node name="Area2D2" type="Area2D" parent="."]
