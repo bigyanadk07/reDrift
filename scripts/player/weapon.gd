@@ -13,7 +13,7 @@ func _on_hitbox_body_entered(body):
 		
 @onready var anim_tree= get_node("AnimationTree")
 
-var timer: Timer
+
 var attack_time:=0.55
 var attacking:bool=false
 var dying:bool=false

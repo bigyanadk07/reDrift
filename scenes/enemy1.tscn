@@ -681,7 +681,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-43.0193, -98.545)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5yte"]
-radius = 17.0
+radius = 18.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t1lwq"]
 radius = 5.0
@@ -719,7 +719,7 @@ parameters/conditions/idle = false
 parameters/conditions/is_moving = false
 parameters/attack/blend_position = Vector2(-0.00438213, 0.355026)
 parameters/death/blend_position = Vector2(-0.000876427, 0.00529099)
-parameters/idle/blend_position = Vector2(0.00613499, 0.0407407)
+parameters/idle/blend_position = Vector2(0.000876427, -0.159912)
 parameters/walk/blend_position = Vector2(-0.0587204, 0.00582004)
 
 [node name="AttackComponent" type="Node2D" parent="."]
