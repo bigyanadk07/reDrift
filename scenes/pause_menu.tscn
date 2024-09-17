@@ -33,10 +33,10 @@ script = ExtResource("1_ol174")
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_bg3lh")
 layout_mode = 0
-offset_left = -1512.14
-offset_top = -878.369
-offset_right = -1472.14
-offset_bottom = -838.369
+offset_left = -1968.84
+offset_top = -857.702
+offset_right = -1928.84
+offset_bottom = -817.702
 scale = Vector2(95.2215, 74.7709)
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
