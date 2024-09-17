@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://oiveijm06w4l"]
+[gd_scene load_steps=10 format=3 uid="uid://oiveijm06w4l"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_ac1cd"]
 [ext_resource type="Texture2D" uid="uid://dcjsjpsf3odwi" path="res://Other Assets/Backgrounds/manu.png" id="1_ihldr"]
@@ -7,6 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://dba0v2ok05cg" path="res://Other Assets/Button/button_hover.png" id="3_3uk1w"]
 [ext_resource type="FontFile" uid="uid://nbymtktk5hc" path="res://Other Assets/Fonts/1_Minecraft-Regular.otf" id="4_fivi4"]
 [ext_resource type="AudioStream" uid="uid://d2y7ewpximfpi" path="res://Other Assets/Button/button_click.wav" id="7_bolgx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bfse5"]
+texture = ExtResource("2_ghpug")
+texture_margin_left = 3.0
+
+[sub_resource type="Theme" id="Theme_48xfe"]
+Button/styles/normal = SubResource("StyleBoxTexture_bfse5")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -30,7 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ihldr")
 
-[node name="Gametitle" type="RichTextLabel" parent="."]
+[node name="Gametitle" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -40,9 +47,11 @@ offset_top = 143.0
 offset_right = 231.0
 offset_bottom = 259.0
 grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("2_jtl2m")
-theme_override_font_sizes/normal_font_size = 120
+theme_override_fonts/font = ExtResource("2_jtl2m")
+theme_override_font_sizes/font_size = 120
 text = "reDrift"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -59,7 +68,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Play" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
+theme = SubResource("Theme_48xfe")
 texture_normal = ExtResource("2_ghpug")
 texture_pressed = ExtResource("2_ghpug")
 texture_hover = ExtResource("3_3uk1w")

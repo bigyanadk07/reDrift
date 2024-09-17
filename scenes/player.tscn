@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://d0bwc852pp1x6"]
+[gd_scene load_steps=97 format=3 uid="uid://f2mswd1jvbvj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_p6gci"]
 [ext_resource type="Texture2D" uid="uid://cw242uvldatmo" path="res://characters/player.png" id="2_jm1au"]
@@ -447,6 +447,7 @@ tracks/1/keys = {
 resource_name = "back_attack"
 length = 0.5
 loop_mode = 1
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -558,6 +559,7 @@ tracks/2/keys = {
 resource_name = "front_attack"
 length = 0.5
 loop_mode = 1
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -628,6 +630,7 @@ tracks/2/keys = {
 resource_name = "left_attack"
 length = 0.5
 loop_mode = 1
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -792,6 +795,7 @@ tracks/2/keys = {
 resource_name = "right_attack"
 length = 0.6
 loop_mode = 1
+step = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1008,10 +1012,10 @@ animation = &"left_attack"
 animation = &"right_attack"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hp4pm"]
-animation = &"back_attack"
+animation = &"front_attack"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5gvdk"]
-animation = &"front_attack"
+animation = &"back_attack"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_44svc"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_7ffx2")
@@ -1033,10 +1037,10 @@ animation = &"left_idle"
 animation = &"right_idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7e22j"]
-animation = &"back_idle"
+animation = &"idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pw2qu"]
-animation = &"idle"
+animation = &"back_idle"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_g0mjk"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_t6nbh")
@@ -1123,6 +1127,10 @@ position = Vector2(-1, -2)
 scale = Vector2(1.04167, 1.21875)
 sprite_frames = SubResource("SpriteFrames_xqcke")
 animation = &"front_idle"
+<<<<<<< Updated upstream
+=======
+frame = 1
+>>>>>>> Stashed changes
 offset = Vector2(0, -15)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1137,7 +1145,7 @@ tree_root = SubResource("AnimationNodeStateMachine_0ngbk")
 advance_expression_base_node = NodePath("../AnimatedSprite2D")
 anim_player = NodePath("../AnimationPlayer")
 parameters/attack/blend_position = Vector2(-0.00262928, -0.00582004)
-parameters/idle/blend_position = Vector2(0.00613499, -0.303965)
+parameters/idle/blend_position = Vector2(0.00788784, 0.291005)
 parameters/walk/blend_position = Vector2(0.00262928, -0.32467)
 
 [node name="Player_hitbox" type="Area2D" parent="."]
@@ -1151,18 +1159,6 @@ wait_time = 0.5
 
 [node name="deal_attack_timer" type="Timer" parent="."]
 wait_time = 0.5
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(8, -9)
-zoom = Vector2(4, 4)
-limit_left = 0
-limit_top = 0
-limit_right = 622
-limit_bottom = 350
-limit_smoothed = true
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 modulate = Color(0, 0.501961, 0, 1)
