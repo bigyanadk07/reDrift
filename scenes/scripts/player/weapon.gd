@@ -15,11 +15,13 @@ func _on_hitbox_body_entered(body):
 
 var timer: Timer
 var attack_time:=0.55
-var attacking=false
+var attacking:bool=false
+var dying:bool=false
+var health:int= 100
 var speed = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body
+	hit(100)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -31,7 +33,7 @@ func _physics_process(delta):
 		$Timer.start(attack_time)
 		
 	
-	if attacking == false:
+	if (attacking == false) and (dying==false):
 		var input_vector = Vector2(
 			Input.get_action_raw_strength("move_right")-Input.get_action_raw_strength("move_left"),
 			Input.get_action_raw_strength("move_down")-Input.get_action_raw_strength("move_up"))
@@ -43,6 +45,7 @@ func _physics_process(delta):
 			anim_tree.set("parameters/idle/blend_position",input_vector)
 			anim_tree.set("parameters/walk/blend_position",input_vector)
 			anim_tree.set("parameters/attack/blend_position",input_vector)
+			anim_tree.set("parameters/death/blend_position",input_vector)
 			
 		move_and_slide()
 
@@ -51,3 +54,11 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	attacking= false
+func hit(damage):
+	health-=damage
+	if health<=0:
+		dying=true
+		anim_tree.get("parameters/playback").travel("death")
+		await anim_tree.animation_finished
+		self.queue_free()
+ 
