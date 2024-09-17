@@ -42,7 +42,7 @@ func player_movement(delta):
 	if attack_ip == false:
 		var input_vector = Vector2(
 			Input.get_action_raw_strength("move_right")-Input.get_action_raw_strength("move_left"),
-			Input.get_action_raw_strength("move_down")-Input.get_action_raw_strength("move_up"))
+			Input.get_action_raw_strength("move_down")-Input.get_action_raw_strength("move_up")).normalized()
 		self.velocity= input_vector*speed
 		if input_vector==Vector2.ZERO:
 			anim_tree.get("parameters/playback").travel("idle")

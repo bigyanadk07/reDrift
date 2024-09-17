@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cp8qfbsm6esg0"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bkq2iuyj7xt1j"]
 
 [ext_resource type="Texture2D" uid="uid://bhicii66cyo0s" path="res://tilesets/dungeon/cave.png" id="1_2jr44"]
 [ext_resource type="Texture2D" uid="uid://bhggar42lwdvh" path="res://tilesets/dungeon/decorative.png" id="2_lb3o6"]
