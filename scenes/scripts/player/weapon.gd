@@ -21,7 +21,7 @@ var health:int= 100
 var speed = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hit(100)
+	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

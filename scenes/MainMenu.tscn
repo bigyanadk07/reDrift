@@ -35,10 +35,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -215.0
-offset_top = 159.0
-offset_right = 242.0
-offset_bottom = 275.0
+offset_left = -226.0
+offset_top = 143.0
+offset_right = 231.0
+offset_bottom = 259.0
 grow_horizontal = 2
 theme_override_fonts/normal_font = ExtResource("2_jtl2m")
 theme_override_font_sizes/normal_font_size = 120
@@ -51,10 +51,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -166.0
-offset_right = 125.0
-offset_bottom = 166.0
+offset_left = -250.0
+offset_top = -208.0
+offset_right = 250.0
+offset_bottom = 208.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -67,9 +67,9 @@ stretch_mode = 0
 
 [node name="Label" type="Label" parent="VBoxContainer/Play"]
 layout_mode = 0
-offset_left = 45.0
+offset_left = 173.0
 offset_top = 9.0
-offset_right = 208.0
+offset_right = 336.0
 offset_bottom = 69.0
 theme_override_fonts/font = ExtResource("4_fivi4")
 theme_override_font_sizes/font_size = 35
@@ -78,14 +78,19 @@ text = "Play
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Multiplayer" type="TextureButton" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+alignment = 1
+
+[node name="Multiplayer" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 texture_normal = ExtResource("2_ghpug")
 texture_pressed = ExtResource("2_ghpug")
 texture_hover = ExtResource("3_3uk1w")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/Multiplayer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Multiplayer"]
 layout_mode = 0
 offset_left = 33.0
 offset_top = 10.0
@@ -98,14 +103,15 @@ text = "Multiplayer
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="How to" type="TextureButton" parent="VBoxContainer"]
+[node name="How to" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 texture_normal = ExtResource("2_ghpug")
 texture_pressed = ExtResource("2_ghpug")
 texture_hover = ExtResource("3_3uk1w")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/How to"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/How to"]
 layout_mode = 0
 offset_left = 33.0
 offset_top = 10.0
@@ -127,9 +133,9 @@ stretch_mode = 0
 
 [node name="Label" type="Label" parent="VBoxContainer/Options"]
 layout_mode = 0
-offset_left = 46.0
+offset_left = 155.0
 offset_top = 8.0
-offset_right = 209.0
+offset_right = 318.0
 offset_bottom = 68.0
 theme_override_fonts/font = ExtResource("4_fivi4")
 theme_override_font_sizes/font_size = 35
@@ -147,9 +153,9 @@ stretch_mode = 0
 
 [node name="Label" type="Label" parent="VBoxContainer/Exit"]
 layout_mode = 0
-offset_left = 44.0
+offset_left = 170.0
 offset_top = 9.0
-offset_right = 207.0
+offset_right = 333.0
 offset_bottom = 69.0
 theme_override_fonts/font = ExtResource("4_fivi4")
 theme_override_font_sizes/font_size = 35
@@ -162,7 +168,7 @@ vertical_alignment = 1
 stream = ExtResource("7_bolgx")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
-[connection signal="pressed" from="VBoxContainer/How to" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/How to" to="." method="_on_how_to_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
