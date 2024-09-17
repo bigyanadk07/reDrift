@@ -1,7 +1,7 @@
 extends Node
 
 var player_current_attack = false
-
+var health = 100
 var current_scene = "world"
 var transition_scene = false 
 
