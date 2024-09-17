@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbx8v0v701n67"]
 
-[ext_resource type="Script" path="res://scripts/multimapdemo.gd" id="1_r6qu4"]
+[ext_resource type="Script" path="res://scenes/scripts/multimapdemo.gd" id="1_r6qu4"]
 [ext_resource type="TileSet" uid="uid://bs6vm7ut3d3fa" path="res://scenes/Tres Files/World1.tres" id="2_77w86"]
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="5_fou1x"]
 [ext_resource type="TileSet" uid="uid://cp8qfbsm6esg0" path="res://dump/dungeon1.tres" id="6_00i31"]

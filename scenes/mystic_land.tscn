@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://fsw0hcehotmj"]
+[gd_scene load_steps=6 format=3 uid="uid://fsw0hcehotmj"]
 
-[ext_resource type="Script" path="res://scenes/scripts/mystic_land.gd" id="1_mswu3"]
+[ext_resource type="Script" path="res://scripts/mystic_land.gd" id="1_mswu3"]
 [ext_resource type="PackedScene" uid="uid://d0bwc852pp1x6" path="res://scenes/player.tscn" id="1_wxq3x"]
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="3_5lyhx"]
+[ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/pause_menu.tscn" id="4_kdcm1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx0ak"]
 size = Vector2(61, 59)
@@ -36,6 +37,20 @@ polygon = PackedVector2Array(19, 16, 19, -16, 90, -16, 20, 11, 620, 13, 622, 226
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to Dungeon"]
 position = Vector2(653.5, 255.5)
 shape = SubResource("RectangleShape2D_vx0ak")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("4_kdcm1")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
 
 [connection signal="body_entered" from="Transition to Dungeon" to="." method="_on_transition_to_dungeon_body_entered"]
 [connection signal="body_exited" from="Transition to Dungeon" to="." method="_on_transition_to_dungeon_body_exited"]

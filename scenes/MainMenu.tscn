@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://oiveijm06w4l"]
 
-[ext_resource type="Script" path="res://scenes/scripts/Menu.gd" id="1_ac1cd"]
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="1_ac1cd"]
 [ext_resource type="Texture2D" uid="uid://dcjsjpsf3odwi" path="res://Other Assets/Backgrounds/manu.png" id="1_ihldr"]
 [ext_resource type="Texture2D" uid="uid://6vx0hg5bx1ht" path="res://Other Assets/Button/button_normal.png" id="2_ghpug"]
 [ext_resource type="FontFile" uid="uid://ck3wp7rovlfbl" path="res://Other Assets/Fonts/Attack Of Monster.ttf" id="2_jtl2m"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://4usslygvhbo2"]
 
-[ext_resource type="Script" path="res://scenes/scripts/boss_1.gd" id="1_1ilho"]
+[ext_resource type="Script" path="res://scripts/boss_1.gd" id="1_1ilho"]
 [ext_resource type="Texture2D" uid="uid://c1btkpi7b1g4t" path="res://characters/Bringer-of-Death-SpritSheet.png" id="2_h6lrh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xsb0f"]

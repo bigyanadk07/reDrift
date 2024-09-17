@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://c4kediim8sfcn"]
 
-[ext_resource type="Script" path="res://scenes/scripts/Howto.gd" id="1_w3yhc"]
+[ext_resource type="Script" path="res://scripts/Howto.gd" id="1_w3yhc"]
 [ext_resource type="Texture2D" uid="uid://cboixbhmtivq8" path="res://background/bg4.png" id="2_flv5l"]
 [ext_resource type="Texture2D" uid="uid://dw4ax0wmxvri5" path="res://tilesets/objects/game.png" id="2_m43ed"]
 [ext_resource type="FontFile" uid="uid://ck3wp7rovlfbl" path="res://Other Assets/Fonts/Attack Of Monster.ttf" id="3_hl00e"]

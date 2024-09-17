@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bym6p1tive6ep"]
+[gd_scene load_steps=6 format=3 uid="uid://bym6p1tive6ep"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_vp33o"]
-[ext_resource type="Script" path="res://scenes/scripts/mystic_land2.gd" id="1_ynll4"]
+[ext_resource type="Script" path="res://scripts/mystic_land2.gd" id="1_ynll4"]
 [ext_resource type="PackedScene" uid="uid://d0bwc852pp1x6" path="res://scenes/player.tscn" id="2_tpiyn"]
+[ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/pause_menu.tscn" id="4_u0qro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rw43p"]
-size = Vector2(92, 73.25)
+size = Vector2(52.9642, 51)
 
 [node name="mystic_land2" type="Node2D"]
 y_sort_enabled = true
@@ -34,7 +35,21 @@ polygon = PackedVector2Array(-7, -16, 3, 0, 620, 2, 623, 35, 678, 31, 683, 96, 6
 scale = Vector2(1.00514, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to Below"]
-position = Vector2(278, 392)
+position = Vector2(647.056, 61.5)
 shape = SubResource("RectangleShape2D_rw43p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("4_u0qro")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
 
 [connection signal="body_entered" from="Transition to Below" to="." method="_on_transition_to_below_body_entered"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=57 format=3 uid="uid://cxbsi15l23riy"]
 
-[ext_resource type="Script" path="res://scenes/scripts/skele/Skeleme.gd" id="1_r3vus"]
+[ext_resource type="Script" path="res://scripts/skele/Skeleme.gd" id="1_r3vus"]
 [ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="2_hm4qp"]
-[ext_resource type="Script" path="res://scenes/scripts/skele/HealthComponent.gd" id="3_txkpk"]
+[ext_resource type="Script" path="res://scripts/skele/HealthComponent.gd" id="3_txkpk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
 radius = 4.00025

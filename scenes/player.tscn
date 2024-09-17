@@ -1,6 +1,6 @@
 [gd_scene load_steps=97 format=3 uid="uid://d0bwc852pp1x6"]
 
-[ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_p6gci"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_p6gci"]
 [ext_resource type="Texture2D" uid="uid://cw242uvldatmo" path="res://characters/player.png" id="2_jm1au"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy7di"]
@@ -1123,7 +1123,6 @@ position = Vector2(-1, -2)
 scale = Vector2(1.04167, 1.21875)
 sprite_frames = SubResource("SpriteFrames_xqcke")
 animation = &"front_idle"
-frame = 2
 offset = Vector2(0, -15)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -13,6 +13,7 @@ var current_dir = "none"
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 	$regen_timer.start()
+	global.player = self
 
 
 
@@ -153,4 +154,3 @@ func _on_regen_timer_timeout():
 	if global.health < 100 and global.health > 0:
 		global.health = global.health + 20
 
-		

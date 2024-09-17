@@ -4,7 +4,7 @@ extends Node2D
 var paused = false
 
 func _process(delta):
-	change_scene()
+	change_scene_tomysticland()
 	if Input.is_action_just_pressed('Resume'):
 		pauseMenu()
 
@@ -21,9 +21,15 @@ func _on_transitionto_dungeon_body_entered(body):
 	if body.has_method("player"):
 		global.transition_scene = true
 
-func change_scene():
+func change_scene_tomysticland():
 	if global.transition_scene == true:
-		if global.current_scene == "world":
+		print("Starting scene transition to mystic_land...")
+		global.transition_scene = false
+		if global.current_scene == "world":  # Only proceed if we are in 'world'
+			print("Changing scene from world to mystic_land")
 			get_tree().change_scene_to_file("res://scenes/mystic_land.tscn")
-			global.finish_changescenes()
+			global.finish_changescenes()  # Move to 'mystic_land'
+		else:
+			print("Not in world, scene won't change.")
+
 			
