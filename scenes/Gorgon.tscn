@@ -1,6 +1,6 @@
 [gd_scene load_steps=61 format=3 uid="uid://f814l0rmjkvh"]
 
-[ext_resource type="Script" path="res://scripts/Gorgon.gd" id="1_45u4s"]
+[ext_resource type="Script" path="res://scenes/scripts/Gorgon.gd" id="1_45u4s"]
 [ext_resource type="Texture2D" uid="uid://cco0uwvwax4y1" path="res://characters/Gorgon_2/Attack_1.png" id="2_dgtna"]
 [ext_resource type="Texture2D" uid="uid://c4tt5r3j4idov" path="res://characters/Gorgon_2/Hurt.png" id="3_fraxp"]
 [ext_resource type="Texture2D" uid="uid://dienme8h6cs5m" path="res://characters/Gorgon_2/Dead.png" id="3_tmk4h"]

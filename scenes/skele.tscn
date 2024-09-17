@@ -1,8 +1,8 @@
 [gd_scene load_steps=57 format=3 uid="uid://cxbsi15l23riy"]
 
-[ext_resource type="Script" path="res://scripts/skele/Skeleme.gd" id="1_r3vus"]
+[ext_resource type="Script" path="res://scenes/scripts/skele/Skeleme.gd" id="1_r3vus"]
 [ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="2_hm4qp"]
-[ext_resource type="Script" path="res://scripts/skele/HealthComponent.gd" id="3_txkpk"]
+[ext_resource type="Script" path="res://scenes/scripts/skele/HealthComponent.gd" id="3_txkpk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
 radius = 4.00025
@@ -505,7 +505,7 @@ states/idle/position = Vector2(334, 105)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_1ph4j")
 states/walk/position = Vector2(686, 239)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_kx5ki"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_dffcl"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_qi4c1"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_t5ray"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_rpsyi"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_7drck"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_eugl1"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_bl0x5")]
-graph_offset = Vector2(97.6135, -67.3032)
+graph_offset = Vector2(162.613, 110.697)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5yte"]
 radius = 17.0
@@ -526,6 +526,7 @@ vframes = 14
 frame = 18
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 rotation = 1.57105
 shape = SubResource("CapsuleShape2D_yr5ho")
@@ -560,7 +561,6 @@ script = ExtResource("3_txkpk")
 shape = SubResource("CircleShape2D_h5yte")
 
 [node name="Area2D2" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(1, 0)

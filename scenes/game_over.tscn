@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7irhhwkc8fev"]
+
+[ext_resource type="Script" path="res://scenes/scripts/game_over.gd" id="1_cby3w"]
+[ext_resource type="Texture2D" uid="uid://rjoo0j8g03xy" path="res://Other Assets/Backgrounds/endgame-bg.jpg" id="1_ucodi"]
+[ext_resource type="Texture2D" uid="uid://6vx0hg5bx1ht" path="res://Other Assets/Button/button_normal.png" id="2_37p4y"]
+[ext_resource type="Texture2D" uid="uid://dba0v2ok05cg" path="res://Other Assets/Button/button_hover.png" id="3_umoso"]
+[ext_resource type="FontFile" uid="uid://nbymtktk5hc" path="res://Other Assets/Fonts/1_Minecraft-Regular.otf" id="4_linlg"]
+[ext_resource type="FontFile" uid="uid://dx0y6pbvg2w6l" path="res://Other Assets/Fonts/Minecrafter.Reg.ttf" id="5_tw60w"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cby3w")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1918.0
+offset_bottom = 1080.0
+texture = ExtResource("1_ucodi")
+
+[node name="Main Menu Button" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -40.0
+offset_right = 200.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+button_mask = 0
+texture_normal = ExtResource("2_37p4y")
+texture_pressed = ExtResource("2_37p4y")
+texture_hover = ExtResource("3_umoso")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/Main Menu Button"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 15.0
+offset_right = 355.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("4_linlg")
+theme_override_font_sizes/font_size = 35
+text = "Exit to Main Menu
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit Button" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 761.0
+offset_top = -480.0
+offset_right = 1159.0
+offset_bottom = -400.0
+grow_vertical = 0
+texture_normal = ExtResource("2_37p4y")
+texture_pressed = ExtResource("2_37p4y")
+texture_hover = ExtResource("3_umoso")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/Exit Button"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 5.0
+offset_right = 252.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("4_linlg")
+theme_override_font_sizes/font_size = 35
+text = "Exit 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOver Title" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_top = 347.0
+offset_right = 229.0
+offset_bottom = 422.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_linlg")
+theme_override_font_sizes/font_size = 75
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="You Died" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -365.0
+offset_top = 145.0
+offset_right = 455.0
+offset_bottom = 345.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_tw60w")
+theme_override_font_sizes/font_size = 150
+text = "You Died!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="TextureRect/Main Menu Button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="TextureRect/Exit Button" to="." method="_on_exit_button_pressed"]

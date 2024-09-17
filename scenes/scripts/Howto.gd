@@ -10,8 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_back_pressed():
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
-func _on_exit_pressed():
-	get_tree().quit()
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

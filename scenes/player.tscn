@@ -1,6 +1,6 @@
 [gd_scene load_steps=97 format=3 uid="uid://d0bwc852pp1x6"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_p6gci"]
+[ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_p6gci"]
 [ext_resource type="Texture2D" uid="uid://cw242uvldatmo" path="res://characters/player.png" id="2_jm1au"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy7di"]
@@ -790,6 +790,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_diocn"]
 resource_name = "right_attack"
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -810,7 +811,7 @@ tracks/1/path = NodePath("../AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
@@ -1122,7 +1123,7 @@ position = Vector2(-1, -2)
 scale = Vector2(1.04167, 1.21875)
 sprite_frames = SubResource("SpriteFrames_xqcke")
 animation = &"front_idle"
-frame = 3
+frame = 2
 offset = Vector2(0, -15)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

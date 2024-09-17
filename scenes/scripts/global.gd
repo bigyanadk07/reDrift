@@ -5,14 +5,8 @@ var player_current_attack = false
 var current_scene = "world"
 var transition_scene = false 
 
-var player_exit_cliffside_posx = 0
-var player_exit_cliffside_posy = 0
-
-var player_start_posx = 0
-var player_start_posy = 0
-
-
 func finish_changescenes():
+	print("Global change scene called while going from world to mysticland")
 	if transition_scene == true:
 		transition_scene = false
 		if current_scene == "world":
@@ -21,9 +15,20 @@ func finish_changescenes():
 			current_scene = "world"
 
 func finish_changescenes1():
+	print("Global change scene called while going from mysticland to mysticland2")
 	if transition_scene == true:
 		transition_scene = false
 		if current_scene == "mystic_land":
 			current_scene = "mystic_land2"
 		else: 
 			current_scene = "mystic_land"
+			
+func finish_changescenes2():
+	print("Global change scene called while going from mysticland2 to mysticland3")
+	if transition_scene == true:
+		transition_scene = false
+		if current_scene == "mystic_land2":
+			current_scene = "mystic_land3"
+		else: 
+			current_scene = "mystic_land2"
+
