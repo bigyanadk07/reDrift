@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4kediim8sfcn"]
+[gd_scene load_steps=12 format=3 uid="uid://c4kediim8sfcn"]
 
 [ext_resource type="Script" path="res://scenes/scripts/Howto.gd" id="1_w3yhc"]
 [ext_resource type="Texture2D" uid="uid://cboixbhmtivq8" path="res://background/bg4.png" id="2_flv5l"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://6vx0hg5bx1ht" path="res://Other Assets/Button/button_normal.png" id="7_covtn"]
 [ext_resource type="Texture2D" uid="uid://dba0v2ok05cg" path="res://Other Assets/Button/button_hover.png" id="8_dltpb"]
 [ext_resource type="FontFile" uid="uid://nbymtktk5hc" path="res://Other Assets/Fonts/1_Minecraft-Regular.otf" id="9_allpp"]
+[ext_resource type="AudioStream" uid="uid://d2y7ewpximfpi" path="res://Other Assets/Button/button_click.wav" id="11_gblhm"]
 
 [node name="How To" type="Node2D"]
 script = ExtResource("1_w3yhc")
@@ -211,5 +212,8 @@ offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("9_allpp")
 theme_override_font_sizes/font_size = 50
 text = "Back"
+
+[node name="ButtonClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_gblhm")
 
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]

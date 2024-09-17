@@ -4,7 +4,6 @@ const speed = 100
 
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
-var health = 100
 var player_alive = true
 var attack_ip = false
 @onready var anim_tree = get_node("AnimationTree")
@@ -23,11 +22,12 @@ func _physics_process(delta):
 	enemy_attack()
 	#attack()
 	
-	if health <= 0:
+	if global.health <= 0:
 		player_alive = false
-		health = 0
-		print("Player has been killed")
+		global.health = 0
 		self.queue_free()
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+		
 
 
 func player_movement(delta):
@@ -105,10 +105,10 @@ func _on_player_hitbox_body_exited(body):
 		
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown == true:
-		health = health - 10
+		global.health = global.health - 10
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
-		print(health)
+		print(global.health)
 	
 
 func attack():
@@ -143,13 +143,14 @@ func _on_deal_attack_timer_timeout():
 
 func update_health():
 	var healthbar = $HealthBar
-	healthbar.value = health
-	if health >= 100:
+	healthbar.value = global.health
+	if global.health >= 100:
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
 
 func _on_regen_timer_timeout():
-	if health < 100 and health > 0:
-		health = health + 20
+	if global.health < 100 and global.health > 0:
+		global.health = global.health + 20
+
 		

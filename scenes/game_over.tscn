@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7irhhwkc8fev"]
+[gd_scene load_steps=8 format=3 uid="uid://b7irhhwkc8fev"]
 
 [ext_resource type="Script" path="res://scenes/scripts/game_over.gd" id="1_cby3w"]
 [ext_resource type="Texture2D" uid="uid://rjoo0j8g03xy" path="res://Other Assets/Backgrounds/endgame-bg.jpg" id="1_ucodi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dba0v2ok05cg" path="res://Other Assets/Button/button_hover.png" id="3_umoso"]
 [ext_resource type="FontFile" uid="uid://nbymtktk5hc" path="res://Other Assets/Fonts/1_Minecraft-Regular.otf" id="4_linlg"]
 [ext_resource type="FontFile" uid="uid://dx0y6pbvg2w6l" path="res://Other Assets/Fonts/Minecrafter.Reg.ttf" id="5_tw60w"]
+[ext_resource type="AudioStream" uid="uid://d2y7ewpximfpi" path="res://Other Assets/Button/button_click.wav" id="7_dk5o8"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -99,7 +100,7 @@ theme_override_font_sizes/font_size = 75
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="You Died" type="Label" parent="TextureRect"]
+[node name="You Died Title" type="Label" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -113,6 +114,9 @@ theme_override_fonts/font = ExtResource("5_tw60w")
 theme_override_font_sizes/font_size = 150
 text = "You Died!"
 horizontal_alignment = 1
+
+[node name="ButtonClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_dk5o8")
 
 [connection signal="pressed" from="TextureRect/Main Menu Button" to="." method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="TextureRect/Exit Button" to="." method="_on_exit_button_pressed"]
