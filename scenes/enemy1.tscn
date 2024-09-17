@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://scenes/scripts/skele/HealthComponent.gd" id="3_2xp8w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
-radius = 4.00025
-height = 12.0
+radius = 3.0
+height = 8.0
 
 [sub_resource type="Animation" id="Animation_0sr31"]
 resource_name = "Attack"
@@ -501,7 +501,7 @@ states/idle/position = Vector2(334, 105)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_1ph4j")
 states/walk/position = Vector2(686, 239)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_kx5ki"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_dffcl"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_qi4c1"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_t5ray"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_rpsyi"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_7drck"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_eugl1"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_bl0x5")]
-graph_offset = Vector2(97.6135, -67.3032)
+graph_offset = Vector2(-43.0193, -98.545)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5yte"]
 radius = 17.0
@@ -514,7 +514,7 @@ z_index = 2
 script = ExtResource("1_nch8i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -8)
 scale = Vector2(1, 1.02163)
 texture = ExtResource("1_dke2u")
 hframes = 12
@@ -522,7 +522,7 @@ vframes = 14
 frame = 18
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 5)
 rotation = 1.57105
 shape = SubResource("CapsuleShape2D_yr5ho")
 
@@ -538,10 +538,10 @@ parameters/conditions/attack = false
 parameters/conditions/dead = false
 parameters/conditions/idle = false
 parameters/conditions/is_moving = false
-parameters/attack/blend_position = Vector2(-0.200701, 0.00484574)
-parameters/death/blend_position = Vector2(-0.00438213, -0.00440526)
-parameters/idle/blend_position = Vector2(-0.00438213, 0.140529)
-parameters/walk/blend_position = Vector2(-0.000876427, -0.00484574)
+parameters/attack/blend_position = Vector2(-0.00613499, 0.0174602)
+parameters/death/blend_position = Vector2(-0.000876427, 0.00529099)
+parameters/idle/blend_position = Vector2(0.00613499, 0.0407407)
+parameters/walk/blend_position = Vector2(-0.0587204, 0.00582004)
 
 [node name="AttackComponent" type="Node2D" parent="."]
 
