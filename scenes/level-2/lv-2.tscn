@@ -46137,7 +46137,7 @@ sources/3 = SubResource("TileSetAtlasSource_82skh")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7e1i"]
 size = Vector2(58, 33)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 process_physics_priority = 1
 y_sort_enabled = true
 
