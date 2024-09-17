@@ -1,5 +1,4 @@
 extends Control
-@onready var player = $"../player"
 
 
 func _on_play_pressed():
