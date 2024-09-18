@@ -464,7 +464,8 @@ script = ExtResource("1_480qr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m24dv")
 animation = &"death"
-frame_progress = 0.228569
+frame = 2
+frame_progress = 0.394188
 offset = Vector2(0, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_cpgek"]
 [ext_resource type="Script" path="res://scripts/mystic_land3.gd" id="1_o0k17"]
-[ext_resource type="PackedScene" uid="uid://d0bwc852pp1x6" path="res://scenes/player.tscn" id="2_3jwlh"]
+[ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_3jwlh"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/pause_menu.tscn" id="4_8v07u"]
 [ext_resource type="PackedScene" uid="uid://f814l0rmjkvh" path="res://scenes/Gorgon.tscn" id="5_p4o5j"]
 

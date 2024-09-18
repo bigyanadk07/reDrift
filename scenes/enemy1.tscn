@@ -717,9 +717,9 @@ parameters/conditions/attack = false
 parameters/conditions/dead = false
 parameters/conditions/idle = false
 parameters/conditions/is_moving = false
-parameters/attack/blend_position = Vector2(-0.00438213, 0.355026)
+parameters/attack/blend_position = Vector2(-0.00346619, 0.0291005)
 parameters/death/blend_position = Vector2(-0.000876427, 0.00529099)
-parameters/idle/blend_position = Vector2(0.000876427, -0.159912)
+parameters/idle/blend_position = Vector2(-0.00173312, 0.168783)
 parameters/walk/blend_position = Vector2(-0.0587204, 0.00582004)
 
 [node name="AttackComponent" type="Node2D" parent="."]
