@@ -27,7 +27,7 @@ func _ready():
 func _process(delta):
 	pass
 func _physics_process(delta):
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("att"):
 		anim_tree.get("parameters/playback").travel("attack")
 		attacking = true
 		$Timer.start(attack_time)
@@ -35,8 +35,8 @@ func _physics_process(delta):
 	
 	if (attacking == false) and (dying==false):
 		var input_vector = Vector2(
-			Input.get_action_raw_strength("move_right")-Input.get_action_raw_strength("move_left"),
-			Input.get_action_raw_strength("move_down")-Input.get_action_raw_strength("move_up"))
+			Input.get_action_raw_strength("right")-Input.get_action_raw_strength("left"),
+			Input.get_action_raw_strength("down")-Input.get_action_raw_strength("up")).normalized()
 		self.velocity= input_vector*speed
 		if input_vector==Vector2.ZERO:
 			anim_tree.get("parameters/playback").travel("idle")
