@@ -401,22 +401,26 @@ script = ExtResource("1_45u4s")
 position = Vector2(4, 5)
 scale = Vector2(0.454712, 0.467041)
 sprite_frames = SubResource("SpriteFrames_it2lk")
-animation = &"walk"
+animation = &"death"
+frame_progress = 0.390472
 offset = Vector2(-5, -60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(2, -31)
 shape = SubResource("CapsuleShape2D_ue2do")
 
 [node name="detection_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+visible = false
 position = Vector2(4, -15)
 shape = SubResource("CircleShape2D_ofkja")
 
 [node name="gorgon_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gorgon_hitbox"]
+visible = false
 position = Vector2(3, -16)
 shape = SubResource("CircleShape2D_x6e21")
 

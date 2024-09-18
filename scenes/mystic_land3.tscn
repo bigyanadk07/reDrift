@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://beonf6uo33gq6"]
+[gd_scene load_steps=7 format=3 uid="uid://beonf6uo33gq6"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_cpgek"]
 [ext_resource type="Script" path="res://scripts/mystic_land3.gd" id="1_o0k17"]
 [ext_resource type="PackedScene" uid="uid://d0bwc852pp1x6" path="res://scenes/player.tscn" id="2_3jwlh"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/pause_menu.tscn" id="4_8v07u"]
+[ext_resource type="PackedScene" uid="uid://f814l0rmjkvh" path="res://scenes/Gorgon.tscn" id="5_p4o5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6mmw"]
 size = Vector2(45, 47)
@@ -35,6 +36,9 @@ polygon = PackedVector2Array(1, 7, 418, 3, 418, 47, 622, 47, 624, 1, 625, 17, 62
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trasnport to Mysticland2"]
 position = Vector2(646, 294)
 shape = SubResource("RectangleShape2D_q6mmw")
+
+[node name="Gorgon" parent="." instance=ExtResource("5_p4o5j")]
+position = Vector2(514, 227)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
