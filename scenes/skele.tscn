@@ -487,6 +487,7 @@ advance_condition = &"attack"
 advance_condition = &"is_moving"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7drck"]
+switch_mode = 2
 advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eugl1"]
@@ -505,7 +506,7 @@ states/idle/position = Vector2(334, 105)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_1ph4j")
 states/walk/position = Vector2(686, 239)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_kx5ki"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_dffcl"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_qi4c1"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_t5ray"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_rpsyi"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_7drck"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_eugl1"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_bl0x5")]
-graph_offset = Vector2(162.613, 110.697)
+graph_offset = Vector2(162.613, -73.2825)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5yte"]
 radius = 17.0
@@ -555,18 +556,21 @@ parameters/walk/blend_position = Vector2(-0.000876427, -0.00484574)
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("3_txkpk")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="attackarea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackarea"]
 shape = SubResource("CircleShape2D_h5yte")
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="AreaDetection" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(1, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
 shape = SubResource("CircleShape2D_r7bfg")
 
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[connection signal="body_entered" from="attackarea" to="." method="_on_attackarea_body_entered"]
+[connection signal="body_exited" from="attackarea" to="." method="_on_attackarea_body_exited"]
+[connection signal="body_entered" from="AreaDetection" to="." method="_on_area_detection_body_entered"]
+[connection signal="body_exited" from="AreaDetection" to="." method="_on_area_detection_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
