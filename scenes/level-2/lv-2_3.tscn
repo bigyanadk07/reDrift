@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ck7v2hnvlgqqm"]
+[gd_scene load_steps=13 format=3 uid="uid://ck7v2hnvlgqqm"]
 
 [ext_resource type="Texture2D" uid="uid://de6ebm7yeaiem" path="res://tilesets/dungeon/background.png" id="1_711ig"]
 [ext_resource type="Texture2D" uid="uid://y7q5g7axyipl" path="res://tilesets/dungeon/MainLev2.0.png" id="2_wqyuo"]
@@ -46014,6 +46014,12 @@ sources/1 = SubResource("TileSetAtlasSource_yh6um")
 sources/2 = SubResource("TileSetAtlasSource_osx4w")
 sources/3 = SubResource("TileSetAtlasSource_tvger")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3osfk"]
+size = Vector2(55.5, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyvhx"]
+size = Vector2(55, 34)
+
 [node name="Node2D2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -46056,18 +46062,29 @@ layer_7/tile_data = PackedInt32Array(11534372, 589826, 18, 11599909, 589826, 18,
 rotation = -4.55473e-05
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-polygon = PackedVector2Array(32.872, 2811, 32.8643, 2980, 527.864, 2980.02, 527.857, 3150.02, 33.8566, 3149, 29.8317, 3696, 689.832, 3695.03, 689.838, 3566.03, 876.837, 3568.04, 875.832, 3699.04, 1987.83, 3700.09, 1984.85, 3326.09, 1902.85, 3322.09, 1902.86, 2980.09, 1984.86, 2974.09, 1983.87, 2832.09, 704.871, 2828.03, 707.871, 2837.03, 665.87, 2864.03, 625.87, 2865.03, 599.87, 2854.03, 583.871, 2830.03, 599.872, 2806.03, 607.872, 2806.03, 648.873, 2790.03, 612.874, 2762.03, 585.873, 2794.03, 568.872, 2810.03, 557.872, 2812.03, 168.872, 2812.01, 169.875, 2752.01, 114.875, 2752.01, 112.872, 2812.01, 34.8719, 2812, 103.875, 2750, 879.877, 2696.04, 1993.87, 2828.09, 2034.83, 3725.09, 6.83066, 3718)
+polygon = PackedVector2Array(32.872, 2811, 32.8643, 2980, 527.864, 2980.02, 527.857, 3150.02, 33.8566, 3149, 29.8317, 3696, 689.832, 3695.03, 689.838, 3566.03, 876.837, 3568.04, 875.832, 3699.04, 1987.83, 3700.09, 1984.85, 3326.09, 1902.85, 3322.09, 1902.86, 2980.09, 1984.86, 2974.09, 1983.87, 2832.09, 1894.87, 2830.09, 1895.87, 2775.09, 1838.87, 2773.08, 1838.87, 2832.08, 704.871, 2828.03, 707.871, 2837.03, 665.87, 2864.03, 625.87, 2865.03, 599.87, 2854.03, 583.871, 2830.03, 599.872, 2806.03, 607.872, 2806.03, 648.873, 2790.03, 612.874, 2762.03, 585.873, 2794.03, 568.872, 2810.03, 557.872, 2812.03, 168.872, 2812.01, 169.875, 2752.01, 114.875, 2752.01, 112.872, 2812.01, 34.8719, 2812, 103.875, 2750, 879.877, 2696.04, 1944.88, 2709.09, 1993.87, 2828.09, 2034.83, 3725.09, 6.83066, 3718)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
 polygon = PackedVector2Array(591.864, 2981.03, 591.856, 3152.03, 688.856, 3152.03, 688.839, 3537.03, 875.839, 3535.04, 872.849, 3323.04, 1837.85, 3321.08, 1839.86, 2980.08)
 
 [node name="Skele" parent="." instance=ExtResource("4_on2i2")]
 position = Vector2(139, 2847)
 
 [node name="Camera2D" type="Camera2D" parent="Skele"]
+visible = false
 position = Vector2(-2, 6)
 zoom = Vector2(6, 6)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(142, 2775)
+shape = SubResource("RectangleShape2D_3osfk")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1866.5, 2791)
+shape = SubResource("RectangleShape2D_eyvhx")

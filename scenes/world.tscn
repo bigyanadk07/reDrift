@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://doa66tqeirssk"]
+[gd_scene load_steps=8 format=3 uid="uid://doa66tqeirssk"]
 
 [ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="1_2fpox"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_uyln8"]
 [ext_resource type="TileSet" uid="uid://bs6vm7ut3d3fa" path="res://scenes/Tres Files/World1.tres" id="2_g05xd"]
 [ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/slime.tscn" id="5_dl3w1"]
+[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skele.tscn" id="6_dx8tx"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/pause_menu.tscn" id="10_10dhm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04iky"]
@@ -54,25 +55,17 @@ offset_top = -32.0
 offset_right = 64.0
 offset_bottom = 32.0
 
-[node name="player" parent="." instance=ExtResource("1_2fpox")]
+[node name="player" parent="." groups=["player"] instance=ExtResource("1_2fpox")]
 z_index = 2
 y_sort_enabled = true
 position = Vector2(39, 52)
 
-[node name="Slime" parent="." instance=ExtResource("5_dl3w1")]
+[node name="Slime" parent="." groups=["monster"] instance=ExtResource("5_dl3w1")]
 position = Vector2(384, 136)
 
-[node name="Slime2" parent="." instance=ExtResource("5_dl3w1")]
-position = Vector2(210, 132)
-
-[node name="Slime3" parent="." instance=ExtResource("5_dl3w1")]
-position = Vector2(253, 203)
-
-[node name="Slime4" parent="." instance=ExtResource("5_dl3w1")]
-position = Vector2(341, 193)
-
-[node name="Slime5" parent="." instance=ExtResource("5_dl3w1")]
-position = Vector2(305, 127)
+[node name="Skeleme" parent="." node_paths=PackedStringArray("player") groups=["monster"] instance=ExtResource("6_dx8tx")]
+position = Vector2(180, 127)
+player = NodePath("../player")
 
 [connection signal="body_entered" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_entered"]
 [connection signal="body_exited" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_exited"]
