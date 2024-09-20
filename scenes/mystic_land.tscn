@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://fsw0hcehotmj"]
 
 [ext_resource type="Script" path="res://scripts/mystic_land.gd" id="1_mswu3"]
-[ext_resource type="PackedScene" uid="uid://d0bwc852pp1x6" path="res://scenes/player.tscn" id="1_wxq3x"]
+[ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="1_wxq3x"]
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="3_5lyhx"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/pause_menu.tscn" id="4_kdcm1"]
 
@@ -13,7 +13,6 @@ y_sort_enabled = true
 script = ExtResource("1_mswu3")
 
 [node name="player" parent="." instance=ExtResource("1_wxq3x")]
-y_sort_enabled = true
 position = Vector2(54, 50)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -30,7 +29,7 @@ layer_1/tile_data = PackedInt32Array(2, 262162, 1, 327694, 5, 5, 917508, 5, 5, 7
 [node name="World Boundary" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World Boundary"]
-polygon = PackedVector2Array(19, 16, 19, -16, 90, -16, 20, 11, 620, 13, 622, 226, 686, 228, 682, 285, 622, 285, 622, 355, -1, 356, 3, 15, 16, 23, -33, -13, -66, 59, -60, 87, -45, 238, -66, 303, -75, 371, -56, 424, 60, 460, 220, 476, 436, 457, 779, 389, 816, 343, 822, 228, 768, 117, 716, 63, 701, -18, 674, -74, 545, -115, 424, -139, 135, -147, -99, -135, -99, -72, -68, -44, -13, -3, -5, 10, 18, 4, 17, 24)
+polygon = PackedVector2Array(2, -1, 620, 13, 622, 226, 674, 227, 673, 284, 622, 285, 622, 355, -1, 356, 2, 0, -22, 384, 674, 395, 674, -18)
 
 [node name="Transition to Dungeon" type="Area2D" parent="."]
 
