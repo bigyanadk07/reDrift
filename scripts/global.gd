@@ -27,3 +27,19 @@ func finish_changescenes3():
 func finish_changescenes4():
 	print("Global change scene called, going from mystic_land4 to ashland1")
 	current_scene = "ashland1"  # Update the current scene here
+
+func finish_changescenes5():
+	print("Global change scene called, going from mystic_land4 to ashland1")
+	current_scene = "lv-2" 
+	
+func finish_changescenes6():
+	print("Global change scene called, going from mystic_land4 to ashland1")
+	current_scene = "lv-2.1" 
+	
+func finish_changescenes7():
+	print("Global change scene called, going from mystic_land4 to ashland1")
+	current_scene = "ashland1" 
+	
+func finish_changescenes8():
+	print("Global change scene called, going from mystic_land4 to ashland1")
+	current_scene = "ashland1" 

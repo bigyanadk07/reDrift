@@ -1148,7 +1148,7 @@ root_node = NodePath(".")
 tree_root = SubResource("AnimationNodeStateMachine_0ngbk")
 anim_player = NodePath("../AnimationPlayer")
 parameters/attack/blend_position = Vector2(-0.00613499, -0.277533)
-parameters/idle/blend_position = Vector2(-0.000876427, 0.00440526)
+parameters/idle/blend_position = Vector2(0.00438213, 0.277533)
 parameters/walk/blend_position = Vector2(0.000876427, 1)
 
 [node name="Player_hitbox" type="Area2D" parent="."]

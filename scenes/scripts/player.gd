@@ -35,7 +35,6 @@ func player_movement(delta):
 		anim_tree.get("parameters/playback").travel("attack")
 		global.player_current_attack = true
 		attack_ip = true
-		print("attack")
 		$deal_attack_timer.start()
 		
 		

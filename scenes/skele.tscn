@@ -1,8 +1,9 @@
-[gd_scene load_steps=57 format=3 uid="uid://cxbsi15l23riy"]
+[gd_scene load_steps=58 format=3 uid="uid://cxbsi15l23riy"]
 
 [ext_resource type="Script" path="res://scripts/skele/Skeleme.gd" id="1_r3vus"]
 [ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="2_hm4qp"]
 [ext_resource type="Script" path="res://scripts/skele/HealthComponent.gd" id="3_txkpk"]
+[ext_resource type="PackedScene" uid="uid://osj7k30503uu" path="res://scenes/enemy ai/raycasting.tscn" id="4_n1pmy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
 radius = 4.00025
@@ -509,18 +510,18 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(162.613, -73.2825)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5yte"]
-radius = 17.0
+radius = 7.51665
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7bfg"]
-radius = 43.0
+radius = 114.018
 
 [node name="Skeleme" type="CharacterBody2D"]
 z_index = 2
+scale = Vector2(2, 2)
 script = ExtResource("1_r3vus")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -10)
-scale = Vector2(1, 1.02163)
 texture = ExtResource("2_hm4qp")
 hframes = 12
 vframes = 14
@@ -562,11 +563,15 @@ script = ExtResource("3_txkpk")
 shape = SubResource("CircleShape2D_h5yte")
 
 [node name="AreaDetection" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
 shape = SubResource("CircleShape2D_r7bfg")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Node" parent="." instance=ExtResource("4_n1pmy")]
+scale = Vector2(0.7, 0.7)
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="body_entered" from="attackarea" to="." method="_on_attackarea_body_entered"]

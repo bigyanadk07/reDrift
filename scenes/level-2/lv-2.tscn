@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://di21vblg07jn6"]
+[gd_scene load_steps=14 format=3 uid="uid://di21vblg07jn6"]
 
 [ext_resource type="Texture2D" uid="uid://de6ebm7yeaiem" path="res://tilesets/dungeon/background.png" id="1_clnry"]
 [ext_resource type="Texture2D" uid="uid://y7q5g7axyipl" path="res://tilesets/dungeon/MainLev2.0.png" id="2_203ij"]
 [ext_resource type="Texture2D" uid="uid://bhggar42lwdvh" path="res://tilesets/dungeon/decorative.png" id="3_ijblv"]
 [ext_resource type="Texture2D" uid="uid://cd3jgtvtp6ptk" path="res://tilesets/dungeon/MainLev2.01.png" id="4_4x5w5"]
 [ext_resource type="PackedScene" uid="uid://cyiocthi2otge" path="res://scenes/enemy1.tscn" id="4_o0guu"]
+[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skele.tscn" id="6_l23cb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pp5t"]
 texture = ExtResource("1_clnry")
@@ -46129,6 +46130,9 @@ texture = ExtResource("4_4x5w5")
 
 [sub_resource type="TileSet" id="TileSet_op2yb"]
 physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.564766, 0.284151, 0.342333, 1)
 sources/0 = SubResource("TileSetAtlasSource_7pp5t")
 sources/1 = SubResource("TileSetAtlasSource_yh6um")
 sources/2 = SubResource("TileSetAtlasSource_osx4w")
@@ -46137,11 +46141,16 @@ sources/3 = SubResource("TileSetAtlasSource_82skh")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7e1i"]
 size = Vector2(58, 33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eybnr"]
+size = Vector2(46.5, 54.3362)
+
 [node name="Node2D2" type="Node2D"]
 process_physics_priority = 1
 y_sort_enabled = true
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="NavigationRegion2D"]
 y_sort_enabled = true
 rotation = -4.55473e-05
 tile_set = SubResource("TileSet_op2yb")
@@ -46180,10 +46189,10 @@ rotation = -4.55473e-05
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(1304.99, 273.059)
 scale = Vector2(143.367, 35.199)
-polygon = PackedVector2Array(-8.49577, 8.2657, 3.94782, 8.32483, 4.12916, 9.20557, 9.71622, 9.2066, 9.70934, 0.768867, 8.56542, 0.910705, 8.56543, -0.36774, 8.14693, -0.367817, 8.15389, 0.853808, 5.20342, 0.881671, 4.99417, 0.00092411, 4.8617, -4.3174, 3.90615, -8.29496, 3.71084, -7.4427, 3.68982, 1.02344, 3.53636, 1.64843, -6.66126, 1.58973, -6.81468, 0.226014, -6.91929, -1.81952, -6.9192, -9.17768, -8.64903, -9.14959, -8.6839, -9.68938, -8.9908, -9.68944, -9.01871, -9.14966, -9.6116, -9.14977, -9.61168, -1.70638, -8.69096, -1.70621, -8.50264, -1.02433, -8.49577, 8.2657, -9.96043, -1.62121, -9.64646, -9.71797, 3.89918, -8.55065, 10.7487, -1.4185, 9.84873, 10.3714, 3.36885, 10.91)
+polygon = PackedVector2Array(-8.49577, 8.2657, 3.94782, 8.32483, 4.12916, 9.20557, 9.71622, 9.2066, 9.70934, 0.768867, 8.56542, 0.910705, 8.56543, -0.36774, 8.14693, -0.367817, 8.15389, 0.853808, 5.20342, 0.881671, 4.99417, 0.00092411, 4.8617, -4.3174, 3.90615, -8.29496, 3.71084, -7.4427, 3.68982, 1.02344, 3.53636, 1.64843, -6.66126, 1.58973, -6.81468, 0.226014, -6.50081, -0.342113, -6.60542, -1.59217, -6.89141, -1.36494, -6.91929, -1.81952, -6.9192, -9.17768, -8.64903, -9.14959, -8.6839, -9.68938, -8.9908, -9.68944, -9.01871, -9.14966, -9.6116, -9.14977, -9.61168, -1.70638, -8.69096, -1.70621, -8.50264, -1.02433, -8.49577, 8.2657, -9.96043, -1.62121, -9.64646, -9.71797, 3.89918, -8.55065, 10.7487, -1.4185, 9.84873, 10.3714, 3.36885, 10.91)
 
-[node name="Skele" parent="." instance=ExtResource("4_o0guu")]
-position = Vector2(104, 155)
+[node name="Skele" parent="." groups=["player"] instance=ExtResource("4_o0guu")]
+position = Vector2(105, 152)
 rotation = -4.55473e-05
 
 [node name="Camera2D" type="Camera2D" parent="Skele"]
@@ -46195,3 +46204,15 @@ drag_left_margin = 0.5
 drag_top_margin = 0.5
 drag_right_margin = 0.5
 drag_bottom_margin = 0.5
+
+[node name="Skeleme" parent="." groups=["monster"] instance=ExtResource("6_l23cb")]
+position = Vector2(134, 270)
+scale = Vector2(1.4, 1.4)
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(452.611, 396.869)
+rotation = -0.349066
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_eybnr")

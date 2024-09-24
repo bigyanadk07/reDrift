@@ -66,6 +66,17 @@ position = Vector2(384, 136)
 
 [node name="Skeleme" parent="." node_paths=PackedStringArray("player") groups=["monster"] instance=ExtResource("6_dx8tx")]
 position = Vector2(180, 127)
+scale = Vector2(1, 1)
+player = NodePath("../player")
+
+[node name="Skeleme2" parent="." node_paths=PackedStringArray("player") groups=["monster"] instance=ExtResource("6_dx8tx")]
+position = Vector2(239, 174)
+scale = Vector2(1, 1)
+player = NodePath("../player")
+
+[node name="Skeleme3" parent="." node_paths=PackedStringArray("player") groups=["monster"] instance=ExtResource("6_dx8tx")]
+position = Vector2(161, 190)
+scale = Vector2(1, 1)
 player = NodePath("../player")
 
 [connection signal="body_entered" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_entered"]

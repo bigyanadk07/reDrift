@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://osj7k30503uu"]
+
+[ext_resource type="Script" path="res://scripts/ememy ai/raycasting.gd" id="1_lignd"]
+
+[node name="Rays" type="Node2D"]
+script = ExtResource("1_lignd")
+
+[node name="1" type="RayCast2D" parent="."]
+rotation = 3.14159
+target_position = Vector2(0, 35)
+
+[node name="3" type="RayCast2D" parent="."]
+position = Vector2(-3.57628e-07, -1.19209e-07)
+rotation = -1.5708
+target_position = Vector2(0, 35)
+
+[node name="7" type="RayCast2D" parent="."]
+rotation = 1.5708
+target_position = Vector2(0, 35)
+
+[node name="6" type="RayCast2D" parent="."]
+rotation = 0.785398
+target_position = Vector2(0, 29.78)
+
+[node name="4" type="RayCast2D" parent="."]
+rotation = -0.785398
+target_position = Vector2(0, 29.78)
+
+[node name="8" type="RayCast2D" parent="."]
+rotation = 2.35619
+target_position = Vector2(0, 29.78)
+
+[node name="2" type="RayCast2D" parent="."]
+rotation = -2.35619
+target_position = Vector2(0, 29.78)
+
+[node name="5" type="RayCast2D" parent="."]
+target_position = Vector2(0, 35)
