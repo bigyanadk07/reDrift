@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://mbmeh327rkqf"]
+
+[ext_resource type="Script" path="res://scripts/Statemachine/Statemachine.gd" id="1_ir7d4"]
+[ext_resource type="Script" path="res://scripts/Statemachine/Attack.gd" id="2_g5cm4"]
+[ext_resource type="Script" path="res://scripts/Statemachine/Walk.gd" id="3_hve7n"]
+[ext_resource type="Script" path="res://scripts/Statemachine/Chasing.gd" id="4_p1eue"]
+[ext_resource type="Script" path="res://scripts/Statemachine/Death.gd" id="5_omvuf"]
+[ext_resource type="Script" path="res://scripts/Statemachine/GotHit.gd" id="6_6njmm"]
+[ext_resource type="Script" path="res://scripts/Statemachine/Ilde.gd" id="7_2bquq"]
+[ext_resource type="Script" path="res://scripts/Statemachine/HeavyAttack.gd" id="8_x15ml"]
+
+[node name="Statemachine" type="Node2D"]
+script = ExtResource("1_ir7d4")
+
+[node name="Attack" type="Node2D" parent="."]
+script = ExtResource("2_g5cm4")
+
+[node name="Walk" type="Node2D" parent="."]
+script = ExtResource("3_hve7n")
+
+[node name="Chasing" type="Node2D" parent="."]
+script = ExtResource("4_p1eue")
+
+[node name="Death" type="Node2D" parent="."]
+script = ExtResource("5_omvuf")
+
+[node name="GotHit" type="Node2D" parent="."]
+script = ExtResource("6_6njmm")
+
+[node name="Idle" type="Node2D" parent="."]
+script = ExtResource("7_2bquq")
+
+[node name="HeavyAttack" type="Node2D" parent="."]
+script = ExtResource("8_x15ml")

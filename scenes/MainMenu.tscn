@@ -37,6 +37,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ihldr")
 
+[node name="ButtonClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_bolgx")
+
 [node name="Gametitle" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -45,7 +48,7 @@ anchor_right = 0.5
 offset_left = -226.0
 offset_top = 143.0
 offset_right = 231.0
-offset_bottom = 259.0
+offset_bottom = 262.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_jtl2m")
 theme_override_font_sizes/font_size = 120
@@ -174,9 +177,6 @@ text = "Exit
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="ButtonClickSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_bolgx")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]

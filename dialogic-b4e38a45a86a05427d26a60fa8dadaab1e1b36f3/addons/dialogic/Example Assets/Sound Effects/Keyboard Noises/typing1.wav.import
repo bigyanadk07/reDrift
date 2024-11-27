@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwy4rr8vwvfxw"
+path="res://.godot/imported/typing1.wav-55c89bd987ee86e904ea98fabb0da8ff.sample"
+
+[deps]
+
+source_file="res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Example Assets/Sound Effects/Keyboard Noises/typing1.wav"
+dest_files=["res://.godot/imported/typing1.wav-55c89bd987ee86e904ea98fabb0da8ff.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

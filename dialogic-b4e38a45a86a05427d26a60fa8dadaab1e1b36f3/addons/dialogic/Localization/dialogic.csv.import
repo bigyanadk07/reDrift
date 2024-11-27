@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bubfq5kim6a3c"
+
+[deps]
+
+files=["res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.zh_CN.translation", "res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.en.translation", "res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.es.translation", "res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.fr.translation", "res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.de.translation"]
+
+source_file="res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.csv"
+dest_files=["res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.zh_CN.translation", "res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.en.translation", "res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.es.translation", "res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.fr.translation", "res://dialogic-b4e38a45a86a05427d26a60fa8dadaab1e1b36f3/addons/dialogic/Localization/dialogic.de.translation"]
+
+[params]
+
+compress=true
+delimiter=0

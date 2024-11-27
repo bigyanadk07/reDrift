@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/skele/Skeleme.gd" id="1_r3vus"]
 [ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="2_hm4qp"]
-[ext_resource type="Script" path="res://scripts/skele/HealthComponent.gd" id="3_txkpk"]
+[ext_resource type="Script" path="res://scenes/Chasing.gd" id="4_3mcwj"]
 [ext_resource type="PackedScene" uid="uid://osj7k30503uu" path="res://scenes/enemy ai/raycasting.tscn" id="4_n1pmy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
@@ -550,13 +550,6 @@ parameters/death/blend_position = Vector2(-0.00438213, -0.00440526)
 parameters/idle/blend_position = Vector2(-0.00438213, 0.140529)
 parameters/walk/blend_position = Vector2(-0.000876427, -0.00484574)
 
-[node name="AttackComponent" type="Node2D" parent="."]
-
-[node name="HitboxComponent" type="Area2D" parent="."]
-
-[node name="HealthComponent" type="Node2D" parent="."]
-script = ExtResource("3_txkpk")
-
 [node name="attackarea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackarea"]
@@ -572,6 +565,11 @@ shape = SubResource("CircleShape2D_r7bfg")
 
 [node name="Node" parent="." instance=ExtResource("4_n1pmy")]
 scale = Vector2(0.7, 0.7)
+
+[node name="Chasing" type="Node2D" parent="."]
+script = ExtResource("4_3mcwj")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="body_entered" from="attackarea" to="." method="_on_attackarea_body_entered"]

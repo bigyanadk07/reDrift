@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var raycast_node = $Node  # Adjust the path to your raycast node
+@onready var raycast_node = $Node  #Raycast decleration
 @export var player: CharacterBody2D
 
 enum mobState {
