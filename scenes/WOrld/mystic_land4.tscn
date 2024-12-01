@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_0df3g"]
 [ext_resource type="Script" path="res://scripts/mystic_land4.gd" id="1_bptto"]
 [ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_3oesg"]
-[ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/pause_menu.tscn" id="4_xhomo"]
+[ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="4_xhomo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6mmw"]
 size = Vector2(45, 47)

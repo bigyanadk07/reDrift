@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="reDrift"
-run/main_scene="res://scenes/MainMenu.tscn"
+run/main_scene="res://scenes/UI/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]

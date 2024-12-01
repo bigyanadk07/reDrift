@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://4usslygvhbo2"]
+[gd_scene load_steps=59 format=3 uid="uid://bvraoa5vdlvk3"]
 
 [ext_resource type="Script" path="res://scripts/boss_1.gd" id="1_1ilho"]
 [ext_resource type="Texture2D" uid="uid://c1btkpi7b1g4t" path="res://characters/Bringer-of-Death-SpritSheet.png" id="2_h6lrh"]
