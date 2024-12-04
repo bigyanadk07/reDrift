@@ -25,7 +25,6 @@ layer_0/tile_data = PackedInt32Array(-65536, 1, 0, 131073, 131072, 1, 65537, 131
 layer_1/name = "cliff"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array()
 layer_2/name = "Environment"
 layer_2/y_sort_enabled = true
 layer_2/z_index = 2
