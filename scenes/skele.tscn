@@ -1,6 +1,6 @@
-[gd_scene load_steps=58 format=3 uid="uid://cxbsi15l23riy"]
+[gd_scene load_steps=58 format=3 uid="uid://c0fak4e57d1jv"]
 
-[ext_resource type="Script" path="res://scripts/skele/Skeleme.gd" id="1_r3vus"]
+[ext_resource type="Script" path="res://scripts/skele/Skeleme.gd" id="1_nvnoc"]
 [ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="2_hm4qp"]
 [ext_resource type="Script" path="res://scenes/Chasing.gd" id="4_3mcwj"]
 [ext_resource type="PackedScene" uid="uid://osj7k30503uu" path="res://scenes/enemy ai/raycasting.tscn" id="4_n1pmy"]
@@ -518,7 +518,7 @@ radius = 114.018
 [node name="Skele" type="CharacterBody2D"]
 z_index = 2
 scale = Vector2(2, 2)
-script = ExtResource("1_r3vus")
+script = ExtResource("1_nvnoc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -10)
@@ -570,6 +570,7 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("4_3mcwj")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="body_entered" from="attackarea" to="." method="_on_attackarea_body_entered"]
