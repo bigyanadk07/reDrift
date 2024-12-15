@@ -1,8 +1,7 @@
-[gd_scene load_steps=57 format=3 uid="uid://cyiocthi2otge"]
+[gd_scene load_steps=56 format=3 uid="uid://cyiocthi2otge"]
 
 [ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="1_dke2u"]
-[ext_resource type="Script" path="res://scripts/player/weapon.gd" id="1_nch8i"]
-[ext_resource type="Script" path="res://scripts/skele/HealthComponent.gd" id="3_2xp8w"]
+[ext_resource type="Script" path="res://scripts/player/skeleplayer.gd" id="1_ghtjc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
 radius = 3.0
@@ -690,10 +689,7 @@ height = 18.0
 [node name="Enemy1" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
-script = ExtResource("1_nch8i")
-grid_size = null
-chase_speed = null
-detect_range = null
+script = ExtResource("1_ghtjc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
@@ -730,7 +726,6 @@ parameters/walk/blend_position = Vector2(-0.0587204, 0.00582004)
 [node name="HitboxComponent" type="Area2D" parent="."]
 
 [node name="HealthComponent" type="Node2D" parent="."]
-script = ExtResource("3_2xp8w")
 
 [node name="PlayerDetector" type="Area2D" parent="."]
 

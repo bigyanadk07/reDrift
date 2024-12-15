@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bym6p1tive6ep"]
+[gd_scene load_steps=8 format=3 uid="uid://bym6p1tive6ep"]
 
 [ext_resource type="Script" path="res://scripts/mystic_land2.gd" id="1_nkfrj"]
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="2_fe8bs"]
@@ -7,6 +7,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rw43p"]
 size = Vector2(52.9642, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slky3"]
+size = Vector2(91.5296, 39.5)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_1ke1p"]
+points = PackedVector2Array(0, 0, 25, 0, 25, -10, -10, -10, -10, 25, 0, 25)
 
 [node name="mystic_land2" type="Node2D"]
 y_sort_enabled = true
@@ -24,13 +30,13 @@ layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(2, 262162, 1, 327695, 1572865, 0, 1245187, 327681, 4, 851997, 1703937, 8, 851972, 1703937, 8, 65561, 1703937, 8, 393251, 851969, 0, 786440, 393221, 7, 983063, 393221, 7, 393217, 393221, 7, 655388, 393221, 7, 327700, 393221, 7, 1310745, 393221, 7, 1179684, 196613, 5, 393245, 589829, 5, 393228, 655365, 7, 1310725, 655365, 7, 1114141, 327685, 0, 786433, 327685, 0, 393254, 5, 0, 1114124, 196613, 5, 131078, 524293, 6, 131104, 524289, 0, 1376276, 13, 3, 1310740, 13, 1, 1245204, 13, 0, 1245198, 13, 0, 1310734, 13, 1, 1376270, 13, 2, 131110, 13, 3, 131109, 13, 3, 327718, 13, 3, 327717, 13, 3)
 
 [node name="player" parent="." instance=ExtResource("3_u5585")]
-position = Vector2(21, 35)
+position = Vector2(18, 31)
 
 [node name="World Boundary" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World Boundary"]
 position = Vector2(-1, 1)
-polygon = PackedVector2Array(0, 0, 620, 2, 623, 35, 659, 36, 660, 79, 624, 88, 623, 363, 325, 364, 324, 403, 233, 404, 232, 363, 5, 363, 0, 0, -3, 395, 625, 413, 671, 2)
+polygon = PackedVector2Array(25, -2, 620, 2, 623, 35, 659, 36, 660, 79, 624, 88, 623, 363, 325, 364, 324, 400, 233, 398, 232, 363, 5, 363, 0.468172, 23.1129, -11, 23, -10, -12, 24, -12, -13, -15, -10, 393, 625, 413, 671, 2, 25, -15)
 
 [node name="Transition to Below" type="Area2D" parent="."]
 scale = Vector2(1.00514, 1)
@@ -38,6 +44,13 @@ scale = Vector2(1.00514, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to Below"]
 position = Vector2(646.676, 62)
 shape = SubResource("RectangleShape2D_rw43p")
+
+[node name="Transition to Below2" type="Area2D" parent="."]
+scale = Vector2(1.00514, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to Below2"]
+position = Vector2(275.584, 384.75)
+shape = SubResource("RectangleShape2D_slky3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -53,4 +66,16 @@ offset_top = -32.0
 offset_right = 64.0
 offset_bottom = 32.0
 
+[node name="Transition to Below3" type="Area2D" parent="."]
+scale = Vector2(1.01031, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to Below3"]
+position = Vector2(-0.989799, -1)
+shape = SubResource("ConvexPolygonShape2D_1ke1p")
+
 [connection signal="body_entered" from="Transition to Below" to="." method="_on_transition_to_below_body_entered"]
+[connection signal="body_entered" from="Transition to Below2" to="." method="_on_transition_to_below_body_entered"]
+[connection signal="body_entered" from="Transition to Below2" to="." method="_on_transition_to_below_2_body_entered"]
+[connection signal="body_entered" from="Transition to Below3" to="." method="_on_transition_to_below_body_entered"]
+[connection signal="body_entered" from="Transition to Below3" to="." method="_on_transition_to_below_3_body_entered"]
+[connection signal="body_entered" from="Transition to Below3" to="." method="_on_transition_to_below_2_body_entered"]

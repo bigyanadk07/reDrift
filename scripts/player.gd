@@ -153,4 +153,3 @@ func update_health():
 func _on_regen_timer_timeout():
 	if global.health < 100 and global.health > 0:
 		global.health = global.health + 20
-

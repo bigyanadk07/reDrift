@@ -3,6 +3,9 @@ extends Node2D
 
 var paused = false
 
+func _ready() -> void:
+	global.past_scene=""
+
 func _process(delta):
 	change_scene_tomysticland()
 	if Input.is_action_just_pressed('Resume'):
@@ -27,7 +30,8 @@ func change_scene_tomysticland():
 		global.transition_scene = false
 		if global.current_scene == "world":  # Only proceed if we are in 'world'
 			print("Changing scene from world to mystic_land")
-			get_tree().change_scene_to_file("res://scenes/mystic_land.tscn")
+			global.past_scene=global.current_scene
+			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land.tscn")
 			global.finish_changescenes()  # Move to 'mystic_land'
 		else:
 			print("Not in world, scene won't change.")

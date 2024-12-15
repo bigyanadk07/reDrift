@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfhnhw5xakf8h"]
+[gd_scene load_steps=6 format=3 uid="uid://cfhnhw5xakf8h"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_cpgek"]
 [ext_resource type="Script" path="res://scripts/mystic_land3.gd" id="1_h4r2s"]
 [ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_3jwlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30odo"]
+size = Vector2(62, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w4ke"]
 size = Vector2(62, 92)
 
 [node name="mystic_land3" type="Node2D"]
@@ -23,7 +26,7 @@ layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(851979, 65541, 1, 1114130, 65541, 1, 589846, 65541, 1, 851999, 65541, 1, 393248, 65541, 1, 1310728, 786446, 0, 786438, 786446, 0, 393233, 786446, 0, 327707, 786446, 0, 1114147, 786446, 0, 589837, 14, 9, 1048599, 14, 9, 196639, 851982, 10, 917507, 655374, 8, 917512, 262158, 4, 1114127, 262158, 4, 1048583, 131086, 4, 589851, 393230, 4, 655394, 393230, 4, 786447, 65549, 3, 786448, 131085, 3, 786449, 196621, 3, 1048592, 65549, 3, 1048593, 131085, 3, 1048594, 196621, 3, 1114111, 65549, 3, 1048576, 131085, 3, 1048577, 196621, 3, 393245, 65549, 3, 393246, 131085, 3, 393247, 196621, 3, 720932, 65549, 3, 720933, 131085, 3, 720934, 196621, 3, 917531, 65549, 3, 917532, 131085, 3, 917533, 196621, 3, 131079, 65551, 1)
 
 [node name="player" parent="." instance=ExtResource("2_3jwlh")]
-position = Vector2(27, 295)
+position = Vector2(14, 307)
 
 [node name="Transition to ML4" type="Area2D" parent="."]
 
@@ -34,6 +37,15 @@ shape = SubResource("RectangleShape2D_30odo")
 [node name="WorldBoundary" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldBoundary"]
-polygon = PackedVector2Array(5, 6, 621, 4, 621, 84, 688, 84, 685, 186, 621, 158, 617, 350, 1, 363, 4, -33, -58, 38, -73, 156, -72, 256, -52, 354, -40, 392, 5, 429, 434, 431, 560, 432, 642, 414, 692, 368, 694, 283, 696, 247, 703, 211, 703, 164, 699, 137, 699, 122, 699, 99, 699, 79, 698, 33, 688, -9, 657, -30, 592, -45, 479, -47, 223, -54, 90, -48, 3, -44, -10, -23, 9, -25)
+position = Vector2(1, 1)
+polygon = PackedVector2Array(0, 5, 621, 4, 621, 84, 665, 84, 664, 156, 621, 158, 617, 350, -24, 356, -23, 271, 0, 271, 3, 1, -40, 392, 657, 407, 683, -32)
+
+[node name="Transition to ML3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to ML3"]
+position = Vector2(-32, 312)
+shape = SubResource("RectangleShape2D_7w4ke")
 
 [connection signal="body_entered" from="Transition to ML4" to="." method="_on_transition_to_ml_4_body_entered"]
+[connection signal="body_entered" from="Transition to ML3" to="." method="_on_transition_to_ml_4_body_entered"]
+[connection signal="body_entered" from="Transition to ML3" to="." method="_on_transition_to_ml_3_body_entered"]

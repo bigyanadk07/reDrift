@@ -6,7 +6,7 @@ var paused = false
 
 func _ready():
 	global.current_scene == "lv-2"
-	
+
 func _process(delta):
 	handle_scene_transition()
 	if Input.is_action_just_pressed('Resume'):
@@ -15,7 +15,6 @@ func _process(delta):
 func toggle_pause_menu():
 	paused = !paused
 	pause_menu.visible = not paused
-	
 	if paused:
 		Engine.time_scale = 0
 	else:

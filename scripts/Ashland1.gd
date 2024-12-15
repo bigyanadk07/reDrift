@@ -22,7 +22,7 @@ func change_scene_toashland1():
 	if global.transition_scene == true:
 		global.transition_scene = false
 		if global.current_scene == "mystic_land3":
-			get_tree().change_scene_to_file("res://scenes/mystic_land5.tscn")
+			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land5.tscn")
 			global.finish_changescenes4()
 
 

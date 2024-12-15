@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://beonf6uo33gq6"]
+[gd_scene load_steps=7 format=3 uid="uid://beonf6uo33gq6"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_0df3g"]
 [ext_resource type="Script" path="res://scripts/mystic_land4.gd" id="1_bptto"]
@@ -8,12 +8,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6mmw"]
 size = Vector2(45, 47)
 
-[node name="mystic_land3" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82ppa"]
+size = Vector2(45, 47)
+
+[node name="mystic_land4" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_bptto")
 
 [node name="player" parent="." instance=ExtResource("2_3oesg")]
-position = Vector2(48, 28)
+position = Vector2(22, 32)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -29,11 +32,11 @@ layer_1/tile_data = PackedInt32Array(1048613, 5, 0, 1245192, 65541, 1, 786455, 6
 [node name="World Boundary" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World Boundary"]
-polygon = PackedVector2Array(1, 7, 418, 3, 418, 47, 623, 45, 623, 273, 662, 271, 661, 316, 624, 317, 625, 352, 4, 356, 1, 7, -5, 366, 670, 356, 662, -11)
+polygon = PackedVector2Array(0, 4, 418, 12, 418, 47, 623, 45, 623, 273, 662, 271, 661, 316, 624, 317, 625, 352, 4, 356, 0, 51, -5, 366, 670, 356, 662, -11)
 
-[node name="Trasnport to Mysticland4" type="Area2D" parent="."]
+[node name="Trasnport to AL1" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trasnport to Mysticland4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trasnport to AL1"]
 position = Vector2(646, 294)
 shape = SubResource("RectangleShape2D_q6mmw")
 
@@ -51,4 +54,12 @@ offset_top = -32.0
 offset_right = 64.0
 offset_bottom = 32.0
 
-[connection signal="body_entered" from="Trasnport to Mysticland4" to="." method="_on_trasnport_to_mysticland_4_body_entered"]
+[node name="Trasnport to ML3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trasnport to ML3"]
+position = Vector2(-21, 28)
+shape = SubResource("RectangleShape2D_82ppa")
+
+[connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_mysticland_4_body_entered"]
+[connection signal="body_entered" from="Trasnport to ML3" to="." method="_on_trasnport_to_mysticland_4_body_entered"]
+[connection signal="body_entered" from="Trasnport to ML3" to="." method="_on_trasnport_to_ml_3_body_entered"]

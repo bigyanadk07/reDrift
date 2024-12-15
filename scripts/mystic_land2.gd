@@ -1,10 +1,23 @@
 extends Node2D
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
-	
-var paused = false
+@onready var player: CharacterBody2D = $player
 
-func _process(delta):
-	change_scene_tomysticland3()
+var paused = false
+var to_lv2 = false
+var to_back = false
+
+func _ready() -> void:
+	if global.past_scene=="mystic_land3":
+		player.position = Vector2(607, 70)
+
+func _process(_delta):
+	if to_lv2 or to_back:
+		if to_back:
+			change_scene_to_back()
+		else:
+			change_scene_to_Dungeon()
+	else:
+		change_scene_tomysticland3()
 	if Input.is_action_just_pressed('Resume'):
 		pauseMenu()
 
@@ -21,6 +34,7 @@ func pauseMenu():
 func _on_transition_to_below_body_entered(body):
 	if body.has_method("player"):
 		global.transition_scene = true
+		
 
 func change_scene_tomysticland3():
 	if global.transition_scene == true:
@@ -28,16 +42,47 @@ func change_scene_tomysticland3():
 		global.transition_scene = false
 		if global.current_scene == "mystic_land2": 
 			print("Changing scene from mystic_land2 to mystic_land3")
-			get_tree().change_scene_to_file("res://scenes/mystic_land3.tscn")
+			global.past_scene=global.current_scene
+			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land3.tscn")
 			global.finish_changescenes2() 
 		else:
 			print("Not in mystic_land2, scene won't change.")
+			
+			
+
+func change_scene_to_Dungeon():
+	if global.transition_scene == true:
+		print("Starting scene transition to mystic_land3...")
+		global.transition_scene = false
+		if global.current_scene == "mystic_land2": 
+			print("Changing scene from mystic_land2 to lv-2")
+			global.past_scene=global.current_scene
+			get_tree().change_scene_to_file("res://scenes/level-2/lv-2.tscn")
+			global.finish_changescenes5() 
+		else:
+			print("Not in mystic_land2, scene won't change.")
+
+func change_scene_to_back():
+	if global.transition_scene == true:
+		print("Starting scene transition to mystic_land2...")
+		global.transition_scene = false
+		if global.current_scene == "mystic_land2": 
+			print("Changing scene from mystic_land3 to mysticland2")
+			global.past_scene=global.current_scene
+			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land.tscn")
+			global.finish_changescenes() 
+		else:
+			print("Not in mystic_land3, scene won't change.")
 
 
+func _on_transition_to_below_2_body_entered(body):
+	print("body entered")
+	if body.has_method("player"):
+		to_lv2 = true
+		global.transition_scene = true
 
 
-
-
-
-
-
+func _on_transition_to_below_3_body_entered(body: Node2D) -> void:
+	if body.has_method("player"):
+		to_back =true
+		global.transition_scene = true
