@@ -1,9 +1,14 @@
 extends Node2D
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
+@onready var player: CharacterBody2D = $player
 
 var paused = false
 var back = false
 
+func _ready() -> void:
+	if global.past_scene=="mystic_land4":
+		player.position = Vector2(610, 303)
+		
 func _process(delta):
 	if back:
 		change_scene_tomysticland3()

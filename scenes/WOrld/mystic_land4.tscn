@@ -16,7 +16,7 @@ y_sort_enabled = true
 script = ExtResource("1_bptto")
 
 [node name="player" parent="." instance=ExtResource("2_3oesg")]
-position = Vector2(22, 32)
+position = Vector2(610, 303)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -61,5 +61,5 @@ position = Vector2(-21, 28)
 shape = SubResource("RectangleShape2D_82ppa")
 
 [connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_mysticland_4_body_entered"]
-[connection signal="body_entered" from="Trasnport to ML3" to="." method="_on_trasnport_to_mysticland_4_body_entered"]
 [connection signal="body_entered" from="Trasnport to ML3" to="." method="_on_trasnport_to_ml_3_body_entered"]
+[connection signal="body_entered" from="Trasnport to ML3" to="." method="_on_trasnport_to_mysticland_4_body_entered"]

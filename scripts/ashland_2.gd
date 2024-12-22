@@ -6,8 +6,8 @@ var paused = false
 var back = false
 
 func _ready() -> void:
-	if global.past_scene=="ashland2":
-		player.position = Vector2(610, 162)
+	if global.past_scene=="mystic_land4":
+		player.position = Vector2(610, 131)
 		
 func _process(delta):
 	if back:

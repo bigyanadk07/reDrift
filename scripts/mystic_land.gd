@@ -5,7 +5,7 @@ extends Node2D
 var paused = false
 
 func _ready() -> void:
-	if global.past_scene=="mystic_land3":
+	if global.past_scene=="mystic_land2":
 		player.position = Vector2(608, 262)  # Change to desired position
 		
 func _process(delta):

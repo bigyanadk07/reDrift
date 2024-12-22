@@ -3,21 +3,20 @@ extends Node2D
 @onready var player: CharacterBody2D = $player
 
 var paused = false
-var to_lv2 = false
-var to_back = false
+var transition_to
 
 func _ready() -> void:
 	if global.past_scene=="mystic_land3":
 		player.position = Vector2(607, 70)
 
 func _process(_delta):
-	if to_lv2 or to_back:
-		if to_back:
+	match transition_to:
+		1:
 			change_scene_to_back()
-		else:
+		2:
 			change_scene_to_Dungeon()
-	else:
-		change_scene_tomysticland3()
+		3:
+			change_scene_tomysticland3()
 	if Input.is_action_just_pressed('Resume'):
 		pauseMenu()
 
@@ -31,8 +30,9 @@ func pauseMenu():
 		Engine.time_scale=0
 	paused=!paused
 	
-func _on_transition_to_below_body_entered(body):
+func _on_transition_to_ml_3_body_entered(body):
 	if body.has_method("player"):
+		transition_to= 3
 		global.transition_scene = true
 		
 
@@ -75,14 +75,14 @@ func change_scene_to_back():
 			print("Not in mystic_land3, scene won't change.")
 
 
-func _on_transition_to_below_2_body_entered(body):
+func _on_transition_to_lv_2_body_entered(body):
 	print("body entered")
 	if body.has_method("player"):
-		to_lv2 = true
+		transition_to =2
 		global.transition_scene = true
 
 
-func _on_transition_to_below_3_body_entered(body: Node2D) -> void:
+func _on_transition_to_ml_1_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
-		to_back =true
+		transition_to=1
 		global.transition_scene = true
