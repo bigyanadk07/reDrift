@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6p85pxd5jq30"]
+[gd_scene load_steps=6 format=3 uid="uid://b6p85pxd5jq30"]
 
 [ext_resource type="Script" path="res://scripts/Ashland1.gd" id="1_qtf3p"]
 [ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_gcw2g"]
@@ -7,12 +7,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xc8dr"]
 size = Vector2(36, 37)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8gl1"]
+size = Vector2(36, 37)
+
 [node name="Ashland1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_qtf3p")
 
 [node name="player" parent="." instance=ExtResource("2_gcw2g")]
-position = Vector2(14, 345)
+position = Vector2(14, 346)
 
 [node name="Ashland Map1" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -28,7 +31,7 @@ layer_1/tile_data = PackedInt32Array(786441, 1638419, 14, 917524, 1638419, 14, 3
 [node name="WorldBoundary" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldBoundary"]
-polygon = PackedVector2Array(7, -9, 431, -3, 431, 69, 436, 74, 442, 78, 453, 78, 473, 77, 620, 82, 622, 140, 660, 141, 660, 178, 618, 176, 613, 259, 560, 260, 556, 256, 555, 245, 549, 245, 548, 244, 536, 244, 532, 248, 532, 256, 526, 260, 438, 260, 436, 263, 436, 271, 432, 275, 422, 278, 420, 279, 420, 288, 415, 291, 390, 292, 388, 294, 388, 303, 382, 307, 356, 308, 355, 320, 351, 323, 293, 324, 292, 326, 292, 336, 288, 339, 198, 340, 196, 342, 193, 367, 193, 379, -4, 367, -1, -17, -79, 16, -72, 97, -73, 223, -81, 316, -62, 416, -30, 497, 144, 509, 423, 516, 608, 463, 765, 305, 767, 218, 746, 116, 689, -9, 589, -67, 266, -147, 102, -145, -30, -73, 10, -22, 0, -25)
+polygon = PackedVector2Array(-1, -17, 431, -3, 431, 69, 442, 78, 623, 80, 622, 140, 639, 141, 639, 175, 623, 177, 619, 215, 605, 210, 582, 218, 580, 256, 560, 260, 555, 245, 532, 248, 526, 260, 438, 260, 432, 275, 420, 279, 420, 288, 388, 294, 388, 303, 356, 308, 355, 320, 293, 324, 292, 336, 198, 340, 196, 342, 193, 379, -4, 373, -4, 356, -10, 356, -10, 319, -4, 319, -1, -17, -14, 443, 652, 261, 636, -24)
 
 [node name="Transition Area" type="Area2D" parent="."]
 
@@ -36,4 +39,12 @@ polygon = PackedVector2Array(7, -9, 431, -3, 431, 69, 436, 74, 442, 78, 453, 78,
 position = Vector2(642, 158.5)
 shape = SubResource("RectangleShape2D_xc8dr")
 
+[node name="Transition to ML4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to ML4"]
+position = Vector2(-22, 338)
+shape = SubResource("RectangleShape2D_l8gl1")
+
 [connection signal="body_entered" from="Transition Area" to="." method="_on_transition_area_body_entered"]
+[connection signal="body_entered" from="Transition to ML4" to="." method="_on_transition_to_ml_4_body_entered"]
+[connection signal="body_entered" from="Transition to ML4" to="." method="_on_transition_area_body_entered"]

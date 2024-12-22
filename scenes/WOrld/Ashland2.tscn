@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnp3shsag8fx0"]
+[gd_scene load_steps=6 format=3 uid="uid://dnp3shsag8fx0"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_84ukf"]
+[ext_resource type="Script" path="res://scripts/ashland_2.gd" id="1_r57nb"]
 [ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_u2x1h"]
 [ext_resource type="PackedScene" uid="uid://cyiocthi2otge" path="res://scenes/enemy1.tscn" id="3_cdfv8"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5flw"]
+size = Vector2(45, 47)
+
+[node name="Ashland2" type="Node2D"]
+script = ExtResource("1_r57nb")
 
 [node name="Ashland Map2" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -18,12 +23,18 @@ layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(65539, 393232, 0, 65543, 393232, 0, 65547, 393232, 0, 1441801, 851984, 8, 1376260, 720912, 7, 1441812, 720912, 7, 1441817, 917520, 10, 1376282, 917520, 10, 1441811, 917520, 10, 851972, 1638419, 14, 983046, 1507347, 14, 786433, 1507347, 14, 983041, 2293779, 11, 655361, 2293779, 11)
 
 [node name="player" parent="." instance=ExtResource("2_u2x1h")]
-position = Vector2(21, 88)
+position = Vector2(17, 109)
 
 [node name="WorldCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldCollision"]
-polygon = PackedVector2Array(-4, 2, -3, 272, 26, 272, 30, 277, 31, 287, 119, 288, 126, 291, 128, 304, 167, 304, 202, 306, 204, 310, 205, 335, 214, 336, 225, 335, 227, 324, 233, 321, 253, 321, 271, 321, 271, 331, 273, 337, 285, 336, 288, 331, 294, 323, 353, 322, 355, 310, 358, 306, 385, 305, 385, 297, 389, 289, 416, 289, 419, 278, 434, 273, 436, 260, 530, 256, 534, 244, 556, 241, 558, 250, 562, 257, 622, 258, 614, 255, 613, -4, -14, -2, -54, -106, 286, -117, 626, -112, 1040, 86, 1040, 154, 931, 359, 632, 537, 231, 617, -133, 565, -247, 359, -188, 191, -81, 104, -36, 16, -27, -1, -13, 0, -14, 8, -6, 8, -9, 2)
+polygon = PackedVector2Array(-3, -2, -3, 76, -18, 76, -17, 123, -2, 123, -3, 272, 26, 272, 31, 287, 119, 288, 128, 304, 202, 306, 205, 335, 225, 335, 233, 321, 271, 321, 273, 337, 285, 336, 294, 323, 353, 322, 358, 306, 385, 305, 389, 289, 416, 289, 419, 278, 434, 273, 436, 260, 530, 256, 534, 244, 556, 241, 562, 257, 614, 255, 613, -4, -3, -2, 620, -23, 626, 320, -23, 361, -26, 76)
 
 [node name="Skele" parent="." instance=ExtResource("3_cdfv8")]
 position = Vector2(373, 204)
+
+[node name="Trasnport to AL1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trasnport to AL1"]
+position = Vector2(-25, 100)
+shape = SubResource("RectangleShape2D_r5flw")

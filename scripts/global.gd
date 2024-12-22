@@ -39,7 +39,7 @@ func finish_changescenes6():
 	
 func finish_changescenes7():
 	print("Global change scene called, going from mystic_land4 to ashland1")
-	current_scene = "ashland1" 
+	current_scene = "ashland2" 
 	
 func finish_changescenes8():
 	print("Global change scene called, going from mystic_land4 to ashland1")
