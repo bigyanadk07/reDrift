@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-@onready var raycast_node = $Node  #Raycast decleration
-@export var player: CharacterBody2D
+@onready var raycast_node = $Node  # Raycast declaration
+@export var player: CharacterBody2D 
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D  # NavigationAgent2D declaration
 
 enum mobState {
 	IDLE,
@@ -25,8 +26,9 @@ var danger_array: Array = []
 func _ready():
 	health = MAX_HEALTH
 	current_state = mobState.IDLE
+	navigation_agent.max_speed = speed
 
-func _process(delta):
+func _process(_delta):
 	danger_array = raycast_node.danger  # Get the danger array
 
 func _physics_process(delta):
@@ -39,20 +41,27 @@ func _physics_process(delta):
 				anim_tree.set("parameters/idle/blend_position", direction)
 
 			mobState.CHASING:
-				arr1.clear()
-				for i in arr:
-					arr1.append(round((i.dot(direction)) * 100) / 100)
-				var arrsub=subtract_arrays(arr1, danger_array)
-				var index =get_index_of_max(arrsub)
-				anim_tree.get("parameters/playback").travel("walk")
-				var steering= (arr[index]-direction).normalized()
-				velocity = direction + steering*1.2 # Combine direction and steering
-				velocity = velocity.normalized() * speed * delta
-				anim_tree.set("parameters/walk/blend_position", direction)
+				navigation_agent.set_target_position(player.global_position)
+				if navigation_agent.is_target_reached():
+					current_state = mobState.ATTACKING
+				else:
+					arr1.clear()
+					for i in arr:
+						arr1.append(round((i.dot(direction)) * 100) / 100)
+					var arrsub=subtract_arrays(arr1, danger_array)
+					var index =get_index_of_max(arrsub)
+					anim_tree.get("parameters/playback").travel("walk")
+					var next_path_point = navigation_agent.get_next_path_position()
+					direction = (next_path_point - global_position).normalized()
+					anim_tree.get("parameters/playback").travel("walk")
+					var steering= ((arr[index]-direction)*2).normalized()
+					var dir = direction + steering
+					velocity = dir.normalized() * speed* delta
+					anim_tree.set("parameters/walk/blend_position", direction.normalized())
 
 			mobState.ATTACKING:
 				anim_tree.get("parameters/playback").travel("attack")
-				velocity = Vector2(0, 0) 
+				velocity = Vector2(0, 0)
 				anim_tree.set("parameters/attack/blend_position", direction)
 
 			mobState.DEATH:
@@ -100,5 +109,4 @@ func subtract_arrays(array_a: Array, array_b: Array) -> Array:
 	var result = []
 	for i in range(array_a.size()):
 		result.append(array_a[i] - array_b[i])
-
 	return result

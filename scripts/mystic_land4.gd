@@ -2,9 +2,13 @@ extends Node2D
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
 
 var paused = false
+var back = false
 
 func _process(delta):
-	change_scene_tomysticland4()
+	if back:
+		change_scene_tomysticland3()
+	else:
+		change_scene_toashlandland1()
 	if Input.is_action_just_pressed('Resume'):
 		pauseMenu()
 
@@ -18,14 +22,31 @@ func pauseMenu():
 	paused=!paused
 	
 	
-func change_scene_tomysticland4():
+func change_scene_toashlandland1():
 	if global.transition_scene == true:
 		global.transition_scene = false
 		if global.current_scene == "mystic_land4":
-			get_tree().change_scene_to_file("res://scenes/Ashland1.tscn")
+			global.past_scene=global.current_scene
+			get_tree().change_scene_to_file("res://scenes/WOrld/Ashland1.tscn")
+			global.finish_changescenes2()
+
+func change_scene_tomysticland3():
+	if global.transition_scene == true:
+		global.transition_scene = false
+		if global.current_scene == "mystic_land4":
+			global.past_scene=global.current_scene
+			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land3.tscn")
 			global.finish_changescenes2()
 
 
+
 func _on_trasnport_to_mysticland_4_body_entered(body):
+	back = false
+	if body.has_method("player"):
+		global.transition_scene = true
+
+
+func _on_trasnport_to_ml_3_body_entered(body: Node2D) -> void:
+	back = true
 	if body.has_method("player"):
 		global.transition_scene = true

@@ -1,14 +1,12 @@
-[gd_scene load_steps=59 format=3 uid="uid://cxbsi15l23riy"]
+[gd_scene load_steps=57 format=3 uid="uid://cxbsi15l23riy"]
 
-[ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="1_70jsk"]
-[ext_resource type="Script" path="res://scenes/luffy/skele1.gd" id="1_c5xxt"]
-[ext_resource type="PackedScene" uid="uid://osj7k30503uu" path="res://scenes/enemy ai/raycasting.tscn" id="2_a718c"]
-[ext_resource type="Script" path="res://scripts/ememy ai/rays/raycasting.gd" id="4_3jaww"]
-[ext_resource type="PackedScene" uid="uid://mbmeh327rkqf" path="res://scenes/statemachine.tscn" id="5_r37pa"]
+[ext_resource type="Script" path="res://scripts/skele/Skeleme.gd" id="1_r3vus"]
+[ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="2_hm4qp"]
+[ext_resource type="PackedScene" uid="uid://osj7k30503uu" path="res://scenes/enemy ai/raycasting.tscn" id="4_n1pmy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
-radius = 4.00025
-height = 12.0
+radius = 3.0
+height = 9.00025
 
 [sub_resource type="Animation" id="Animation_0sr31"]
 resource_name = "Attack"
@@ -511,26 +509,24 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(162.613, -73.2825)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5yte"]
-radius = 7.51665
+radius = 19.5064
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7bfg"]
 radius = 114.018
 
 [node name="Skeleme" type="CharacterBody2D"]
 z_index = 2
-scale = Vector2(2, 2)
-script = ExtResource("1_c5xxt")
+script = ExtResource("1_r3vus")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -10)
-texture = ExtResource("1_70jsk")
+position = Vector2(-0.5, -9.5)
+texture = ExtResource("2_hm4qp")
 hframes = 12
 vframes = 14
 frame = 18
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 1)
+position = Vector2(0, 1.5)
 rotation = 1.57105
 shape = SubResource("CapsuleShape2D_yr5ho")
 
@@ -557,20 +553,17 @@ parameters/walk/blend_position = Vector2(-0.000876427, -0.00484574)
 shape = SubResource("CircleShape2D_h5yte")
 
 [node name="AreaDetection" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
 shape = SubResource("CircleShape2D_r7bfg")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Raycast" parent="." instance=ExtResource("2_a718c")]
+[node name="Node" parent="." instance=ExtResource("4_n1pmy")]
 scale = Vector2(0.7, 0.7)
-script = ExtResource("4_3jaww")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-
-[node name="Statemachine" parent="." instance=ExtResource("5_r37pa")]
+debug_enabled = true
 
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="body_entered" from="attackarea" to="." method="_on_attackarea_body_entered"]

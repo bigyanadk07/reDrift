@@ -1,7 +1,5 @@
 extends Control
-#
-
-@onready var world = $"../.."
+@onready var world: Node2D = $"../.."
 
 #func _ready():
 	#$AnimationPlayer.play("RESET")
@@ -33,8 +31,7 @@ func _on_restart_pressed():
 	#
 #func _process(delta):
 	#testEsc()
-
-
+	
 func _on_resume_pressed():
 	world.pauseMenu()
 
