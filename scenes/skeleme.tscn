@@ -514,8 +514,9 @@ radius = 19.5064
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7bfg"]
 radius = 114.018
 
-[node name="Skeleme" type="CharacterBody2D"]
+[node name="Skeleme" type="CharacterBody2D" groups=["monster"]]
 z_index = 2
+y_sort_enabled = true
 script = ExtResource("1_r3vus")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

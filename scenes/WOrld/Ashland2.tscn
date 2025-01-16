@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnp3shsag8fx0"]
+[gd_scene load_steps=5 format=3 uid="uid://dnp3shsag8fx0"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_84ukf"]
 [ext_resource type="Script" path="res://scripts/ashland_2.gd" id="1_r57nb"]
-[ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_u2x1h"]
 [ext_resource type="PackedScene" uid="uid://cyiocthi2otge" path="res://scenes/enemy1.tscn" id="3_cdfv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5flw"]
@@ -22,9 +21,6 @@ layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(65539, 393232, 0, 65543, 393232, 0, 65547, 393232, 0, 1441801, 851984, 8, 1376260, 720912, 7, 1441812, 720912, 7, 1441817, 917520, 10, 1376282, 917520, 10, 1441811, 917520, 10, 851972, 1638419, 14, 983046, 1507347, 14, 786433, 1507347, 14, 983041, 2293779, 11, 655361, 2293779, 11)
 
-[node name="player" parent="." instance=ExtResource("2_u2x1h")]
-position = Vector2(17, 109)
-
 [node name="WorldCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldCollision"]
@@ -38,3 +34,5 @@ position = Vector2(373, 204)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trasnport to AL1"]
 position = Vector2(-25, 100)
 shape = SubResource("RectangleShape2D_r5flw")
+
+[connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_al_1_body_entered"]

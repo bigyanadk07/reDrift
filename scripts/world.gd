@@ -31,9 +31,6 @@ func change_scene_tomysticland():
 		if global.current_scene == "world":  # Only proceed if we are in 'world'
 			print("Changing scene from world to mystic_land")
 			global.past_scene=global.current_scene
-			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land.tscn")
-			global.finish_changescenes()  # Move to 'mystic_land'
+			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land.tscn")  # Move tod 'mystic_land'
 		else:
 			print("Not in world, scene won't change.")
-
-			
