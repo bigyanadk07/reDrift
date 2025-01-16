@@ -65,28 +65,24 @@ offset_top = -32.0
 offset_right = 64.0
 offset_bottom = 32.0
 
-[node name="player" parent="." groups=["player"] instance=ExtResource("4_pg2v8")]
+[node name="player" parent="." instance=ExtResource("4_pg2v8")]
 z_index = 2
-position = Vector2(39, 52)
+position = Vector2(29, 54)
+
+[node name="Skeleme4" parent="." instance=ExtResource("6_ga2mx")]
+position = Vector2(471, 171)
 
 [node name="Slime" parent="." groups=["monster"] instance=ExtResource("5_qd7y1")]
 position = Vector2(384, 136)
 
-[node name="Skeleme" parent="." node_paths=PackedStringArray("player") groups=["monster"] instance=ExtResource("6_ga2mx")]
+[node name="Skeleme" parent="." instance=ExtResource("6_ga2mx")]
 position = Vector2(180, 127)
-player = NodePath("../player")
 
-[node name="Skeleme2" parent="." node_paths=PackedStringArray("player") groups=["monster"] instance=ExtResource("6_ga2mx")]
+[node name="Skeleme2" parent="." instance=ExtResource("6_ga2mx")]
 position = Vector2(239, 174)
-player = NodePath("../player")
 
-[node name="Skeleme3" parent="." node_paths=PackedStringArray("player") groups=["monster"] instance=ExtResource("6_ga2mx")]
+[node name="Skeleme3" parent="." instance=ExtResource("6_ga2mx")]
 position = Vector2(161, 190)
-player = NodePath("../player")
-
-[node name="Skeleme4" parent="." node_paths=PackedStringArray("player") groups=["monster"] instance=ExtResource("6_ga2mx")]
-position = Vector2(471, 171)
-player = NodePath("../player")
 
 [connection signal="body_entered" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_entered"]
 [connection signal="body_exited" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_exited"]

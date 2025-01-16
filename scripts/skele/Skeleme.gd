@@ -1,7 +1,6 @@
 extends CharacterBody2D
-
 @onready var raycast_node = $Node  # Raycast declaration
-@export var player: CharacterBody2D 
+@onready var player: CharacterBody2D = $"../player"
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D  # NavigationAgent2D declaration
 
 enum mobState {
@@ -107,6 +106,16 @@ func get_index_of_max(array: Array) -> int:
 
 func subtract_arrays(array_a: Array, array_b: Array) -> Array:
 	var result = []
-	for i in range(array_a.size()):
+	var max_size = max(array_a.size(), array_b.size())
+
+	# Pad the shorter array with zeros
+	while array_a.size() < max_size:
+		array_a.append(0)
+	while array_b.size() < max_size:
+		array_b.append(0)
+
+	# Now subtract corresponding elements
+	for i in range(max_size):
 		result.append(array_a[i] - array_b[i])
+
 	return result

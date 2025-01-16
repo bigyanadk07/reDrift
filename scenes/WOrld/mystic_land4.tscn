@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://beonf6uo33gq6"]
+[gd_scene load_steps=6 format=3 uid="uid://beonf6uo33gq6"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_0df3g"]
 [ext_resource type="Script" path="res://scripts/mystic_land4.gd" id="1_bptto"]
-[ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_3oesg"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="4_xhomo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6mmw"]
@@ -14,9 +13,6 @@ size = Vector2(45, 47)
 [node name="mystic_land4" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_bptto")
-
-[node name="player" parent="." instance=ExtResource("2_3oesg")]
-position = Vector2(610, 303)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -61,5 +57,5 @@ position = Vector2(-21, 28)
 shape = SubResource("RectangleShape2D_82ppa")
 
 [connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_mysticland_4_body_entered"]
+[connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_al_1_body_entered"]
 [connection signal="body_entered" from="Trasnport to ML3" to="." method="_on_trasnport_to_ml_3_body_entered"]
-[connection signal="body_entered" from="Trasnport to ML3" to="." method="_on_trasnport_to_mysticland_4_body_entered"]

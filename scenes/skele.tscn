@@ -517,6 +517,7 @@ radius = 114.018
 
 [node name="Skele" type="CharacterBody2D"]
 z_index = 2
+y_sort_enabled = true
 scale = Vector2(2, 2)
 script = ExtResource("1_nvnoc")
 
@@ -564,7 +565,6 @@ shape = SubResource("CircleShape2D_r7bfg")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Node" parent="." instance=ExtResource("4_n1pmy")]
-scale = Vector2(0.7, 0.7)
 
 [node name="Chasing" type="Node2D" parent="."]
 script = ExtResource("4_3mcwj")

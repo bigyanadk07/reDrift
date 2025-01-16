@@ -1,21 +1,28 @@
 extends Node2D
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
 @onready var player: CharacterBody2D = $player
+var players = preload("res://scenes/player.tscn")
 
 var paused = false
 var back = false
 
 func _ready() -> void:
-	if global.past_scene=="mystic_land4":
-		player.position = Vector2(610, 131)
-		
+	global.current_scene = "ashland2"
+	playerpos(Vector2(15,109))
+	
+
 func _process(delta):
 	if back:
-		change_scene_toML4()
+		change_scene_toAL1()
 	else:
 		change_scene_toashland2()
 	if Input.is_action_just_pressed('Resume'):
 		pauseMenu()
+
+func playerpos(pos):
+	var instant = players.instantiate()
+	instant.position= pos
+	add_child(instant)
 
 func pauseMenu():
 	if paused:
@@ -30,18 +37,16 @@ func pauseMenu():
 func change_scene_toashland2():
 	if global.transition_scene == true:
 		global.transition_scene = false
-		if global.current_scene == "ashland1":
+		if global.current_scene == "ashland2":
 			global.past_scene=global.current_scene
 			get_tree().change_scene_to_file("res://scenes/WOrld/Ashland2.tscn")
-			global.finish_changescenes7()
-			
-func change_scene_toML4():
+
+func change_scene_toAL1():
 	if global.transition_scene == true:
 		global.transition_scene = false
-		if global.current_scene == "ashland1":
+		if global.current_scene == "ashland2":
 			global.past_scene=global.current_scene
-			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land4.tscn")
-			global.finish_changescenes3()
+			get_tree().change_scene_to_file("res://scenes/WOrld/Ashland1.tscn")
 
 
 func _on_transition_area_body_entered(body):
@@ -50,7 +55,7 @@ func _on_transition_area_body_entered(body):
 		global.transition_scene = true
 
 
-func _on_transition_to_ml_4_body_entered(body: Node2D) -> void:
+func _on_trasnport_to_al_1_body_entered(body) -> void:
 	back = true
 	if body.has_method("player"):
 		global.transition_scene = true
