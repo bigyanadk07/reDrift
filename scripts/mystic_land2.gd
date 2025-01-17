@@ -1,13 +1,16 @@
 extends Node2D
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
 @onready var player: CharacterBody2D = $player
-
+const players = preload("res://scenes/player.tscn")
 var paused = false
 var transition_to
 
 func _ready() -> void:
+	global.current_scene="mystic_land2"
 	if global.past_scene=="mystic_land3":
-		player.position = Vector2(607, 70)
+		playerpos( Vector2(607, 70))
+	else:
+		playerpos(Vector2(17,21))
 
 func _process(_delta):
 	match transition_to:
@@ -20,6 +23,10 @@ func _process(_delta):
 	if Input.is_action_just_pressed('Resume'):
 		pauseMenu()
 
+func playerpos(pos):
+	var instant = players.instantiate()
+	instant.position= pos
+	add_child(instant)
 
 func pauseMenu():
 	if paused:
@@ -44,7 +51,6 @@ func change_scene_tomysticland3():
 			print("Changing scene from mystic_land2 to mystic_land3")
 			global.past_scene=global.current_scene
 			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land3.tscn")
-			global.finish_changescenes2() 
 		else:
 			print("Not in mystic_land2, scene won't change.")
 			
@@ -58,7 +64,6 @@ func change_scene_to_Dungeon():
 			print("Changing scene from mystic_land2 to lv-2")
 			global.past_scene=global.current_scene
 			get_tree().change_scene_to_file("res://scenes/level-2/lv-2.tscn")
-			global.finish_changescenes5() 
 		else:
 			print("Not in mystic_land2, scene won't change.")
 
@@ -70,7 +75,6 @@ func change_scene_to_back():
 			print("Changing scene from mystic_land3 to mysticland2")
 			global.past_scene=global.current_scene
 			get_tree().change_scene_to_file("res://scenes/WOrld/mystic_land.tscn")
-			global.finish_changescenes() 
 		else:
 			print("Not in mystic_land3, scene won't change.")
 
@@ -82,7 +86,7 @@ func _on_transition_to_lv_2_body_entered(body):
 		global.transition_scene = true
 
 
-func _on_transition_to_ml_1_body_entered(body: Node2D) -> void:
+func _on_transition_to_ml_1_body_entered(body) -> void:
 	if body.has_method("player"):
 		transition_to=1
 		global.transition_scene = true

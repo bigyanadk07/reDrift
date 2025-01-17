@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://fsw0hcehotmj"]
+[gd_scene load_steps=5 format=3 uid="uid://fsw0hcehotmj"]
 
 [ext_resource type="Script" path="res://scripts/mystic_land.gd" id="1_j5u2q"]
-[ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_talu3"]
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="3_u40xk"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="4_bgbgp"]
 
@@ -11,9 +10,6 @@ size = Vector2(61, 59)
 [node name="MysticLand" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_j5u2q")
-
-[node name="player" parent="." instance=ExtResource("2_talu3")]
-position = Vector2(53, 35)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

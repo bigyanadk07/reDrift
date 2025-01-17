@@ -4,8 +4,8 @@ extends Node2D
 @onready var raycasts: Array = [$"1", $"2", $"3", $"4", $"5", $"6", $"7", $"8"]
 @export var danger: Array = []
 
-const DANGER_HIGH = 5
-const DANGER_MEDIUM = 2
+const DANGER_HIGH = 9
+const DANGER_MEDIUM = 4
 
 func _ready():
 	danger.resize(raycasts.size())
