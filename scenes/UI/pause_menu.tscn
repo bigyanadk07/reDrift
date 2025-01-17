@@ -89,7 +89,7 @@ custom_minimum_size = Vector2(5, 5)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 24
-text = "Exit to menu"
+text = "Exit Game"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
