@@ -39,8 +39,13 @@ func change_scene_toashlandland1():
 	if global.transition_scene == true:
 		global.transition_scene = false
 		if global.current_scene == "mystic_land4":
+<<<<<<< Updated upstream
 			global.past_scene=global.current_scene
 			get_tree().change_scene_to_file("res://scenes/WOrld/Ashland1.tscn")
+=======
+			get_tree().change_scene_to_file("res://scenes/WOrld/Ashland1.tscn")
+			global.finish_changescenes2()
+>>>>>>> Stashed changes
 
 
 func change_scene_tomysticland3():

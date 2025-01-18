@@ -52,7 +52,7 @@ offset_bottom = 262.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_jtl2m")
 theme_override_font_sizes/font_size = 120
-text = "reDrift"
+text = "The Dhaka Tales"
 horizontal_alignment = 1
 vertical_alignment = 1
 

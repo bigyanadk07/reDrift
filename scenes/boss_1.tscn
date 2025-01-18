@@ -408,25 +408,25 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_naapa"]
-height = 36.0
+radius = 14.0
+height = 56.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sr3b4"]
 radius = 117.038
 
 [node name="boss1" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_1ilho")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bhmmu")
-animation = &"attack"
-frame_progress = 0.331783
+animation = &"walk"
+frame = 4
+frame_progress = 0.031727
 offset = Vector2(-35, -35)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(3, -10)
+position = Vector2(2, -15)
 shape = SubResource("CapsuleShape2D_naapa")
 
 [node name="detection_area" type="Area2D" parent="."]

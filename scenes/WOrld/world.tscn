@@ -1,9 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=9 format=3 uid="uid://doa66tqeirssk"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://doa66tqeirssk"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_ywj8i"]
 [ext_resource type="TileSet" uid="uid://bs6vm7ut3d3fa" path="res://scenes/Tres Files/World1.tres" id="2_hmfvb"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="3_i78ij"]
 [ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="4_pg2v8"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/slime.tscn" id="5_qd7y1"]
 [ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skeleme.tscn" id="6_ga2mx"]
 
@@ -12,6 +17,9 @@ vertices = PackedVector2Array(487.594, 81.2734, 613.469, 128.781, 587.273, 129.6
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9, 10, 11), PackedInt32Array(12, 13, 14), PackedInt32Array(15, 16, 17, 18, 19), PackedInt32Array(20, 21, 22), PackedInt32Array(23, 10, 9, 24, 25, 26), PackedInt32Array(27, 28, 29, 30), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(35, 36, 37), PackedInt32Array(38, 39, 40, 41, 42), PackedInt32Array(43, 44, 45, 46), PackedInt32Array(3, 2, 47, 48, 49), PackedInt32Array(50, 45, 44, 51), PackedInt32Array(52, 53, 54, 55), PackedInt32Array(56, 57, 58, 59, 60, 61), PackedInt32Array(62, 63, 64, 65), PackedInt32Array(66, 67, 68, 1), PackedInt32Array(69, 66, 1, 0), PackedInt32Array(27, 30, 70, 71), PackedInt32Array(72, 31, 34), PackedInt32Array(73, 74, 75, 76), PackedInt32Array(61, 60, 77, 78), PackedInt32Array(79, 80, 81, 82), PackedInt32Array(48, 83, 49), PackedInt32Array(66, 69, 84, 85), PackedInt32Array(86, 87, 88, 89), PackedInt32Array(90, 91, 92, 46), PackedInt32Array(93, 94, 95, 37, 96, 97, 98, 99), PackedInt32Array(100, 101, 102), PackedInt32Array(103, 104, 105, 106, 107), PackedInt32Array(108, 109, 110, 25), PackedInt32Array(111, 112, 113), PackedInt32Array(114, 115, 116), PackedInt32Array(117, 118, 104), PackedInt32Array(110, 119, 120, 25), PackedInt32Array(113, 121, 122), PackedInt32Array(76, 75, 123, 124), PackedInt32Array(125, 76, 124, 86), PackedInt32Array(126, 127, 19, 18, 128, 129), PackedInt32Array(19, 130, 131, 15), PackedInt32Array(5, 11, 132, 133, 134, 135), PackedInt32Array(126, 129, 105, 100), PackedInt32Array(136, 25, 120, 137, 138, 139, 89, 34), PackedInt32Array(140, 141, 98, 97, 142), PackedInt32Array(141, 140, 143, 144, 81, 145), PackedInt32Array(146, 147, 148, 26, 149), PackedInt32Array(137, 150, 151, 138), PackedInt32Array(152, 153, 154), PackedInt32Array(71, 155, 156, 27), PackedInt32Array(27, 156, 157, 158), PackedInt32Array(159, 160, 55, 54, 161), PackedInt32Array(162, 161, 54, 163), PackedInt32Array(148, 164, 23, 26), PackedInt32Array(78, 77, 165, 138, 151, 166, 107, 106, 167), PackedInt32Array(154, 168, 136), PackedInt32Array(169, 170, 171, 172, 173), PackedInt32Array(174, 175, 176), PackedInt32Array(3, 49, 177, 178), PackedInt32Array(27, 158, 179, 180), PackedInt32Array(177, 181, 182), PackedInt32Array(0, 183, 69), PackedInt32Array(184, 185, 40, 39), PackedInt32Array(186, 187, 188, 189), PackedInt32Array(190, 64, 63, 25), PackedInt32Array(139, 191, 125, 86, 89), PackedInt32Array(92, 192, 43, 46), PackedInt32Array(102, 193, 126, 100), PackedInt32Array(184, 39, 194, 195), PackedInt32Array(196, 195, 194, 197), PackedInt32Array(80, 198, 114, 81), PackedInt32Array(182, 199, 117, 176), PackedInt32Array(63, 200, 201, 202, 25), PackedInt32Array(149, 203, 204, 205), PackedInt32Array(206, 197, 194, 207), PackedInt32Array(176, 178, 177, 182), PackedInt32Array(134, 133, 208, 209, 210, 211, 212), PackedInt32Array(81, 114, 116, 213, 214, 145), PackedInt32Array(215, 35, 37), PackedInt32Array(202, 216, 108, 25), PackedInt32Array(205, 217, 111), PackedInt32Array(20, 22, 218, 219, 220), PackedInt32Array(221, 222, 223, 224, 225, 226, 227), PackedInt32Array(228, 229, 230, 231, 232, 72, 34), PackedInt32Array(233, 12, 14, 234, 235), PackedInt32Array(236, 4, 3, 46), PackedInt32Array(116, 90, 46, 3, 213), PackedInt32Array(237, 144, 143), PackedInt32Array(238, 237, 143), PackedInt32Array(239, 187, 186, 238, 143, 12), PackedInt32Array(233, 239, 12), PackedInt32Array(65, 176, 117, 104, 103, 62), PackedInt32Array(134, 212, 240, 241), PackedInt32Array(207, 242, 243, 244, 245, 206), PackedInt32Array(246, 190, 25), PackedInt32Array(24, 246, 25), PackedInt32Array(169, 247, 241, 240), PackedInt32Array(248, 233, 235, 249, 227), PackedInt32Array(85, 250, 251, 66), PackedInt32Array(227, 66, 251, 44), PackedInt32Array(176, 8, 7, 252, 94, 174), PackedInt32Array(38, 42, 253, 220, 219), PackedInt32Array(254, 173, 172, 215, 37, 95), PackedInt32Array(255, 146, 149, 256), PackedInt32Array(149, 205, 111, 113), PackedInt32Array(162, 152, 154, 136, 34), PackedInt32Array(104, 100, 105), PackedInt32Array(176, 65, 8), PackedInt32Array(93, 174, 94), PackedInt32Array(257, 256, 149, 113), PackedInt32Array(162, 163, 180, 179, 122), PackedInt32Array(244, 243, 170, 169, 240, 257, 220), PackedInt32Array(257, 113, 122, 179), PackedInt32Array(251, 51, 44), PackedInt32Array(227, 44, 79, 82, 189), PackedInt32Array(227, 189, 188), PackedInt32Array(227, 188, 221), PackedInt32Array(227, 226, 248), PackedInt32Array(194, 227, 249, 207), PackedInt32Array(20, 220, 257), PackedInt32Array(179, 20, 257), PackedInt32Array(162, 122, 152), PackedInt32Array(34, 89, 228)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, 2, 625, 2, 626, 353, 0, 353)])
 source_geometry_group_name = &"navigation_polygon_source_group"
+=======
+[ext_resource type="PackedScene" uid="uid://bvraoa5vdlvk3" path="res://scenes/boss_1.tscn" id="5_rvx8x"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04iky"]
 size = Vector2(56, 39.5)
@@ -69,6 +77,7 @@ offset_bottom = 32.0
 
 [node name="player" parent="." instance=ExtResource("4_pg2v8")]
 z_index = 2
+<<<<<<< Updated upstream
 position = Vector2(26, 35)
 
 [node name="Slime" parent="." groups=["monster"] instance=ExtResource("5_qd7y1")]
@@ -85,6 +94,12 @@ position = Vector2(161, 190)
 
 [node name="Skeleme4" parent="." instance=ExtResource("6_ga2mx")]
 position = Vector2(471, 171)
+=======
+position = Vector2(140, 114)
+
+[node name="boss1" parent="." instance=ExtResource("5_rvx8x")]
+position = Vector2(346, 191)
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_entered"]
 [connection signal="body_exited" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_exited"]
