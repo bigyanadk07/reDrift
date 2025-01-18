@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name player extends CharacterBody2D
 
 const speed = 100
 

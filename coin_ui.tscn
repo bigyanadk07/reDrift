@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxsidktq8cf68"]
+
+[ext_resource type="Texture2D" uid="uid://b4lfmwnfk0wxu" path="res://Other Assets/Dhaka.png" id="1_6j3af"]
+
+[node name="CoinUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.0596947, 0.0596947)
+texture = ExtResource("1_6j3af")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 6.0
+offset_right = 131.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 40
+text = "0"

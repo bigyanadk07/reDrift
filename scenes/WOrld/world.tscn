@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://doa66tqeirssk"]
+[gd_scene load_steps=11 format=3 uid="uid://doa66tqeirssk"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_ywj8i"]
 [ext_resource type="TileSet" uid="uid://bs6vm7ut3d3fa" path="res://scenes/Tres Files/World1.tres" id="2_hmfvb"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="3_i78ij"]
 [ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="4_pg2v8"]
+[ext_resource type="PackedScene" uid="uid://bxsidktq8cf68" path="res://coin_ui.tscn" id="4_vxh1f"]
 [ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/slime.tscn" id="5_qd7y1"]
+[ext_resource type="PackedScene" uid="uid://chlt53m7sfftr" path="res://scenes/Objects/Dhaka.tscn" id="5_rfikr"]
 [ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skeleme.tscn" id="6_ga2mx"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6lvd3"]
@@ -66,6 +68,14 @@ offset_top = -32.0
 offset_right = 64.0
 offset_bottom = 32.0
 
+[node name="CoinUI" parent="CanvasLayer" instance=ExtResource("4_vxh1f")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+grow_horizontal = 2
+
 [node name="player" parent="." instance=ExtResource("4_pg2v8")]
 z_index = 2
 position = Vector2(26, 35)
@@ -87,6 +97,15 @@ position = Vector2(59, 279)
 
 [node name="Skeleme4" parent="." instance=ExtResource("6_ga2mx")]
 position = Vector2(307, 168)
+
+[node name="Dhaka" parent="." instance=ExtResource("5_rfikr")]
+position = Vector2(130, 105)
+
+[node name="Dhaka2" parent="." instance=ExtResource("5_rfikr")]
+position = Vector2(128, 50)
+
+[node name="Dhaka3" parent="." instance=ExtResource("5_rfikr")]
+position = Vector2(42, 77)
 
 [connection signal="body_entered" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_entered"]
 [connection signal="body_exited" from="TransitiontoDungeon" to="." method="_on_transitionto_dungeon_body_exited"]

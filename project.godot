@@ -17,6 +17,8 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 global="*res://scripts/global.gd"
+GameController="*res://scripts/GameController.gd"
+EventController="*res://scripts/EventController.gd"
 
 [display]
 

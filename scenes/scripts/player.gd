@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name player extends CharacterBody2D
 
 const speed = 5000
 var enemy_inattack_range = false
@@ -7,7 +7,7 @@ var health = 100
 var player_alive = true
 var attack_ip = false
 
-
+@onready var hit_sound_player = $HitSoundPlayer  # Ensure this matches the actual node name in your scene
 @onready var anim_tree = get_node("AnimationTree")
 var current_dir = "none"
 
@@ -40,6 +40,7 @@ func player_movement(delta):
 		for enemy in enemies:
 			if enemy.has_method("damage"):
 				enemy.damage(attack)
+				hit_sound_player.play()
 	
 	if attack_ip == false:
 		var input_vector = Vector2(
