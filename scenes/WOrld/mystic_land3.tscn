@@ -63,5 +63,5 @@ position = Vector2(596, 252)
 position = Vector2(51, 112)
 
 [connection signal="body_entered" from="Transition to ML4" to="." method="_on_transition_to_ml_4_body_entered"]
-[connection signal="body_entered" from="Transition to ML2" to="." method="_on_transition_to_ml_3_body_entered"]
 [connection signal="body_entered" from="Transition to ML2" to="." method="_on_transition_to_ml_2_body_entered"]
+[connection signal="body_entered" from="Transition to ML2" to="." method="_on_transition_to_ml_3_body_entered"]
