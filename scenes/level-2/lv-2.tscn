@@ -1,8 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://di21vblg07jn6"]
 
 [ext_resource type="Script" path="res://scripts/dungeons/lv-2.gd" id="1_uvqyw"]
-[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skeleme.tscn" id="3_qwry3"]
-[ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="4_gfqls"]
+[ext_resource type="PackedScene" uid="uid://du5yteu1gnkuk" path="res://scenes/UI/canvas_layer.tscn" id="4_m8bj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7e1i"]
 size = Vector2(58, 33)
@@ -15,11 +14,11 @@ vertices = PackedVector2Array(1985.53, 710.992, 1944.26, 485.977, 1970.26, 148.8
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 8, 10, 11), PackedInt32Array(0, 11, 10, 1), PackedInt32Array(4, 12, 13, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(25, 93, 424, 110, 458, 479, 1935, 476, 1962, 126, 2088, 256, 2128, 458, 2799, 465, 2788, 752, 2005, 761, 1980, 721, 194, 725, 191, 375, 24, 376)])
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3x3y5"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tyw6b"]
 load_path = "res://.godot/imported/MainLev2.0.png-78606cff2b4e4696bed45cdf0e0dbf8d.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0dh4r"]
-texture = SubResource("CompressedTexture2D_3x3y5")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xo6t5"]
+texture = SubResource("CompressedTexture2D_tyw6b")
 0:0/0 = 0
 1:0/0 = 0
 4:0/0 = 0
@@ -7475,11 +7474,11 @@ texture = SubResource("CompressedTexture2D_3x3y5")
 80:31/0 = 0
 82:30/0 = 0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5mqfi"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8jct6"]
 load_path = "res://.godot/imported/decorative.png-17897912b764409f7e35bb98f28ee8d5.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_so2ff"]
-texture = SubResource("CompressedTexture2D_5mqfi")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v5v1c"]
+texture = SubResource("CompressedTexture2D_8jct6")
 1:2/0 = 0
 3:2/0 = 0
 0:3/0 = 0
@@ -7936,22 +7935,25 @@ texture = SubResource("CompressedTexture2D_5mqfi")
 2:36/size_in_atlas = Vector2i(2, 2)
 2:36/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_s4cpp"]
+[sub_resource type="TileSet" id="TileSet_1dcg3"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.564766, 0.284151, 0.342333, 1)
-sources/1 = SubResource("TileSetAtlasSource_0dh4r")
-sources/2 = SubResource("TileSetAtlasSource_so2ff")
+sources/1 = SubResource("TileSetAtlasSource_xo6t5")
+sources/2 = SubResource("TileSetAtlasSource_v5v1c")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8vru"]
+size = Vector2(50.3421, 57.7461)
 
 [node name="world" type="Node2D"]
 process_physics_priority = 1
 y_sort_enabled = true
 script = ExtResource("1_uvqyw")
 
-[node name="transition_to_below" type="Area2D" parent="."]
+[node name="transition_lv2_1" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_below"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_lv2_1"]
 position = Vector2(2608, 432)
 shape = SubResource("RectangleShape2D_x7e1i")
 
@@ -7964,9 +7966,9 @@ position = Vector2(1304.99, 273.059)
 scale = Vector2(143.367, 35.199)
 polygon = PackedVector2Array(-8.49577, 8.2657, 3.94782, 8.32483, 4.12916, 9.20557, 9.71622, 9.2066, 9.70934, 0.768867, 8.56542, 0.910705, 8.56543, -0.36774, 8.14693, -0.367817, 8.15389, 0.853808, 5.20342, 0.881671, 4.99417, 0.00092411, 4.8617, -4.3174, 3.90615, -8.29496, 3.71084, -7.4427, 3.68982, 1.02344, 3.53636, 1.64843, -6.66126, 1.58973, -6.81468, 0.226014, -6.50081, -0.342113, -6.60542, -1.59217, -6.89141, -1.36494, -6.91929, -1.81952, -6.9192, -9.17768, -8.64903, -9.14959, -8.6839, -9.68938, -8.9908, -9.68944, -9.01871, -9.14966, -9.6116, -9.14977, -9.61168, -1.70638, -8.69096, -1.70621, -8.50264, -1.02433, -8.49577, 8.2657, -9.96043, -1.62121, -9.64646, -9.71797, 3.89918, -8.55065, 10.7487, -1.4185, 9.84873, 10.3714, 3.36885, 10.91)
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="transition_to_lv2_2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_lv2_2"]
 position = Vector2(452.611, 396.869)
 rotation = -0.349066
 shape = SubResource("RectangleShape2D_eybnr")
@@ -7977,7 +7979,7 @@ navigation_polygon = SubResource("NavigationPolygon_c5iao")
 [node name="TileMap" type="TileMap" parent="NavigationRegion2D"]
 y_sort_enabled = true
 rotation = -4.55473e-05
-tile_set = SubResource("TileSet_s4cpp")
+tile_set = SubResource("TileSet_1dcg3")
 format = 2
 layer_0/name = "walls"
 layer_0/y_sort_enabled = true
@@ -7997,11 +7999,15 @@ layer_4/name = "modulator"
 layer_5/name = "rods layer"
 layer_5/z_index = 4
 
-[node name="player" parent="." groups=["player"] instance=ExtResource("4_gfqls")]
-position = Vector2(127, 237)
+[node name="CanvasLayer" parent="." instance=ExtResource("4_m8bj6")]
 
-[node name="Skeleme" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_qwry3")]
-position = Vector2(297, 187)
-player = NodePath("../player")
+[node name="transition_back" type="Area2D" parent="."]
 
-[connection signal="body_entered" from="transition_to_below" to="." method="_on_transition_to_below_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="transition_back"]
+position = Vector2(144, 85)
+rotation = -1.56451
+shape = SubResource("RectangleShape2D_f8vru")
+
+[connection signal="body_entered" from="transition_lv2_1" to="." method="_on_transition_lv_2_1_body_entered"]
+[connection signal="body_entered" from="transition_to_lv2_2" to="." method="_on_transition_to_lv_2_2_body_entered"]
+[connection signal="body_entered" from="transition_back" to="." method="_on_transition_back_body_entered"]

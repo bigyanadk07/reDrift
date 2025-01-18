@@ -7,3 +7,6 @@ var transition_scene = false
 var past_scene 
 
 var player: Node2D
+
+var camera_limitr = 622
+var camera_limitb = 350

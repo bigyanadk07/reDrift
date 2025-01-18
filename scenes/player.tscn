@@ -1,8 +1,9 @@
-[gd_scene load_steps=116 format=3 uid="uid://f2mswd1jvbvj"]
+[gd_scene load_steps=117 format=3 uid="uid://f2mswd1jvbvj"]
 
 [ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_p6gci"]
 [ext_resource type="Texture2D" uid="uid://cw242uvldatmo" path="res://characters/player.png" id="2_jm1au"]
 [ext_resource type="Texture2D" uid="uid://der1fahyg6au8" path="res://characters/player1.png" id="3_6s6rh"]
+[ext_resource type="Script" path="res://scripts/camera/camera_2d.gd" id="4_cw3s3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy7di"]
 radius = 5.0
@@ -1122,7 +1123,7 @@ radius = 17.2627
 [node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 y_sort_enabled = true
-collision_mask = 2
+collision_layer = 3
 script = ExtResource("1_p6gci")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1174,6 +1175,7 @@ limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("4_cw3s3")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 modulate = Color(0, 0.501961, 0, 1)

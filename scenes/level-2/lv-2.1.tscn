@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c43tg714hv4ni"]
+[gd_scene load_steps=7 format=3 uid="uid://c43tg714hv4ni"]
 
 [ext_resource type="Texture2D" uid="uid://y7q5g7axyipl" path="res://tilesets/dungeon/MainLev2.0.png" id="2_rn186"]
-[ext_resource type="PackedScene" uid="uid://cyiocthi2otge" path="res://scenes/enemy1.tscn" id="4_2ib4g"]
 [ext_resource type="Texture2D" uid="uid://cd3jgtvtp6ptk" path="res://tilesets/dungeon/MainLev2.01.png" id="4_nfaop"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yh6um"]
@@ -14926,18 +14925,3 @@ rotation = -4.55473e-05
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-1760.79, -4613.08)
 polygon = PackedVector2Array(2459.79, 4568.11, 2482.79, 4588.11, 2495.79, 4637.11, 3023.77, 4986.14, 2454.75, 5384.11, 1894.77, 4986.09, 2418.79, 4633.11, 2435.79, 4579.11, 2459.79, 4569.11, 2411.79, 4547.11, 1850.77, 4968.08, 2454.75, 5409.11, 3081.77, 4969.14)
-
-[node name="Skele" parent="." instance=ExtResource("4_2ib4g")]
-position = Vector2(789, 266)
-rotation = -4.55473e-05
-
-[node name="Camera2D" type="Camera2D" parent="Skele"]
-position = Vector2(1.99994, 2.99995)
-zoom = Vector2(3, 3)
-limit_smoothed = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.5
-drag_top_margin = 0.5
-drag_right_margin = 0.5
-drag_bottom_margin = 0.5

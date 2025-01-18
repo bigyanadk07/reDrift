@@ -8,7 +8,9 @@ var transition_to
 func _ready() -> void:
 	global.current_scene="mystic_land2"
 	if global.past_scene=="mystic_land3":
-		playerpos( Vector2(607, 70))
+		playerpos( Vector2(607, 70)) 
+	elif global.past_scene=="lv-2":
+		playerpos( Vector2(275, 348)) 
 	else:
 		playerpos(Vector2(17,21))
 
@@ -63,6 +65,9 @@ func change_scene_to_Dungeon():
 		if global.current_scene == "mystic_land2": 
 			print("Changing scene from mystic_land2 to lv-2")
 			global.past_scene=global.current_scene
+			global.camera_limitr=int(1 << 31) - 1
+			global.camera_limitb=int(1 << 31) - 1
+			preload("res://scenes/level-2/lv-2.tscn")
 			get_tree().change_scene_to_file("res://scenes/level-2/lv-2.tscn")
 		else:
 			print("Not in mystic_land2, scene won't change.")

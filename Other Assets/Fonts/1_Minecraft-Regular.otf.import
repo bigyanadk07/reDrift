@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/1_Minecraft-Regular.otf-287ef7344d006f6518d95
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

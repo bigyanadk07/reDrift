@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq3rkwkjqvy0u"]
+[gd_scene load_steps=9 format=3 uid="uid://doa66tqeirssk"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_ywj8i"]
 [ext_resource type="TileSet" uid="uid://bs6vm7ut3d3fa" path="res://scenes/Tres Files/World1.tres" id="2_hmfvb"]
@@ -35,7 +35,6 @@ layer_0/tile_data = PackedInt32Array(-65536, 1, 0, 131073, 131072, 1, 65537, 131
 layer_1/name = "cliff"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array()
 layer_2/name = "Environment"
 layer_2/y_sort_enabled = true
 layer_2/z_index = 2

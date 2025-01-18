@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://beonf6uo33gq6"]
+[gd_scene load_steps=6 format=3 uid="uid://beonf6uo33gq6"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_0df3g"]
 [ext_resource type="Script" path="res://scripts/mystic_land4.gd" id="1_bptto"]
-[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skeleme.tscn" id="4_2o511"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="4_xhomo"]
-[ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/slime.tscn" id="5_mnkhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6mmw"]
 size = Vector2(45, 47)
@@ -58,18 +56,6 @@ offset_bottom = 32.0
 position = Vector2(-21, 28)
 shape = SubResource("RectangleShape2D_82ppa")
 
-[node name="Skeleme" parent="." instance=ExtResource("4_2o511")]
-position = Vector2(73, 176)
-
-[node name="Slime" parent="." instance=ExtResource("5_mnkhs")]
-position = Vector2(181, 126)
-
-[node name="Skeleme2" parent="." instance=ExtResource("4_2o511")]
-position = Vector2(387, 336)
-
-[node name="Slime2" parent="." instance=ExtResource("5_mnkhs")]
-position = Vector2(551, 260)
-
-[connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_al_1_body_entered"]
 [connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_mysticland_4_body_entered"]
+[connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_al_1_body_entered"]
 [connection signal="body_entered" from="Trasnport to ML3" to="." method="_on_trasnport_to_ml_3_body_entered"]

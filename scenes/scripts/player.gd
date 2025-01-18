@@ -7,24 +7,24 @@ var health = 100
 var player_alive = true
 var attack_ip = false
 
+
 @onready var anim_tree = get_node("AnimationTree")
 var current_dir = "none"
 
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 	$regen_timer.start()
+
 func _physics_process(delta):
 	update_health()
 	player_movement(delta)
 	enemy_attack()
 	
-	# Check for game over
-	if player_alive and health <= 0:
+	if health <= 0:
 		player_alive = false
 		health = 0
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 		self.queue_free()
-
 
 func player_movement(delta):
 	if Input.is_action_just_pressed("attack"):

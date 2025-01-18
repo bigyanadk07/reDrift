@@ -2,9 +2,9 @@ extends Node2D
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
 @onready var player: CharacterBody2D = $player
 
-
 var players =preload("res://scenes/player.tscn")
 var MonsterScene = preload("res://scenes/skeleme.tscn")
+var MonsterScenes = preload("res://scenes/slime.tscn")
 var paused = false
 var back = false
 var monster_positions = []  # List to store existing monster positions
@@ -20,8 +20,9 @@ func _ready() -> void:
 		playerpos(Vector2(14,346))
 		
 	randomize()
-	for i in range(4):  # Spawn 10 monsters
-		spawn_monster()
+	for i in range(2):  # Spawn 10 monsters
+		spawn_monster_skele()
+		spawn_monster_slime()
 
 func _process(delta):
 	if back:
@@ -92,10 +93,11 @@ func is_position_valid(position: Vector2, relaxed: bool = false) -> bool:
 	if player and position.distance_to(player.global_position) < min_player_distance:
 		print("Position too close to the player:", position)
 		return false
+		
 
 	return true
 
-func spawn_monster():
+func spawn_monster_skele():
 	# Primary check: spawn monster inside the NavigationRegion2D and validate other conditions
 	for i in range(2):  # Try 100 times to find a valid spawn position
 		# Get the navigation region's bounds (for random positioning within it)
@@ -111,9 +113,32 @@ func spawn_monster():
 
 	print("Failed to spawn monster after 100 tries.")
 
+func spawn_monster_slime():
+	# Primary check: spawn monster inside the NavigationRegion2D and validate other conditions
+	for i in range(2):  # Try 100 times to find a valid spawn position
+		# Get the navigation region's bounds (for random positioning within it)
+		 # Get the axis-aligned bounding box of the navigation region
+		# Generate a random position within the bounds
+		var spawn_position = Vector2(randf_range(20,600),randf_range(75,245))
+		
+		# Check if the spawn position is valid (navigation region + other conditions)
+		if is_position_valid(spawn_position):
+			print("Spawn position found (primary):", spawn_position)
+			add_monster1(spawn_position)
+			return
+
+	print("Failed to spawn monster after 100 tries.")
+
 
 func add_monster(position: Vector2):
 	var monster = MonsterScene.instantiate()
+	monster.position = position
+	add_child(monster)
+	monster_positions.append(position)  # Save the monster's position
+	print("Monster spawned at:", position)
+
+func add_monster1(position: Vector2):
+	var monster = MonsterScenes.instantiate()
 	monster.position = position
 	add_child(monster)
 	monster_positions.append(position)  # Save the monster's position
