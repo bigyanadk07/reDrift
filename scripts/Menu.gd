@@ -18,3 +18,8 @@ func _on_exit_pressed():
 func _on_how_to_pressed():
 	$ButtonClickSound.play()
 	get_tree().change_scene_to_file("res://scenes/Howto.tscn")
+
+
+func _on_about_pressed():
+	$ButtonClickSound.play()
+	get_tree().change_scene_to_file("res://scenes/About.tscn")

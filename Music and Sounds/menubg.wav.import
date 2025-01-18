@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bg4ow7lu6s8vt"
+path="res://.godot/imported/menubg.wav-f41a117ccd67bdba86d9dca47beb19d5.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/menubg.wav"
+dest_files=["res://.godot/imported/menubg.wav-f41a117ccd67bdba86d9dca47beb19d5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

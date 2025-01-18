@@ -1,19 +1,47 @@
-[gd_scene load_steps=10 format=3 uid="uid://oiveijm06w4l"]
+[gd_scene load_steps=25 format=3 uid="uid://oiveijm06w4l"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_ac1cd"]
-[ext_resource type="Texture2D" uid="uid://dcjsjpsf3odwi" path="res://Other Assets/Backgrounds/manu.png" id="1_ihldr"]
-[ext_resource type="Texture2D" uid="uid://6vx0hg5bx1ht" path="res://Other Assets/Button/button_normal.png" id="2_ghpug"]
+[ext_resource type="Texture2D" uid="uid://ghewubj1vyrw" path="res://Other Assets/bgggg.jpg" id="2_4bnq6"]
 [ext_resource type="FontFile" uid="uid://ck3wp7rovlfbl" path="res://Other Assets/Fonts/Attack Of Monster.ttf" id="2_jtl2m"]
-[ext_resource type="Texture2D" uid="uid://dba0v2ok05cg" path="res://Other Assets/Button/button_hover.png" id="3_3uk1w"]
-[ext_resource type="FontFile" uid="uid://nbymtktk5hc" path="res://Other Assets/Fonts/1_Minecraft-Regular.otf" id="4_fivi4"]
+[ext_resource type="Theme" uid="uid://ygdgrf3wmpkd" path="res://buttontheme.tres" id="5_im8ik"]
+[ext_resource type="AudioStream" uid="uid://bocqobmc0guiw" path="res://Music and Sounds/MenuBgMC.wav" id="6_n3nnf"]
 [ext_resource type="AudioStream" uid="uid://d2y7ewpximfpi" path="res://Other Assets/Button/button_click.wav" id="7_bolgx"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bfse5"]
-texture = ExtResource("2_ghpug")
-texture_margin_left = 3.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hm2ta"]
 
-[sub_resource type="Theme" id="Theme_48xfe"]
-Button/styles/normal = SubResource("StyleBoxTexture_bfse5")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edvve"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvfm3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bukdp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mi6fq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0y0b7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lxss5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6qaf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk017"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0u0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rm70"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00pvm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyci7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlw8b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4t8w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nmkw4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2tps"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxa78"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -29,157 +57,118 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -136.0
-offset_right = 122.0
-offset_bottom = 137.0
+offset_left = -3.0
+offset_top = -24.0
+offset_right = 4077.0
+offset_bottom = 2259.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ihldr")
+scale = Vector2(0.326038, 0.326038)
+texture = ExtResource("2_4bnq6")
 
 [node name="ButtonClickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_bolgx")
 
 [node name="Gametitle" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -226.0
-offset_top = 143.0
-offset_right = 231.0
-offset_bottom = 262.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_jtl2m")
-theme_override_font_sizes/font_size = 120
-text = "The Dhaka Tales"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -208.0
-offset_right = 250.0
-offset_bottom = 208.0
+offset_left = 394.0
+offset_top = -115.0
+offset_right = 394.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Play" type="TextureButton" parent="VBoxContainer"]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-theme = SubResource("Theme_48xfe")
-texture_normal = ExtResource("2_ghpug")
-texture_pressed = ExtResource("2_ghpug")
-texture_hover = ExtResource("3_3uk1w")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="VBoxContainer/Play"]
-layout_mode = 0
-offset_left = 173.0
-offset_top = 9.0
-offset_right = 336.0
-offset_bottom = 69.0
-theme_override_fonts/font = ExtResource("4_fivi4")
-theme_override_font_sizes/font_size = 35
-text = "Play
-"
+scale = Vector2(0.601514, 1.17155)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jtl2m")
+theme_override_font_sizes/font_size = 120
+text = "reDrift : The Lost Dhaka"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-alignment = 1
+[node name="Menu buttons" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 688.0
+offset_top = -503.0
+offset_right = 1148.0
+offset_bottom = -323.0
+grow_vertical = 0
+scale = Vector2(1.10147, 1.60642)
 
-[node name="Multiplayer" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="Play" type="Button" parent="Menu buttons"]
 layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("2_ghpug")
-texture_pressed = ExtResource("2_ghpug")
-texture_hover = ExtResource("3_3uk1w")
-stretch_mode = 0
+theme = ExtResource("5_im8ik")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jtl2m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hm2ta")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_edvve")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gvfm3")
+text = "Play"
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Multiplayer"]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 10.0
-offset_right = 223.0
-offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("4_fivi4")
-theme_override_font_sizes/font_size = 35
+[node name="Multiplayer" type="Button" parent="Menu buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jtl2m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bukdp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mi6fq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0y0b7")
 text = "Multiplayer
 "
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="How to" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+[node name="Options" type="Button" parent="Menu buttons"]
 layout_mode = 2
-size_flags_horizontal = 3
-texture_normal = ExtResource("2_ghpug")
-texture_pressed = ExtResource("2_ghpug")
-texture_hover = ExtResource("3_3uk1w")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/How to"]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 10.0
-offset_right = 223.0
-offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("4_fivi4")
-theme_override_font_sizes/font_size = 31
-text = "How to Play
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Options" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("2_ghpug")
-texture_pressed = ExtResource("2_ghpug")
-texture_hover = ExtResource("3_3uk1w")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="VBoxContainer/Options"]
-layout_mode = 0
-offset_left = 155.0
-offset_top = 8.0
-offset_right = 318.0
-offset_bottom = 68.0
-theme_override_fonts/font = ExtResource("4_fivi4")
-theme_override_font_sizes/font_size = 35
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jtl2m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lxss5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h6qaf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mk017")
 text = "Options
 "
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Exit" type="TextureButton" parent="VBoxContainer"]
+[node name="How To" type="Button" parent="Menu buttons"]
 layout_mode = 2
-texture_normal = ExtResource("2_ghpug")
-texture_pressed = ExtResource("2_ghpug")
-texture_hover = ExtResource("3_3uk1w")
-stretch_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jtl2m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u0u0x")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3rm70")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_00pvm")
+text = "How To
+"
 
-[node name="Label" type="Label" parent="VBoxContainer/Exit"]
-layout_mode = 0
-offset_left = 170.0
-offset_top = 9.0
-offset_right = 333.0
-offset_bottom = 69.0
-theme_override_fonts/font = ExtResource("4_fivi4")
-theme_override_font_sizes/font_size = 35
+[node name="About" type="Button" parent="Menu buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jtl2m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iyci7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_nlw8b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v4t8w")
+text = "About
+"
+
+[node name="Exit" type="Button" parent="Menu buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jtl2m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nmkw4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s2tps")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nxa78")
 text = "Exit
 "
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Multiplayer" to="." method="_on_multiplayer_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/How to" to="." method="_on_how_to_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_n3nnf")
+autoplay = true
+
+[connection signal="pressed" from="Menu buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu buttons/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="Menu buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu buttons/How To" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="Menu buttons/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="Menu buttons/Exit" to="." method="_on_exit_pressed"]

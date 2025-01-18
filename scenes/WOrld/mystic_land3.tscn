@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfhnhw5xakf8h"]
+[gd_scene load_steps=7 format=3 uid="uid://cfhnhw5xakf8h"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_cpgek"]
 [ext_resource type="Script" path="res://scripts/mystic_land3.gd" id="1_h4r2s"]
+[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skeleme.tscn" id="3_mvadn"]
+[ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/slime.tscn" id="4_kjr1n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30odo"]
 size = Vector2(62, 92)
@@ -41,6 +43,24 @@ polygon = PackedVector2Array(0, 5, 621, 4, 621, 84, 665, 84, 664, 156, 621, 158,
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to ML2"]
 position = Vector2(-32, 312)
 shape = SubResource("RectangleShape2D_7w4ke")
+
+[node name="Skeleme" parent="." instance=ExtResource("3_mvadn")]
+position = Vector2(184, 273)
+
+[node name="Slime" parent="." instance=ExtResource("4_kjr1n")]
+position = Vector2(320, 234)
+
+[node name="Skeleme2" parent="." instance=ExtResource("3_mvadn")]
+position = Vector2(305, 62)
+
+[node name="Slime2" parent="." instance=ExtResource("4_kjr1n")]
+position = Vector2(480, 328)
+
+[node name="Skeleme3" parent="." instance=ExtResource("3_mvadn")]
+position = Vector2(596, 252)
+
+[node name="Slime3" parent="." instance=ExtResource("4_kjr1n")]
+position = Vector2(51, 112)
 
 [connection signal="body_entered" from="Transition to ML4" to="." method="_on_transition_to_ml_4_body_entered"]
 [connection signal="body_entered" from="Transition to ML2" to="." method="_on_transition_to_ml_3_body_entered"]

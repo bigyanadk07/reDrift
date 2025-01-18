@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://fsw0hcehotmj"]
+[gd_scene load_steps=7 format=3 uid="uid://fsw0hcehotmj"]
 
 [ext_resource type="Script" path="res://scripts/mystic_land.gd" id="1_j5u2q"]
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="3_u40xk"]
+[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skeleme.tscn" id="4_7k0af"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="4_bgbgp"]
+[ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/slime.tscn" id="5_iixap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vx0ak"]
 size = Vector2(61, 59)
@@ -46,6 +48,18 @@ offset_left = -64.0
 offset_top = -32.0
 offset_right = 64.0
 offset_bottom = 32.0
+
+[node name="Skeleme" parent="." instance=ExtResource("4_7k0af")]
+position = Vector2(213, 198)
+
+[node name="Slime" parent="." instance=ExtResource("5_iixap")]
+position = Vector2(313, 276)
+
+[node name="Skeleme2" parent="." instance=ExtResource("4_7k0af")]
+position = Vector2(571, 249)
+
+[node name="Slime2" parent="." instance=ExtResource("5_iixap")]
+position = Vector2(532, 291)
 
 [connection signal="body_entered" from="Transition to Dungeon" to="." method="_on_transition_to_dungeon_body_entered"]
 [connection signal="body_exited" from="Transition to Dungeon" to="." method="_on_transition_to_dungeon_body_exited"]

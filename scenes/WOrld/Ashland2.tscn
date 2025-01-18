@@ -1,22 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnp3shsag8fx0"]
+[gd_scene load_steps=6 format=3 uid="uid://dnp3shsag8fx0"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_84ukf"]
-<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://scripts/ashland_2.gd" id="1_r57nb"]
-[ext_resource type="PackedScene" uid="uid://cyiocthi2otge" path="res://scenes/enemy1.tscn" id="3_cdfv8"]
+[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skeleme.tscn" id="3_pf6a6"]
+[ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/slime.tscn" id="4_ffv5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5flw"]
 size = Vector2(45, 47)
 
 [node name="Ashland2" type="Node2D"]
 script = ExtResource("1_r57nb")
-=======
-[ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_u2x1h"]
-[ext_resource type="PackedScene" uid="uid://bvraoa5vdlvk3" path="res://scenes/boss_1.tscn" id="3_thvv5"]
-
-[node name="Node2D" type="Node2D"]
-y_sort_enabled = true
->>>>>>> Stashed changes
 
 [node name="Ashland Map2" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -34,18 +27,37 @@ layer_1/tile_data = PackedInt32Array(65539, 393232, 0, 65543, 393232, 0, 65547, 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldCollision"]
 polygon = PackedVector2Array(-3, -2, -3, 76, -18, 76, -17, 123, -2, 123, -3, 272, 26, 272, 31, 287, 119, 288, 128, 304, 202, 306, 205, 335, 225, 335, 233, 321, 271, 321, 273, 337, 285, 336, 294, 323, 353, 322, 358, 306, 385, 305, 389, 289, 416, 289, 419, 278, 434, 273, 436, 260, 530, 256, 534, 244, 556, 241, 562, 257, 614, 255, 613, -4, -3, -2, 620, -23, 626, 320, -23, 361, -26, 76)
 
-<<<<<<< Updated upstream
-[node name="Skele" parent="." instance=ExtResource("3_cdfv8")]
-position = Vector2(373, 204)
-
 [node name="Trasnport to AL1" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trasnport to AL1"]
 position = Vector2(-25, 100)
 shape = SubResource("RectangleShape2D_r5flw")
 
+[node name="Skeleme" parent="." instance=ExtResource("3_pf6a6")]
+position = Vector2(140, 201)
+
+[node name="Skeleme2" parent="." instance=ExtResource("3_pf6a6")]
+position = Vector2(251, 173)
+
+[node name="Skeleme3" parent="." instance=ExtResource("3_pf6a6")]
+position = Vector2(244, 282)
+
+[node name="Skeleme4" parent="." instance=ExtResource("3_pf6a6")]
+position = Vector2(280, 59)
+
+[node name="Skeleme5" parent="." instance=ExtResource("3_pf6a6")]
+position = Vector2(390, 244)
+
+[node name="Skeleme6" parent="." instance=ExtResource("3_pf6a6")]
+position = Vector2(415, 59)
+
+[node name="Slime" parent="." instance=ExtResource("4_ffv5d")]
+position = Vector2(423, 154)
+
+[node name="Slime2" parent="." instance=ExtResource("4_ffv5d")]
+position = Vector2(548, 207)
+
+[node name="Slime3" parent="." instance=ExtResource("4_ffv5d")]
+position = Vector2(564, 78)
+
 [connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_al_1_body_entered"]
-=======
-[node name="boss1" parent="." instance=ExtResource("3_thvv5")]
-position = Vector2(442, 224)
->>>>>>> Stashed changes
