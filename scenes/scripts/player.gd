@@ -1,4 +1,4 @@
-class_name player extends CharacterBody2D
+extends CharacterBody2D
 
 const speed = 5000
 var enemy_inattack_range = false
