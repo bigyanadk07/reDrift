@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c43tg714hv4ni"]
+[gd_scene load_steps=8 format=3 uid="uid://c43tg714hv4ni"]
 
+[ext_resource type="Script" path="res://scripts/dungeons/lv_2.1.gd" id="1_nvcg2"]
 [ext_resource type="Texture2D" uid="uid://y7q5g7axyipl" path="res://tilesets/dungeon/MainLev2.0.png" id="2_rn186"]
 [ext_resource type="Texture2D" uid="uid://cd3jgtvtp6ptk" path="res://tilesets/dungeon/MainLev2.01.png" id="4_nfaop"]
 
@@ -14888,6 +14889,7 @@ size = Vector2(58, 33)
 [node name="Node2D" type="Node2D"]
 process_physics_priority = 1
 y_sort_enabled = true
+script = ExtResource("1_nvcg2")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

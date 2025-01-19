@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/mystic_land2.gd" id="1_nkfrj"]
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="2_fe8bs"]
-[ext_resource type="PackedScene" uid="uid://du5yteu1gnkuk" path="res://scenes/UI/canvas_layer.tscn" id="3_r07cp"]
+[ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="4_wqv1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rw43p"]
 size = Vector2(52.9642, 51)
@@ -45,8 +45,22 @@ shape = SubResource("RectangleShape2D_rw43p")
 scale = Vector2(1.00514, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to Lv2"]
-position = Vector2(277.573, 385)
+position = Vector2(275.584, 384.75)
 shape = SubResource("RectangleShape2D_slky3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("4_wqv1w")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
 
 [node name="Transition to ML1" type="Area2D" parent="."]
 scale = Vector2(1.01031, 1)
@@ -54,8 +68,6 @@ scale = Vector2(1.01031, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition to ML1"]
 position = Vector2(-0.989799, -1)
 shape = SubResource("ConvexPolygonShape2D_1ke1p")
-
-[node name="CanvasLayer" parent="." instance=ExtResource("3_r07cp")]
 
 [connection signal="body_entered" from="Transition to ML3" to="." method="_on_transition_to_ml_3_body_entered"]
 [connection signal="body_entered" from="Transition to Lv2" to="." method="_on_transition_to_lv_2_body_entered"]

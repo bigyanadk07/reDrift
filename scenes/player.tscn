@@ -1,10 +1,9 @@
-[gd_scene load_steps=118 format=3 uid="uid://f2mswd1jvbvj"]
+[gd_scene load_steps=117 format=3 uid="uid://f2mswd1jvbvj"]
 
 [ext_resource type="Script" path="res://scenes/scripts/player.gd" id="1_p6gci"]
 [ext_resource type="Texture2D" uid="uid://cw242uvldatmo" path="res://characters/player.png" id="2_jm1au"]
 [ext_resource type="Texture2D" uid="uid://der1fahyg6au8" path="res://characters/player1.png" id="3_6s6rh"]
 [ext_resource type="Script" path="res://scripts/camera/camera_2d.gd" id="4_cw3s3"]
-[ext_resource type="AudioStream" uid="uid://cbtuxnituswto" path="res://Music and Sounds/Hit.wav" id="5_ioy7n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy7di"]
 radius = 5.0
@@ -1193,9 +1192,6 @@ wait_time = 4.0
 [node name="AttackArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-
-[node name="HitSoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_ioy7n")
 
 [connection signal="body_entered" from="Player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="Player_hitbox" to="." method="_on_player_hitbox_body_exited"]
