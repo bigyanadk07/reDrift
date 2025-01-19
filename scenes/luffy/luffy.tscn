@@ -1767,20 +1767,21 @@ parameters/walk/blend_position = Vector2(-0.0517091, 0.386243)
 visible = false
 position = Vector2(43, 0)
 sprite_frames = SubResource("SpriteFrames_eo2j0")
-animation = &"hands"
+animation = &""
 frame = 7
 
 [node name="arms" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(68, 0)
 sprite_frames = SubResource("SpriteFrames_w3e72")
-animation = &"hand"
+animation = &""
 frame = 3
 
 [node name="arm" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(63, 0)
 sprite_frames = SubResource("SpriteFrames_435pq")
+animation = &""
 
 [node name="Area2D" type="Area2D" parent="."]
 

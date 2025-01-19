@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://tbchtvkfu4ny"]
+[gd_scene load_steps=14 format=3 uid="uid://tbchtvkfu4ny"]
 
-[ext_resource type="Script" path="res://scenes/UI/scripts/dungeons/lv_2_2.gd" id="1_md0bl"]
+[ext_resource type="Script" path="res://scripts/dungeons/lv_2_2.gd" id="1_md0bl"]
+[ext_resource type="PackedScene" uid="uid://0hkdxn33xod0" path="res://scenes/skeleme.tscn" id="2_m3gr0"]
+[ext_resource type="PackedScene" uid="uid://du5yteu1gnkuk" path="res://scenes/UI/canvas_layer.tscn" id="3_1ofn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du3ik"]
 size = Vector2(50.3421, 57.7461)
@@ -14940,6 +14942,12 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_s0qhi")
 sources/3 = SubResource("TileSetAtlasSource_6uoui")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbapb"]
+size = Vector2(296, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rphg4"]
+size = Vector2(331.5, 19.5)
+
 [node name="lv-2_2" type="Node2D"]
 position = Vector2(2, 4)
 script = ExtResource("1_md0bl")
@@ -14992,3 +15000,26 @@ layer_4/name = "Layer4"
 layer_4/z_index = 2
 layer_5/name = "rods layer"
 layer_5/z_index = 4
+
+[node name="Spawnmonster1" type="Area2D" parent="."]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawnmonster1"]
+position = Vector2(8115, 1400.5)
+shape = SubResource("RectangleShape2D_rbapb")
+
+[node name="Spawnmonster2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawnmonster2"]
+position = Vector2(8975.25, 670.25)
+shape = SubResource("RectangleShape2D_rphg4")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_1ofn2")]
+
+[node name="Skeleme" parent="." instance=ExtResource("2_m3gr0")]
+position = Vector2(8438, 1149)
+
+[connection signal="body_entered" from="transition_back" to="." method="_on_transition_back_body_entered"]
+[connection signal="body_entered" from="transition_lv2_3" to="." method="_on_transition_lv_2_3_body_entered"]
+[connection signal="body_entered" from="Spawnmonster1" to="." method="_on_spawnmonster_1_body_entered"]
+[connection signal="body_entered" from="Spawnmonster2" to="." method="_on_spawnmonster_2_body_entered"]

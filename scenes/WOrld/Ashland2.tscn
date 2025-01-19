@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnp3shsag8fx0"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_84ukf"]
-[ext_resource type="Script" path="res://scenes/UI/scripts/ashland_2.gd" id="1_r57nb"]
+[ext_resource type="Script" path="res://scripts/ashland_2.gd" id="1_r57nb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5flw"]
 size = Vector2(45, 47)
@@ -26,6 +26,7 @@ position = Vector2(-25, 100)
 shape = SubResource("RectangleShape2D_r5flw")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_c4meq")
 
 [node name="Ashland Map2" type="TileMap" parent="NavigationRegion2D"]

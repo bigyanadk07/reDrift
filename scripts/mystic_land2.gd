@@ -67,7 +67,6 @@ func change_scene_to_Dungeon():
 			global.past_scene=global.current_scene
 			global.camera_limitr=int(1 << 31) - 1
 			global.camera_limitb=int(1 << 31) - 1
-			preload("res://scenes/level-2/lv-2.tscn")
 			get_tree().change_scene_to_file("res://scenes/level-2/lv-2.tscn")
 		else:
 			print("Not in mystic_land2, scene won't change.")

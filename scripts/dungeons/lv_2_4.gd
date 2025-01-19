@@ -3,9 +3,13 @@ extends Node2D
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
 var paused = false
 const players = preload("res://scenes/player.tscn")
+
 var transition_to
 
+
 func _ready() -> void:
+	global.camera_limitb=int(1 << 31) - 1
+	global.camera_limitr=int(1 << 31) - 1
 	global.current_scene="lv-2"
 	if global.past_scene=="lv-2.1":
 		playerpos( Vector2(418, 422))
@@ -94,3 +98,4 @@ func _on_transition_to_lv_2_2_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		transition_to= 3
 		global.transition_scene = true
+		

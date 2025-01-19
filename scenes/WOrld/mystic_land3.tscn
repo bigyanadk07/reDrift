@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cfhnhw5xakf8h"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_cpgek"]
-[ext_resource type="Script" path="res://scenes/UI/scripts/mystic_land3.gd" id="1_h4r2s"]
-[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/UI/skeleme.tscn" id="3_mvadn"]
-[ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/UI/slime.tscn" id="4_kjr1n"]
+[ext_resource type="Script" path="res://scripts/mystic_land3.gd" id="1_h4r2s"]
+[ext_resource type="PackedScene" uid="uid://0hkdxn33xod0" path="res://scenes/skeleme.tscn" id="3_mvadn"]
+[ext_resource type="PackedScene" path="res://scenes/slime.tscn" id="4_kjr1n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30odo"]
 size = Vector2(62, 92)
@@ -57,6 +57,7 @@ position = Vector2(596, 252)
 position = Vector2(51, 112)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+y_sort_enabled = true
 navigation_polygon = SubResource("NavigationPolygon_nh5cx")
 
 [node name="Map" type="TileMap" parent="NavigationRegion2D"]

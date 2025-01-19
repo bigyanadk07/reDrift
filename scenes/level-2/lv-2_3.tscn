@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://ck7v2hnvlgqqm"]
+[gd_scene load_steps=15 format=3 uid="uid://ck7v2hnvlgqqm"]
 
 [ext_resource type="Texture2D" uid="uid://de6ebm7yeaiem" path="res://tilesets/dungeon/background.png" id="1_711ig"]
+[ext_resource type="Script" path="res://scripts/dungeons/lv_2_3.gd" id="1_vly6f"]
 [ext_resource type="NavigationPolygon" uid="uid://cdf7rd0vkiwvn" path="res://new_navigation_polygon.tres" id="2_h2vlk"]
 [ext_resource type="Texture2D" uid="uid://y7q5g7axyipl" path="res://tilesets/dungeon/MainLev2.0.png" id="2_wqyuo"]
 [ext_resource type="Texture2D" uid="uid://bhggar42lwdvh" path="res://tilesets/dungeon/decorative.png" id="3_yncan"]
 [ext_resource type="Texture2D" uid="uid://cd3jgtvtp6ptk" path="res://tilesets/dungeon/MainLev2.01.png" id="4_b3rjt"]
-[ext_resource type="PackedScene" uid="uid://cyiocthi2otge" path="res://scenes/UI/enemy1.tscn" id="4_on2i2"]
+[ext_resource type="PackedScene" uid="uid://du5yteu1gnkuk" path="res://scenes/UI/canvas_layer.tscn" id="8_r372a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3osfk"]
 size = Vector2(55.5, 40)
@@ -15397,6 +15398,7 @@ sources/2 = SubResource("TileSetAtlasSource_osx4w")
 sources/3 = SubResource("TileSetAtlasSource_tvger")
 
 [node name="Node2D2" type="Node2D"]
+script = ExtResource("1_vly6f")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 rotation = -4.55473e-05
@@ -15406,16 +15408,6 @@ polygon = PackedVector2Array(32.872, 2811, 32.8643, 2980, 527.864, 2980.02, 527.
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(591.864, 2981.03, 591.856, 3152.03, 688.856, 3152.03, 688.839, 3537.03, 875.839, 3535.04, 872.849, 3323.04, 1837.85, 3321.08, 1839.86, 2980.08)
-
-[node name="Skele" parent="." instance=ExtResource("4_on2i2")]
-position = Vector2(139, 2847)
-
-[node name="Camera2D" type="Camera2D" parent="Skele"]
-visible = false
-position = Vector2(-2, 6)
-zoom = Vector2(6, 6)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -15430,6 +15422,7 @@ position = Vector2(1866.5, 2791)
 shape = SubResource("RectangleShape2D_eyvhx")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+y_sort_enabled = true
 navigation_polygon = ExtResource("2_h2vlk")
 
 [node name="TileMap" type="TileMap" parent="NavigationRegion2D"]
@@ -15467,3 +15460,5 @@ layer_6/tile_data = PackedInt32Array(11468837, 6356993, 805306459, 11534373, 484
 layer_7/name = "waterfall3"
 layer_7/z_index = 5
 layer_7/tile_data = PackedInt32Array(11534372, 589826, 18, 11599909, 589826, 18, 11075622, 6160385, 1879048235, 11206694, 327682, 15, 11272230, 983042, 19, 11337766, 524290, 536870931, 11403302, 1048578, 805306385, 11468838, 1507330, 536870927, 11534374, 1179650, 1610612754, 11075623, 6160385, 1879048235, 11272231, 983042, 268435475, 11337767, 524290, 805306387, 11468839, 983042, 19, 11534375, 1179650, 1879048210, 11665447, 589826, 1342177298, 11468840, 983042, 268435475, 11534376, 1179650, 1879048209, 11665448, 589826, 18, 11141161, 983042, 1073741835, 11206697, 327682, 805306397, 11272233, 1048578, 536870929, 11337769, 1179650, 805306385, 11403305, 1048578, 17, 11468841, 1048578, 536870929, 11599913, 589826, 18, 11141162, 983042, 53, 11534378, 5242881, 39, 12714099, 4849665, 536870945, 12779635, 4849665, 536870944, 12845171, 5046273, 33, 12714100, 4915201, 536870945, 12779636, 4915201, 536870944, 12845172, 4849665, 33, 12714101, 4980737, 536870945, 12779637, 4980737, 536870944, 12845173, 4915201, 33, 12714102, 5046273, 536870945, 12779638, 5046273, 536870944, 12845174, 4980737, 33)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_r372a")]
