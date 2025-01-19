@@ -1,7 +1,7 @@
 [gd_scene load_steps=44 format=3 uid="uid://cut2o7warfhnk"]
 
 [ext_resource type="Texture2D" uid="uid://bf0pf42fs7342" path="res://characters/Bringer-of-Death-SpritSheet_no-Effect.png" id="1_5wyar"]
-[ext_resource type="Script" path="res://scenes/dummy_boss.gd" id="1_b7685"]
+[ext_resource type="Script" path="res://scenes/UI/dummy_boss.gd" id="1_b7685"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncv0l"]
 atlas = ExtResource("1_5wyar")

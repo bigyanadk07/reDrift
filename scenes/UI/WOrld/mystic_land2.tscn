@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bym6p1tive6ep"]
 
-[ext_resource type="Script" path="res://scripts/mystic_land2.gd" id="1_nkfrj"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/mystic_land2.gd" id="1_nkfrj"]
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="2_fe8bs"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="4_wqv1w"]
 

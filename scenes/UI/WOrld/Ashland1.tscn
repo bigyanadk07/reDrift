@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6p85pxd5jq30"]
 
-[ext_resource type="Script" path="res://scripts/Ashland1.gd" id="1_qtf3p"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/Ashland1.gd" id="1_qtf3p"]
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="3_6dcrv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xl1x4"]

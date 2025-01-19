@@ -1,47 +1,48 @@
-[gd_scene load_steps=25 format=3 uid="uid://oiveijm06w4l"]
+[gd_scene load_steps=26 format=3 uid="uid://oiveijm06w4l"]
 
-[ext_resource type="Script" path="res://scripts/Menu.gd" id="1_ac1cd"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/Menu.gd" id="1_ac1cd"]
 [ext_resource type="Texture2D" uid="uid://ghewubj1vyrw" path="res://Other Assets/bgggg.jpg" id="2_4bnq6"]
 [ext_resource type="FontFile" uid="uid://ck3wp7rovlfbl" path="res://Other Assets/Fonts/Attack Of Monster.ttf" id="2_jtl2m"]
 [ext_resource type="Theme" uid="uid://ygdgrf3wmpkd" path="res://buttontheme.tres" id="5_im8ik"]
 [ext_resource type="AudioStream" uid="uid://bocqobmc0guiw" path="res://Music and Sounds/MenuBgMC.wav" id="6_n3nnf"]
 [ext_resource type="AudioStream" uid="uid://d2y7ewpximfpi" path="res://Other Assets/Button/button_click.wav" id="7_bolgx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hm2ta"]
+[ext_resource type="Texture2D" uid="uid://b3gql6axvtkvv" path="res://background/logo.png" id="7_s8771"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edvve"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvfm3"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bukdp"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hm2ta"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mi6fq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0y0b7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lxss5"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bukdp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6qaf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk017"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0u0x"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lxss5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rm70"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00pvm"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyci7"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0u0x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlw8b"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4t8w"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nmkw4"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iyci7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2tps"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxa78"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nmkw4"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -75,19 +76,24 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 394.0
-offset_top = -115.0
-offset_right = 394.0
-offset_bottom = 4.0
+offset_left = 384.0
+offset_top = -122.0
+offset_right = 384.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.601514, 1.17155)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jtl2m")
-theme_override_font_sizes/font_size = 120
-text = "reDrift : The Lost Dhaka"
+theme_override_font_sizes/font_size = 80
+text = " The Lost Dhaka"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(967, 342)
+scale = Vector2(1.58717, 2.03846)
+texture = ExtResource("7_s8771")
 
 [node name="Menu buttons" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(10, 10)
@@ -107,18 +113,18 @@ layout_mode = 2
 theme = ExtResource("5_im8ik")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jtl2m")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hm2ta")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_edvve")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_gvfm3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hm2ta")
 text = "Play"
 
 [node name="Multiplayer" type="Button" parent="Menu buttons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jtl2m")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_bukdp")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_mi6fq")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_0y0b7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bukdp")
 text = "Multiplayer
 "
 
@@ -126,9 +132,9 @@ text = "Multiplayer
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jtl2m")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_lxss5")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_h6qaf")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_mk017")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lxss5")
 text = "Options
 "
 
@@ -136,9 +142,9 @@ text = "Options
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jtl2m")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_u0u0x")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_3rm70")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_00pvm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u0u0x")
 text = "How To
 "
 
@@ -146,9 +152,9 @@ text = "How To
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jtl2m")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iyci7")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_nlw8b")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_v4t8w")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iyci7")
 text = "About
 "
 
@@ -156,9 +162,9 @@ text = "About
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_jtl2m")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nmkw4")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_s2tps")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nxa78")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nmkw4")
 text = "Exit
 "
 

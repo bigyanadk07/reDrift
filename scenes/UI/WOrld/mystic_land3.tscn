@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cfhnhw5xakf8h"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_cpgek"]
-[ext_resource type="Script" path="res://scripts/mystic_land3.gd" id="1_h4r2s"]
-[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/skeleme.tscn" id="3_mvadn"]
-[ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/slime.tscn" id="4_kjr1n"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/mystic_land3.gd" id="1_h4r2s"]
+[ext_resource type="PackedScene" uid="uid://cxbsi15l23riy" path="res://scenes/UI/skeleme.tscn" id="3_mvadn"]
+[ext_resource type="PackedScene" uid="uid://dls7064xsrcy8" path="res://scenes/UI/slime.tscn" id="4_kjr1n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30odo"]
 size = Vector2(62, 92)
@@ -71,5 +71,5 @@ layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(851979, 65541, 1, 1114130, 65541, 1, 589846, 65541, 1, 851999, 65541, 1, 393248, 65541, 1, 1310728, 786446, 0, 786438, 786446, 0, 393233, 786446, 0, 327707, 786446, 0, 1114147, 786446, 0, 589837, 14, 9, 1048599, 14, 9, 196639, 851982, 10, 917507, 655374, 8, 917512, 262158, 4, 1114127, 262158, 4, 1048583, 131086, 4, 589851, 393230, 4, 655394, 393230, 4, 786447, 65549, 3, 786448, 131085, 3, 786449, 196621, 3, 1048592, 65549, 3, 1048593, 131085, 3, 1048594, 196621, 3, 1114111, 65549, 3, 1048576, 131085, 3, 1048577, 196621, 3, 393245, 65549, 3, 393246, 131085, 3, 393247, 196621, 3, 720932, 65549, 3, 720933, 131085, 3, 720934, 196621, 3, 917531, 65549, 3, 917532, 131085, 3, 917533, 196621, 3, 131079, 65551, 1)
 
 [connection signal="body_entered" from="Transition to ML4" to="." method="_on_transition_to_ml_4_body_entered"]
-[connection signal="body_entered" from="Transition to ML2" to="." method="_on_transition_to_ml_3_body_entered"]
 [connection signal="body_entered" from="Transition to ML2" to="." method="_on_transition_to_ml_2_body_entered"]
+[connection signal="body_entered" from="Transition to ML2" to="." method="_on_transition_to_ml_3_body_entered"]

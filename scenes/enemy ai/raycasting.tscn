@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://osj7k30503uu"]
 
-[ext_resource type="Script" path="res://scripts/ememy ai/raycasting.gd" id="1_lignd"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/Enemy AI/raycasting.gd" id="1_lignd"]
 
 [node name="Rays" type="Node2D"]
 script = ExtResource("1_lignd")

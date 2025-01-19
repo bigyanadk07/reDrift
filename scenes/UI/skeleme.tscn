@@ -1,6 +1,6 @@
 [gd_scene load_steps=57 format=3 uid="uid://cxbsi15l23riy"]
 
-[ext_resource type="Script" path="res://scripts/skele/Skeleme.gd" id="1_r3vus"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/skele/Skeleme.gd" id="1_r3vus"]
 [ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="2_hm4qp"]
 [ext_resource type="PackedScene" uid="uid://osj7k30503uu" path="res://scenes/enemy ai/raycasting.tscn" id="4_n1pmy"]
 

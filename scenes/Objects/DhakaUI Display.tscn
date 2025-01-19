@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqr8iqkj1pkc4"]
 
 [ext_resource type="Texture2D" uid="uid://b4lfmwnfk0wxu" path="res://Other Assets/Dhaka.png" id="1_5gk1r"]
-[ext_resource type="Script" path="res://scripts/coin_ui.gd" id="1_vu5r4"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/coin_ui.gd" id="1_vu5r4"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 

@@ -1,7 +1,7 @@
 extends Node2D
 @onready var pause_menu = $"CanvasLayer/Pause Menu"
 @onready var player: CharacterBody2D = $player
-var players= preload("res://scenes/player.tscn")
+var players= preload("res://scenes/UI/player.tscn")
 var paused = false
 var back = false
 

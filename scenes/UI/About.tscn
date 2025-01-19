@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3o83tyi8b77y"]
+
+[ext_resource type="Texture2D" uid="uid://dxnb0pw5pwjix" path="res://Other Assets/Backgrounds/about.jpg" id="1_acdmb"]
+[ext_resource type="Script" path="res://scenes/UI/About.gd" id="1_mp6f2"]
+[ext_resource type="FontFile" uid="uid://ck3wp7rovlfbl" path="res://Other Assets/Fonts/Attack Of Monster.ttf" id="3_xoo3h"]
+[ext_resource type="FontFile" uid="uid://dx0y6pbvg2w6l" path="res://Other Assets/Fonts/Minecrafter.Reg.ttf" id="4_vbfbd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w801x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rg5ve"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ai80w"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mp6f2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 6000.0
+offset_bottom = 3363.0
+scale = Vector2(0.31901, 0.423755)
+texture = ExtResource("1_acdmb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 902.0
+offset_top = 968.0
+offset_right = 947.0
+offset_bottom = 999.0
+scale = Vector2(1.76558, 1.73279)
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w801x")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rg5ve")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ai80w")
+text = "Back
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 240.0
+offset_top = 412.0
+offset_right = 1815.0
+offset_bottom = 516.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_xoo3h")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "Created by Team  				2025"
+fit_content = true
+
+[node name="Names" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 422.0
+offset_top = 832.0
+offset_right = 868.0
+offset_bottom = 1030.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_xoo3h")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Bigyan Adhikari"
+fit_content = true
+
+[node name="Names2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1065.0
+offset_top = 829.0
+offset_right = 1842.0
+offset_bottom = 1027.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_xoo3h")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Sohail Maharjan"
+fit_content = true
+
+[node name="Names3" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1092.0
+offset_top = 381.0
+offset_right = 1605.0
+offset_bottom = 481.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.999967, 0, 0.0199417, 1)
+theme_override_fonts/normal_font = ExtResource("4_vbfbd")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "reDrift"
+fit_content = true
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_button_pressed"]

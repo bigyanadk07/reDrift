@@ -1,7 +1,7 @@
 [gd_scene load_steps=56 format=3 uid="uid://cyiocthi2otge"]
 
 [ext_resource type="Texture2D" uid="uid://cc4ntxnfludnq" path="res://characters/skele.png" id="1_dke2u"]
-[ext_resource type="Script" path="res://scripts/player/skeleplayer.gd" id="1_ghtjc"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/player/skeleplayer.gd" id="1_ghtjc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr5ho"]
 radius = 3.0

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnejp1dykmvop"]
 
 [ext_resource type="TileSet" uid="uid://bs6vm7ut3d3fa" path="res://scenes/Tres Files/World1.tres" id="1_vnr4o"]
-[ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/player.tscn" id="2_7ci62"]
-[ext_resource type="PackedScene" uid="uid://cut2o7warfhnk" path="res://scenes/dummy_boss.tscn" id="3_etvun"]
+[ext_resource type="PackedScene" uid="uid://f2mswd1jvbvj" path="res://scenes/UI/player.tscn" id="2_7ci62"]
+[ext_resource type="PackedScene" uid="uid://cut2o7warfhnk" path="res://scenes/UI/dummy_boss.tscn" id="3_etvun"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tkklq"]
 vertices = PackedVector2Array(767, 381, 13, 381, 12, 18, 767, 18)

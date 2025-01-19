@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://beonf6uo33gq6"]
 
 [ext_resource type="TileSet" uid="uid://dmf374nr1o1wm" path="res://scenes/Objects/mystic_land_updated.tres" id="1_0df3g"]
-[ext_resource type="Script" path="res://scripts/mystic_land4.gd" id="1_bptto"]
-[ext_resource type="PackedScene" uid="uid://bvraoa5vdlvk3" path="res://scenes/boss_1.tscn" id="4_r3i7d"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/mystic_land4.gd" id="1_bptto"]
+[ext_resource type="PackedScene" uid="uid://bvraoa5vdlvk3" path="res://scenes/UI/boss_1.tscn" id="4_r3i7d"]
 [ext_resource type="PackedScene" uid="uid://doyp3ym75cw8s" path="res://scenes/UI/pause_menu.tscn" id="4_xhomo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6mmw"]
@@ -68,6 +68,6 @@ layer_1/tile_data = PackedInt32Array(1048613, 5, 0, 1245192, 65541, 1, 786455, 6
 [node name="boss1" parent="." instance=ExtResource("4_r3i7d")]
 position = Vector2(361, 186)
 
-[connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_mysticland_4_body_entered"]
 [connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_al_1_body_entered"]
+[connection signal="body_entered" from="Trasnport to AL1" to="." method="_on_trasnport_to_mysticland_4_body_entered"]
 [connection signal="body_entered" from="Trasnport to ML3" to="." method="_on_trasnport_to_ml_3_body_entered"]

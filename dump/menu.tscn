@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbp8njg8kxrok"]
 
-[ext_resource type="Script" path="res://scripts/Menu.gd" id="1_f24xr"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/Menu.gd" id="1_f24xr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgjcf"]
 content_margin_left = 2.0

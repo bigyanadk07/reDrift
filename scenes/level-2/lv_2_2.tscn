@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://tbchtvkfu4ny"]
 
-[ext_resource type="Script" path="res://scripts/dungeons/lv_2_2.gd" id="1_md0bl"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/dungeons/lv_2_2.gd" id="1_md0bl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du3ik"]
 size = Vector2(50.3421, 57.7461)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://di21vblg07jn6"]
 
-[ext_resource type="Script" path="res://scripts/dungeons/lv-2.gd" id="1_uvqyw"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/dungeons/lv-2.gd" id="1_uvqyw"]
 [ext_resource type="PackedScene" uid="uid://du5yteu1gnkuk" path="res://scenes/UI/canvas_layer.tscn" id="4_m8bj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7e1i"]

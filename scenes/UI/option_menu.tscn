@@ -1,6 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwusu0xcbao2n"]
+[gd_scene load_steps=13 format=3 uid="uid://cwusu0xcbao2n"]
 
-[ext_resource type="Script" path="res://scripts/option_menu.gd" id="1_6qvu1"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/option_menu.gd" id="1_6qvu1"]
+[ext_resource type="Texture2D" uid="uid://dcjsjpsf3odwi" path="res://Other Assets/Backgrounds/manu.png" id="2_s57ng"]
+[ext_resource type="FontFile" uid="uid://ck3wp7rovlfbl" path="res://Other Assets/Fonts/Attack Of Monster.ttf" id="3_um5io"]
+[ext_resource type="Texture2D" uid="uid://b3gql6axvtkvv" path="res://background/logo.png" id="4_etf08"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwulb"]
 bg_color = Color(0.380686, 0.647224, 0.709653, 1)
@@ -31,6 +34,8 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_tsm3q")
 
 [sub_resource type="Theme" id="Theme_l5qtm"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7edf"]
+
 [node name="Option Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -40,6 +45,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_um8j2")
 script = ExtResource("1_6qvu1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -101.0
+offset_top = -184.0
+offset_right = 1982.0
+offset_bottom = 1163.0
+texture = ExtResource("2_s57ng")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -85,6 +98,33 @@ text = "Keybinds"
 layout_mode = 2
 size_flags_vertical = 3
 text = "Back"
+
+[node name="Gametitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 379.0
+offset_top = -295.5
+offset_right = 379.0
+offset_bottom = -176.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.601514, 1.17155)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_um5io")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v7edf")
+text = " The Lost Dhaka"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(962, 168.5)
+scale = Vector2(1.58717, 2.03846)
+texture = ExtResource("4_etf08")
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Difficulty" to="." method="_on_difficulty_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Keybinds" to="." method="_on_keybinds_pressed"]

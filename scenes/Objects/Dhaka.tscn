@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://chlt53m7sfftr"]
 
 [ext_resource type="Texture2D" uid="uid://q0iy63ad33sw" path="res://tilesets/objects/DhakSS.png" id="1_ib5ql"]
-[ext_resource type="Script" path="res://scripts/Dhaka.gd" id="3_oflbc"]
+[ext_resource type="Script" path="res://scenes/UI/scripts/Dhaka.gd" id="3_oflbc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxwcy"]
 atlas = ExtResource("1_ib5ql")
